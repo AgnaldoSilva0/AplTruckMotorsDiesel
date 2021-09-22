@@ -24,11 +24,13 @@ namespace AplTruckMotorsDiesel
             novoRegistro.ShowDialog();
         }
 
+        //Variavel criada para dar sinal de positivo ou não para a form de login
         public static bool dialogResult = false;
         private void Form1_Load(object sender, EventArgs e)
         {
             Login login = new Login();
             login.ShowDialog();
+            //Se der erro no login, a aplicação fecha
             if (dialogResult != true)
             {
                 Application.Exit();
