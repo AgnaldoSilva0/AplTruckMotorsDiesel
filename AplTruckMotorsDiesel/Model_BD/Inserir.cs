@@ -44,6 +44,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         }
         #endregion
 
+<<<<<<< HEAD
         #region Classe para chamar o metodo responsavel pelo insert passado por parametro
         public static void chamaMetodo(int idMetodo, string codigo, string codigoOriginal, string marca)
         {
@@ -58,6 +59,8 @@ namespace AplTruckMotorsDiesel.Model_BD
 
         #endregion
 
+=======
+>>>>>>> 02e18d14c983537820dd59b1b798de25711b680a
         #region InserirMotor
         public static void inserirModeloMotor(string modeloVeiculo, string modeloMotor, string observacao)
         {
