@@ -11,5 +11,6 @@ namespace AplTruckMotorsDiesel.Model
         private string modelo { get; set; }
         private string aplicacao { get; set; }
         private string observacao { get; set; }
+
     }
 }
