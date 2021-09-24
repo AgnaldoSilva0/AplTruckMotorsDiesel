@@ -9,5 +9,7 @@ namespace AplTruckMotorsDiesel.Model
     class Pistao : Motor
     {
         private string codigoPistao { get; set; }
+        private string codigoOriginal { get; set; }
+        private string marca { get; set; }
     }
 }
