@@ -58,7 +58,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             pictureBoxCadastro.Image = Image.FromFile("pictures/bombaAgua.png");
-            lbItemSelecionado.Text = "Bomba Agua";
+            lbItemSelecionado.Text = "Bomba Agua"; 
         }
 
         private void verificarPanelVisivel(Panel panel)
