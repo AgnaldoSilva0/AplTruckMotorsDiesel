@@ -30,11 +30,11 @@ namespace AplTruckMotorsDiesel
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.metroListView1 = new MetroFramework.Controls.MetroListView();
-            this.clmCodigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmDescricao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmMotor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clmAplicacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewMotor = new MetroFramework.Controls.MetroListView();
+            this.clmIdMotor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmModeloVeiculo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmModeloMotor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clmObservacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbFonte = new MetroFramework.Controls.MetroTextBox();
             this.tbMotor = new MetroFramework.Controls.MetroTextBox();
             this.tbAplicacao = new MetroFramework.Controls.MetroTextBox();
@@ -49,53 +49,64 @@ namespace AplTruckMotorsDiesel
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panelPistao = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.listViewPistao = new MetroFramework.Controls.MetroListView();
+            this.clmPistaoSelecionado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.listViewBBiela = new MetroFramework.Controls.MetroListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panelPistao.SuspendLayout();
+            this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // metroListView1
+            // listViewMotor
             // 
-            this.metroListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.clmCodigo,
-            this.clmDescricao,
-            this.clmMotor,
-            this.clmAplicacao});
-            this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroListView1.FullRowSelect = true;
-            this.metroListView1.Location = new System.Drawing.Point(23, 159);
-            this.metroListView1.Name = "metroListView1";
-            this.metroListView1.OwnerDraw = true;
-            this.metroListView1.Size = new System.Drawing.Size(754, 211);
-            this.metroListView1.TabIndex = 0;
-            this.metroListView1.UseCompatibleStateImageBehavior = false;
-            this.metroListView1.UseSelectable = true;
-            this.metroListView1.View = System.Windows.Forms.View.Details;
+            this.listViewMotor.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmIdMotor,
+            this.clmModeloVeiculo,
+            this.clmModeloMotor,
+            this.clmObservacao});
+            this.listViewMotor.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.listViewMotor.FullRowSelect = true;
+            this.listViewMotor.Location = new System.Drawing.Point(23, 159);
+            this.listViewMotor.Name = "listViewMotor";
+            this.listViewMotor.OwnerDraw = true;
+            this.listViewMotor.Size = new System.Drawing.Size(754, 211);
+            this.listViewMotor.TabIndex = 0;
+            this.listViewMotor.UseCompatibleStateImageBehavior = false;
+            this.listViewMotor.UseSelectable = true;
+            this.listViewMotor.View = System.Windows.Forms.View.Details;
+            this.listViewMotor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewMotor_MouseClick);
             // 
-            // clmCodigo
+            // clmIdMotor
             // 
-            this.clmCodigo.Text = "Código";
-            this.clmCodigo.Width = 114;
+            this.clmIdMotor.Text = "ID Motor";
+            this.clmIdMotor.Width = 114;
             // 
-            // clmDescricao
+            // clmModeloVeiculo
             // 
-            this.clmDescricao.Text = "Descrição";
-            this.clmDescricao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmDescricao.Width = 214;
+            this.clmModeloVeiculo.Text = "Modelo Veículo";
+            this.clmModeloVeiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clmModeloVeiculo.Width = 189;
             // 
-            // clmMotor
+            // clmModeloMotor
             // 
-            this.clmMotor.Text = "Motor";
-            this.clmMotor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmMotor.Width = 129;
+            this.clmModeloMotor.Text = "Modelo Motor";
+            this.clmModeloMotor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clmModeloMotor.Width = 129;
             // 
-            // clmAplicacao
+            // clmObservacao
             // 
-            this.clmAplicacao.Text = "Aplicação";
-            this.clmAplicacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmAplicacao.Width = 288;
+            this.clmObservacao.Text = "Observação";
+            this.clmObservacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.clmObservacao.Width = 317;
             // 
             // tbFonte
             // 
@@ -206,6 +217,7 @@ namespace AplTruckMotorsDiesel
             this.btPesquisaGeral.UseCustomForeColor = true;
             this.btPesquisaGeral.UseSelectable = true;
             this.btPesquisaGeral.UseStyleColors = true;
+            this.btPesquisaGeral.Click += new System.EventHandler(this.btPesquisaGeral_Click);
             // 
             // btPesquisaMotor
             // 
@@ -328,11 +340,115 @@ namespace AplTruckMotorsDiesel
             this.pictureBox4.TabIndex = 13;
             this.pictureBox4.TabStop = false;
             // 
+            // panelPistao
+            // 
+            this.panelPistao.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelPistao.Controls.Add(this.listViewPistao);
+            this.panelPistao.Controls.Add(this.metroLabel3);
+            this.panelPistao.HorizontalScrollbarBarColor = true;
+            this.panelPistao.HorizontalScrollbarHighlightOnWheel = false;
+            this.panelPistao.HorizontalScrollbarSize = 10;
+            this.panelPistao.Location = new System.Drawing.Point(23, 376);
+            this.panelPistao.Name = "panelPistao";
+            this.panelPistao.Size = new System.Drawing.Size(145, 101);
+            this.panelPistao.TabIndex = 8;
+            this.panelPistao.UseCustomBackColor = true;
+            this.panelPistao.UseCustomForeColor = true;
+            this.panelPistao.UseStyleColors = true;
+            this.panelPistao.VerticalScrollbarBarColor = true;
+            this.panelPistao.VerticalScrollbarHighlightOnWheel = false;
+            this.panelPistao.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel3.Location = new System.Drawing.Point(49, 0);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(44, 19);
+            this.metroLabel3.TabIndex = 2;
+            this.metroLabel3.Text = "Pistão";
+            this.metroLabel3.UseCustomBackColor = true;
+            this.metroLabel3.UseCustomForeColor = true;
+            this.metroLabel3.UseStyleColors = true;
+            // 
+            // listViewPistao
+            // 
+            this.listViewPistao.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmPistaoSelecionado});
+            this.listViewPistao.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.listViewPistao.FullRowSelect = true;
+            this.listViewPistao.Location = new System.Drawing.Point(3, 19);
+            this.listViewPistao.Name = "listViewPistao";
+            this.listViewPistao.OwnerDraw = true;
+            this.listViewPistao.Size = new System.Drawing.Size(139, 79);
+            this.listViewPistao.TabIndex = 3;
+            this.listViewPistao.UseCompatibleStateImageBehavior = false;
+            this.listViewPistao.UseSelectable = true;
+            this.listViewPistao.View = System.Windows.Forms.View.List;
+            // 
+            // clmPistaoSelecionado
+            // 
+            this.clmPistaoSelecionado.Width = 135;
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.metroPanel2.Controls.Add(this.listViewBBiela);
+            this.metroPanel2.Controls.Add(this.metroLabel4);
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(174, 376);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(145, 101);
+            this.metroPanel2.TabIndex = 9;
+            this.metroPanel2.UseCustomBackColor = true;
+            this.metroPanel2.UseCustomForeColor = true;
+            this.metroPanel2.UseStyleColors = true;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // listViewBBiela
+            // 
+            this.listViewBBiela.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listViewBBiela.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.listViewBBiela.FullRowSelect = true;
+            this.listViewBBiela.Location = new System.Drawing.Point(3, 19);
+            this.listViewBBiela.Name = "listViewBBiela";
+            this.listViewBBiela.OwnerDraw = true;
+            this.listViewBBiela.Size = new System.Drawing.Size(139, 79);
+            this.listViewBBiela.TabIndex = 3;
+            this.listViewBBiela.UseCompatibleStateImageBehavior = false;
+            this.listViewBBiela.UseSelectable = true;
+            this.listViewBBiela.View = System.Windows.Forms.View.List;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 135;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel4.Location = new System.Drawing.Point(49, 0);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel4.TabIndex = 2;
+            this.metroLabel4.Text = "B.Biela";
+            this.metroLabel4.UseCustomBackColor = true;
+            this.metroLabel4.UseCustomForeColor = true;
+            this.metroLabel4.UseStyleColors = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 535);
+            this.Controls.Add(this.metroPanel2);
+            this.Controls.Add(this.panelPistao);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.pictureBox3);
@@ -346,7 +462,7 @@ namespace AplTruckMotorsDiesel
             this.Controls.Add(this.tbAplicacao);
             this.Controls.Add(this.tbMotor);
             this.Controls.Add(this.tbFonte);
-            this.Controls.Add(this.metroListView1);
+            this.Controls.Add(this.listViewMotor);
             this.Name = "Form1";
             this.Text = "Aplicação Diesel Motors";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -356,6 +472,10 @@ namespace AplTruckMotorsDiesel
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panelPistao.ResumeLayout(false);
+            this.panelPistao.PerformLayout();
+            this.metroPanel2.ResumeLayout(false);
+            this.metroPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,11 +483,10 @@ namespace AplTruckMotorsDiesel
 
         #endregion
 
-        private MetroFramework.Controls.MetroListView metroListView1;
-        private System.Windows.Forms.ColumnHeader clmCodigo;
-        private System.Windows.Forms.ColumnHeader clmDescricao;
-        private System.Windows.Forms.ColumnHeader clmMotor;
-        private System.Windows.Forms.ColumnHeader clmAplicacao;
+        private MetroFramework.Controls.MetroListView listViewMotor;
+        private System.Windows.Forms.ColumnHeader clmIdMotor;
+        private System.Windows.Forms.ColumnHeader clmModeloVeiculo;
+        private System.Windows.Forms.ColumnHeader clmModeloMotor;
         private MetroFramework.Controls.MetroTextBox tbFonte;
         private MetroFramework.Controls.MetroTextBox tbMotor;
         private MetroFramework.Controls.MetroTextBox tbAplicacao;
@@ -382,6 +501,15 @@ namespace AplTruckMotorsDiesel
         private System.Windows.Forms.PictureBox pictureBox3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ColumnHeader clmObservacao;
+        private MetroFramework.Controls.MetroPanel panelPistao;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroListView listViewPistao;
+        private System.Windows.Forms.ColumnHeader clmPistaoSelecionado;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
+        private MetroFramework.Controls.MetroListView listViewBBiela;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
     }
 }
 

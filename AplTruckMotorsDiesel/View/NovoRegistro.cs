@@ -26,9 +26,18 @@ namespace AplTruckMotorsDiesel.View
             lbItemSelecionado.Text = "Pistão";
         }
 
+        private void btAneis_Click(object sender, EventArgs e)
+        {
+            verificarPanelVisivel(panelCadastro);
+            IdMetodoInsert = 2;
+            pictureBoxCadastro.Image = Image.FromFile("pictures/pistao.png");
+            lbItemSelecionado.Text = "Anéis";
+        }
+
         private void btNovoBBiela_Click(object sender, EventArgs e)
         {
             verificarPanelVisivel(panelCadastro);
+            IdMetodoInsert = 3;
             pictureBoxCadastro.Image = Image.FromFile("pictures/bronzina.png");
             lbItemSelecionado.Text = "Bronzina Biela";
         }
@@ -36,6 +45,7 @@ namespace AplTruckMotorsDiesel.View
         private void btNovoJunta_Click(object sender, EventArgs e)
         {
             verificarPanelVisivel(panelCadastro);
+            IdMetodoInsert = 4;
             pictureBoxCadastro.Image = Image.FromFile("pictures/junta.png");
             lbItemSelecionado.Text = "Jogo Junta";
         }
@@ -43,6 +53,7 @@ namespace AplTruckMotorsDiesel.View
         private void btNovoBOleo_Click(object sender, EventArgs e)
         {
             verificarPanelVisivel(panelCadastro);
+            IdMetodoInsert = 5;
             pictureBoxCadastro.Image = Image.FromFile("pictures/bombaOleo.png");
             lbItemSelecionado.Text = "Bomba de Oleo";
         }
@@ -50,6 +61,7 @@ namespace AplTruckMotorsDiesel.View
         private void btNovoBMancal_Click(object sender, EventArgs e)
         {
             verificarPanelVisivel(panelCadastro);
+            IdMetodoInsert = 6;
             pictureBoxCadastro.Image = Image.FromFile("pictures/bronzina.png");
             lbItemSelecionado.Text = "Bronzina Mancal";
         }
@@ -57,6 +69,7 @@ namespace AplTruckMotorsDiesel.View
         private void btNovoBAgua_Click(object sender, EventArgs e)
         {
             verificarPanelVisivel(panelCadastro);
+            IdMetodoInsert = 7;
             pictureBoxCadastro.Image = Image.FromFile("pictures/bombaAgua.png");
             lbItemSelecionado.Text = "Bomba Agua"; 
         }
@@ -72,7 +85,8 @@ namespace AplTruckMotorsDiesel.View
         private int IdMetodoInsert;
         private void btCadastrar_Click(object sender, EventArgs e)
         {
-            Inserir.chamaMetodo(IdMetodoInsert, "testando", "testandoMT", "marca");
+            Inserir.chamaMetodo(IdMetodoInsert, tbCodigo.Text, tbCodigoOriginal.Text, tbMarca.Text);
         }
+
     }
 }

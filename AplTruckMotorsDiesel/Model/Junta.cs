@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AplTruckMotorsDiesel.Model
 {
-    class Junta : Motor
+    class Junta
     {
         private string codigoJunta { get; set; }
     }

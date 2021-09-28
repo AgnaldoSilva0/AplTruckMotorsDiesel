@@ -44,23 +44,44 @@ namespace AplTruckMotorsDiesel.Model_BD
         }
         #endregion
 
-<<<<<<< HEAD
         #region Classe para chamar o metodo responsavel pelo insert passado por parametro
         public static void chamaMetodo(int idMetodo, string codigo, string codigoOriginal, string marca)
         {
             switch (idMetodo)
             {
+                //1 Pistão
                 case 1:
-                    inserirPistao(codigo, codigoOriginal, marca);
+                    inserirItem(codigo, codigoOriginal, marca, "table_pistao");
                     break;
-
+                //2 Aneis
+                case 2:
+                    inserirItem(codigo, codigoOriginal, marca, "table_aneis");
+                    break;
+                //3 Bronzina Biela
+                case 3:
+                    inserirItem(codigo, codigoOriginal, marca, "table_bbiela");
+                    break;
+                //4 Junta
+                case 4:
+                    inserirItem(codigo, codigoOriginal, marca, "table_junta");
+                    break;
+                //5 Bomba Oleo
+                case 5:
+                    inserirItem(codigo, codigoOriginal, marca, "table_bombaoleo");
+                    break;
+                //6 Bronzina Mancal
+                case 6:
+                    inserirItem(codigo, codigoOriginal, marca, "table_bmancal");
+                    break;
+                //7 Bomba de Agua
+                case 7:
+                    inserirItem(codigo, codigoOriginal, marca, "table_bombaagua");
+                    break;
             }
         }
 
         #endregion
 
-=======
->>>>>>> 02e18d14c983537820dd59b1b798de25711b680a
         #region InserirMotor
         public static void inserirModeloMotor(string modeloVeiculo, string modeloMotor, string observacao)
         {
@@ -70,9 +91,9 @@ namespace AplTruckMotorsDiesel.Model_BD
         }
         #endregion
 
-        public static void inserirPistao(string codigo, string codigoOriginal, string marca)
+        public static void inserirItem(string codigo, string codigoOriginal, string marca, string tabela)
         {
-            string comandoTexto = "INSERT INTO table_pistao (codigo, codigoOriginal, marca) " +
+            string comandoTexto = "INSERT INTO '"+ tabela +"' (codigo, codigoOriginal, marca) " +
                         "VALUES ('" + codigo + "', '" + codigoOriginal + "', '" + marca + "')";
             inserirConexao(comandoTexto);
         }

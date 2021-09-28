@@ -1,4 +1,6 @@
-﻿using AplTruckMotorsDiesel.View;
+﻿using AplTruckMotorsDiesel.Model;
+using AplTruckMotorsDiesel.Model_BD;
+using AplTruckMotorsDiesel.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +37,34 @@ namespace AplTruckMotorsDiesel
             {
                 Application.Exit();
                 return;
+            }
+        }
+
+        private void btPesquisaGeral_Click(object sender, EventArgs e)
+        {
+            listViewMotor.Items.Clear();
+            foreach (Motor item in Pesquisar.RetornarMotor(tbFonte.Text))
+            {
+                    listViewMotor.Items.Add(new ListViewItem(new string[] { 
+                        Convert.ToString(item.IdMotor),
+                        Convert.ToString(item.ModeloVeiculo), 
+                        Convert.ToString(item.ModeloMotor), 
+                        Convert.ToString(item.Observacao) }));
+            }
+        }
+
+        private void listViewMotor_MouseClick(object sender, MouseEventArgs e)
+        {
+            string selecionado = listViewMotor.SelectedItems[0].SubItems[2].Text;
+            listViewPistao.Items.Clear();
+            string query = "SELECT * FROM table_aplicacao " +
+                    "INNER JOIN table_pistao ON table_aplicacao.idPistao = table_pistao.codigo " +
+                    "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
+                    "WHERE table_motor.modeloMotor LIKE '%" + selecionado + "%' ";
+            foreach (Pistao item in Pesquisar.retornaPistao("idPistao", query))
+            {
+                listViewPistao.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(item.CodigoPistao) }));
             }
         }
     }

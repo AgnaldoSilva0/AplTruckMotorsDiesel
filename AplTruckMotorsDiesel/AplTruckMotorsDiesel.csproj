@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Model_BD\Conexao.cs" />
     <Compile Include="Model_BD\Inserir.cs" />
+    <Compile Include="Model_BD\Pesquisar.cs" />
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

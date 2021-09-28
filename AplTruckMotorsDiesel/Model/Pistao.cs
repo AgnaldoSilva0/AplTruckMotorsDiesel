@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace AplTruckMotorsDiesel.Model
 {
-    class Pistao : Motor
+    class Pistao
     {
-        private string codigoPistao { get; set; }
-        private string codigoOriginal { get; set; }
-        private string marca { get; set; }
+        private string codigoPistao;
+
+        public string CodigoPistao { get => codigoPistao; set => codigoPistao = value; }
+
+        public Pistao(string codigoPistao)
+        {
+            this.codigoPistao = codigoPistao;
+        }
     }
 }

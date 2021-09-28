@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AplTruckMotorsDiesel.Model
 {
-    class Aneis : Motor
+    class Aneis
     {
         private string codigoAneis { get; set; }
     }
