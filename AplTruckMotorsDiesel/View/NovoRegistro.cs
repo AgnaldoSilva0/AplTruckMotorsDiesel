@@ -21,10 +21,7 @@ namespace AplTruckMotorsDiesel.View
         private void btNovoPistao_Click(object sender, EventArgs e)
         {
             verificarPanelVisivel(panelCadastro);
-<<<<<<< HEAD
             IdMetodoInsert = 1;
-=======
->>>>>>> 02e18d14c983537820dd59b1b798de25711b680a
             pictureBoxCadastro.Image = Image.FromFile("pictures/pistao.png");
             lbItemSelecionado.Text = "Pistão";
         }
@@ -61,11 +58,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             pictureBoxCadastro.Image = Image.FromFile("pictures/bombaAgua.png");
-<<<<<<< HEAD
             lbItemSelecionado.Text = "Bomba Agua"; 
-=======
-            lbItemSelecionado.Text = "Bomba Agua";
->>>>>>> 02e18d14c983537820dd59b1b798de25711b680a
         }
 
         private void verificarPanelVisivel(Panel panel)
@@ -76,17 +69,10 @@ namespace AplTruckMotorsDiesel.View
             }
         }
 
-<<<<<<< HEAD
         private int IdMetodoInsert;
         private void btCadastrar_Click(object sender, EventArgs e)
         {
             Inserir.chamaMetodo(IdMetodoInsert, "testando", "testandoMT", "marca");
-=======
-        private int ItemParaInserir;
-        private void btCadastrar_Click(object sender, EventArgs e)
-        {
-            
->>>>>>> 02e18d14c983537820dd59b1b798de25711b680a
         }
     }
 }
