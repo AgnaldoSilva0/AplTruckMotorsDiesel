@@ -45,10 +45,10 @@ namespace AplTruckMotorsDiesel
             listViewMotor.Items.Clear();
             foreach (Motor item in Pesquisar.RetornarMotor(tbFonte.Text))
             {
-                    listViewMotor.Items.Add(new ListViewItem(new string[] { 
+                listViewMotor.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(item.IdMotor),
-                        Convert.ToString(item.ModeloVeiculo), 
-                        Convert.ToString(item.ModeloMotor), 
+                        Convert.ToString(item.ModeloVeiculo),
+                        Convert.ToString(item.ModeloMotor),
                         Convert.ToString(item.Observacao) }));
             }
         }
@@ -56,16 +56,48 @@ namespace AplTruckMotorsDiesel
         private void listViewMotor_MouseClick(object sender, MouseEventArgs e)
         {
             string selecionado = listViewMotor.SelectedItems[0].SubItems[2].Text;
-            listViewPistao.Items.Clear();
-            string query = "SELECT * FROM table_aplicacao " +
-                    "INNER JOIN table_pistao ON table_aplicacao.idPistao = table_pistao.codigo " +
-                    "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
-                    "WHERE table_motor.modeloMotor LIKE '%" + selecionado + "%' ";
-            foreach (Pistao item in Pesquisar.retornaPistao("idPistao", query))
+            limparTodasListas();
+
+            foreach (Pistao pistao in Pesquisar.retornaPeca("idPistao", Pistao.queryPistao(selecionado), 1))
             {
                 listViewPistao.Items.Add(new ListViewItem(new string[] {
-                        Convert.ToString(item.CodigoPistao) }));
+                        Convert.ToString(pistao.CodigoPistao) }));
+
+                foreach (BronzinaBiela bbiela in Pesquisar.retornaPeca("idBBiela", BronzinaBiela.queryBiela(selecionado), 2))
+                {
+                    listViewBBiela.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(bbiela.BBiela1) }));
+                }
+
+                foreach (Junta junta in Pesquisar.retornaPeca("idJunta", Junta.queryJunta(selecionado), 3))
+                {
+                    listViewJunta.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(junta.CodigoJunta) }));
+                }
+
+                foreach (Aneis aneis in Pesquisar.retornaPeca("idAneis", Aneis.queryAneis(selecionado), 4))
+                {
+                    listViewAneis.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(aneis.CodigoAneis) }));
+                }
+
+                //VERIFICARRRRRRRRRRRRRRRRRRRRRRRRRRR PARECE QUE NAO PRECISA DE DOIS INNERJOIN, veja junta abaixo
+                foreach (BronzinaMancal bMancal in Pesquisar.retornaPeca("idBMancal", Junta.queryJunta(selecionado), 5))
+                {
+                    listViewBMancal.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(bMancal.CodigoBMancal) }));
+                }
             }
         }
+
+        private void limparTodasListas()
+        {
+            listViewPistao.Items.Clear();
+            listViewBBiela.Items.Clear();
+            listViewJunta.Items.Clear();
+            listViewAneis.Items.Clear();
+            listViewBMancal.Items.Clear();
+        }
+
     }
 }

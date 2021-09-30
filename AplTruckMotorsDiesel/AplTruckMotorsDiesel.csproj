@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\BronzinaMancal.cs" />
     <Compile Include="Model_BD\Conexao.cs" />
     <Compile Include="Model_BD\Inserir.cs" />
     <Compile Include="Model_BD\Pesquisar.cs" />
@@ -85,7 +86,7 @@
     </Compile>
     <Compile Include="Model\Aneis.cs" />
     <Compile Include="Model\Bomba.cs" />
-    <Compile Include="Model\Bronzina.cs" />
+    <Compile Include="Model\BronzinaBiela.cs" />
     <Compile Include="Model\Junta.cs" />
     <Compile Include="Model\KitPAC.cs" />
     <Compile Include="Model\Motor.cs" />

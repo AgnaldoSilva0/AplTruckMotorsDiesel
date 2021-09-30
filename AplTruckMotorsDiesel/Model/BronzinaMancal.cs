@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace AplTruckMotorsDiesel.Model
 {
-    class Aneis
+    class BronzinaMancal
     {
-        private string codigoAneis;
+        private string codigoBMancal;
 
-        public Aneis(string codigoAneis)
+        public BronzinaMancal(string codigoBMancal)
         {
-            this.codigoAneis = codigoAneis;
+            this.codigoBMancal = codigoBMancal;
         }
 
-        public string CodigoAneis { get => codigoAneis; set => codigoAneis = value; }
+        public string CodigoBMancal { get => codigoBMancal; set => codigoBMancal = value; }
 
-        public static string queryAneis(string itemSelecionado)
+        public static string queryBMancal(string itemSelecionado)
         {
             return "SELECT * FROM table_aplicacao " +
-                    "INNER JOIN table_aneis ON table_aplicacao.idAneis = table_aneis.codigo " +
+                    "INNER JOIN table_bmancal ON table_aplicacao.idBMancal = table_bmancal.codigo " +
                     "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
                     "WHERE table_motor.modeloMotor LIKE '%" + itemSelecionado + "%' ";
         }

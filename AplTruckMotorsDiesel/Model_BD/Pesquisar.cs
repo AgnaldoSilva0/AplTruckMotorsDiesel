@@ -12,7 +12,12 @@ namespace AplTruckMotorsDiesel.Model_BD
 {
     class Pesquisar
     {
-
+        /// <summary>
+        /// Este método retorna a lista de motores cadastrado no banco de dados, se for passado algum codigo de pesquisa
+        /// ele irá retornar o motor com o codigo informado
+        /// </summary>
+        /// <param name="codigo"></param>
+        /// <returns></returns>
         public static List<Motor> RetornarMotor(string codigo)
         {
             List<Motor> lista = new List<Motor>();
@@ -64,9 +69,17 @@ namespace AplTruckMotorsDiesel.Model_BD
 
         }
 
-        public static List<Pistao> retornaPistao(string idDoItemRetorno, string queryParametro)
+        /// <summary>
+        /// Esse método retorna a lista de itens de acordo com o motor clicado na listview, precisa passar trÊs parametros
+        /// pra ele, que estão comentador abaixo:
+        /// </summary>
+        /// <param name="idDoItemRetorno"> Precisa passar como parametro o nome da coluna na tebela APLICAÇÃO</param>
+        /// <param name="queryParametro"> Precisa passar a query que será executada pelo SQLite, cada MODEL tem sua própria query</param>
+        /// <param name="objetoPeca"> Precisa passar um identificador para ser usado no SWITH, para criar o objeto especifico para ser retornador</param>
+        /// <returns></returns>
+        public static List<Object> retornaPeca(string idDoItemRetorno, string queryParametro, int objetoPeca)
         {
-            List<Pistao> listaPistao = new List<Pistao>();
+            List<Object> listaPistao = new List<Object>();
             string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
@@ -82,7 +95,25 @@ namespace AplTruckMotorsDiesel.Model_BD
                 adaptador.Fill(dados);
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    listaPistao.Add(new Pistao(Convert.ToString(row[idDoItemRetorno])));
+                    switch (objetoPeca)
+                    {
+                        case 1:
+                            listaPistao.Add(new Pistao(Convert.ToString(row[idDoItemRetorno])));
+                            break;
+                        case 2:
+                            listaPistao.Add(new BronzinaBiela(Convert.ToString(row[idDoItemRetorno])));
+                            break;
+                        case 3:
+                            listaPistao.Add(new Junta(Convert.ToString(row[idDoItemRetorno])));
+                            break;
+                        case 4:
+                            listaPistao.Add(new Aneis(Convert.ToString(row[idDoItemRetorno])));
+                            break;
+                        case 5:
+                            listaPistao.Add(new BronzinaMancal(Convert.ToString(row[idDoItemRetorno])));
+                            break;
+                    }
+                    
                 }
             }
             catch (Exception ex)

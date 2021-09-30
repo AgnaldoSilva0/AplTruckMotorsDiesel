@@ -16,5 +16,14 @@ namespace AplTruckMotorsDiesel.Model
         {
             this.codigoPistao = codigoPistao;
         }
+
+        public static string queryPistao(string itemSelecionado)
+        {
+            return "SELECT * FROM table_aplicacao " +
+                    "INNER JOIN table_pistao ON table_aplicacao.idPistao = table_pistao.codigo " +
+                    "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
+                    "WHERE table_motor.modeloMotor LIKE '%" + itemSelecionado + "%' ";
+        }
+
     }
 }
