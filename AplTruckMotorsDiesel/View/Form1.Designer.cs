@@ -67,6 +67,20 @@ namespace AplTruckMotorsDiesel
             this.listViewBMancal = new MetroFramework.Controls.MetroListView();
             this.clmBMancal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.panelBombaAgua = new MetroFramework.Controls.MetroPanel();
+            this.listViewBombaAgua = new MetroFramework.Controls.MetroListView();
+            this.clmBombaAguaSelecionada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.panelBombaOleo = new MetroFramework.Controls.MetroPanel();
+            this.listViewBombaOleo = new MetroFramework.Controls.MetroListView();
+            this.clmBombaOleoSelecionada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.panelKitMotor = new MetroFramework.Controls.MetroPanel();
+            this.listViewKitMotor = new MetroFramework.Controls.MetroListView();
+            this.clmKitMotorSelecionado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -76,6 +90,10 @@ namespace AplTruckMotorsDiesel
             this.panelJunta.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            this.panelBombaAgua.SuspendLayout();
+            this.panelBombaOleo.SuspendLayout();
+            this.panelKitMotor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewMotor
@@ -305,7 +323,7 @@ namespace AplTruckMotorsDiesel
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel2.Location = new System.Drawing.Point(687, 512);
+            this.metroLabel2.Location = new System.Drawing.Point(682, 566);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(90, 15);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -576,11 +594,192 @@ namespace AplTruckMotorsDiesel
             this.metroLabel6.UseCustomForeColor = true;
             this.metroLabel6.UseStyleColors = true;
             // 
+            // panelBombaAgua
+            // 
+            this.panelBombaAgua.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelBombaAgua.Controls.Add(this.listViewBombaAgua);
+            this.panelBombaAgua.Controls.Add(this.metroLabel7);
+            this.panelBombaAgua.HorizontalScrollbarBarColor = true;
+            this.panelBombaAgua.HorizontalScrollbarHighlightOnWheel = false;
+            this.panelBombaAgua.HorizontalScrollbarSize = 10;
+            this.panelBombaAgua.Location = new System.Drawing.Point(174, 483);
+            this.panelBombaAgua.Name = "panelBombaAgua";
+            this.panelBombaAgua.Size = new System.Drawing.Size(145, 101);
+            this.panelBombaAgua.TabIndex = 10;
+            this.panelBombaAgua.UseCustomBackColor = true;
+            this.panelBombaAgua.UseCustomForeColor = true;
+            this.panelBombaAgua.UseStyleColors = true;
+            this.panelBombaAgua.VerticalScrollbarBarColor = true;
+            this.panelBombaAgua.VerticalScrollbarHighlightOnWheel = false;
+            this.panelBombaAgua.VerticalScrollbarSize = 10;
+            // 
+            // listViewBombaAgua
+            // 
+            this.listViewBombaAgua.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmBombaAguaSelecionada});
+            this.listViewBombaAgua.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.listViewBombaAgua.FullRowSelect = true;
+            this.listViewBombaAgua.Location = new System.Drawing.Point(3, 19);
+            this.listViewBombaAgua.Name = "listViewBombaAgua";
+            this.listViewBombaAgua.OwnerDraw = true;
+            this.listViewBombaAgua.Size = new System.Drawing.Size(139, 79);
+            this.listViewBombaAgua.TabIndex = 3;
+            this.listViewBombaAgua.UseCompatibleStateImageBehavior = false;
+            this.listViewBombaAgua.UseSelectable = true;
+            this.listViewBombaAgua.View = System.Windows.Forms.View.List;
+            // 
+            // clmBombaAguaSelecionada
+            // 
+            this.clmBombaAguaSelecionada.Width = 135;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel7.Location = new System.Drawing.Point(29, 0);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel7.TabIndex = 2;
+            this.metroLabel7.Text = "Bomba Agua";
+            this.metroLabel7.UseCustomBackColor = true;
+            this.metroLabel7.UseCustomForeColor = true;
+            this.metroLabel7.UseStyleColors = true;
+            // 
+            // panelBombaOleo
+            // 
+            this.panelBombaOleo.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelBombaOleo.Controls.Add(this.listViewBombaOleo);
+            this.panelBombaOleo.Controls.Add(this.metroLabel8);
+            this.panelBombaOleo.HorizontalScrollbarBarColor = true;
+            this.panelBombaOleo.HorizontalScrollbarHighlightOnWheel = false;
+            this.panelBombaOleo.HorizontalScrollbarSize = 10;
+            this.panelBombaOleo.Location = new System.Drawing.Point(325, 483);
+            this.panelBombaOleo.Name = "panelBombaOleo";
+            this.panelBombaOleo.Size = new System.Drawing.Size(145, 101);
+            this.panelBombaOleo.TabIndex = 11;
+            this.panelBombaOleo.UseCustomBackColor = true;
+            this.panelBombaOleo.UseCustomForeColor = true;
+            this.panelBombaOleo.UseStyleColors = true;
+            this.panelBombaOleo.VerticalScrollbarBarColor = true;
+            this.panelBombaOleo.VerticalScrollbarHighlightOnWheel = false;
+            this.panelBombaOleo.VerticalScrollbarSize = 10;
+            // 
+            // listViewBombaOleo
+            // 
+            this.listViewBombaOleo.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmBombaOleoSelecionada});
+            this.listViewBombaOleo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.listViewBombaOleo.FullRowSelect = true;
+            this.listViewBombaOleo.Location = new System.Drawing.Point(3, 19);
+            this.listViewBombaOleo.Name = "listViewBombaOleo";
+            this.listViewBombaOleo.OwnerDraw = true;
+            this.listViewBombaOleo.Size = new System.Drawing.Size(139, 79);
+            this.listViewBombaOleo.TabIndex = 3;
+            this.listViewBombaOleo.UseCompatibleStateImageBehavior = false;
+            this.listViewBombaOleo.UseSelectable = true;
+            this.listViewBombaOleo.View = System.Windows.Forms.View.List;
+            // 
+            // clmBombaOleoSelecionada
+            // 
+            this.clmBombaOleoSelecionada.Width = 135;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel8.Location = new System.Drawing.Point(29, 0);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(85, 19);
+            this.metroLabel8.TabIndex = 2;
+            this.metroLabel8.Text = "Bomba Oleo";
+            this.metroLabel8.UseCustomBackColor = true;
+            this.metroLabel8.UseCustomForeColor = true;
+            this.metroLabel8.UseStyleColors = true;
+            // 
+            // panelKitMotor
+            // 
+            this.panelKitMotor.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelKitMotor.Controls.Add(this.listViewKitMotor);
+            this.panelKitMotor.Controls.Add(this.metroLabel9);
+            this.panelKitMotor.HorizontalScrollbarBarColor = true;
+            this.panelKitMotor.HorizontalScrollbarHighlightOnWheel = false;
+            this.panelKitMotor.HorizontalScrollbarSize = 10;
+            this.panelKitMotor.Location = new System.Drawing.Point(476, 483);
+            this.panelKitMotor.Name = "panelKitMotor";
+            this.panelKitMotor.Size = new System.Drawing.Size(145, 101);
+            this.panelKitMotor.TabIndex = 12;
+            this.panelKitMotor.UseCustomBackColor = true;
+            this.panelKitMotor.UseCustomForeColor = true;
+            this.panelKitMotor.UseStyleColors = true;
+            this.panelKitMotor.VerticalScrollbarBarColor = true;
+            this.panelKitMotor.VerticalScrollbarHighlightOnWheel = false;
+            this.panelKitMotor.VerticalScrollbarSize = 10;
+            // 
+            // listViewKitMotor
+            // 
+            this.listViewKitMotor.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.clmKitMotorSelecionado});
+            this.listViewKitMotor.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.listViewKitMotor.FullRowSelect = true;
+            this.listViewKitMotor.Location = new System.Drawing.Point(3, 19);
+            this.listViewKitMotor.Name = "listViewKitMotor";
+            this.listViewKitMotor.OwnerDraw = true;
+            this.listViewKitMotor.Size = new System.Drawing.Size(139, 79);
+            this.listViewKitMotor.TabIndex = 3;
+            this.listViewKitMotor.UseCompatibleStateImageBehavior = false;
+            this.listViewKitMotor.UseSelectable = true;
+            this.listViewKitMotor.View = System.Windows.Forms.View.List;
+            // 
+            // clmKitMotorSelecionado
+            // 
+            this.clmKitMotorSelecionado.Width = 135;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel9.Location = new System.Drawing.Point(39, 0);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(64, 19);
+            this.metroLabel9.TabIndex = 2;
+            this.metroLabel9.Text = "Kit Motor";
+            this.metroLabel9.UseCustomBackColor = true;
+            this.metroLabel9.UseCustomForeColor = true;
+            this.metroLabel9.UseStyleColors = true;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(23, 515);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(30, 26);
+            this.pictureBox5.TabIndex = 15;
+            this.pictureBox5.TabStop = false;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.metroButton1.ForeColor = System.Drawing.SystemColors.Control;
+            this.metroButton1.Location = new System.Drawing.Point(50, 515);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(118, 26);
+            this.metroButton1.TabIndex = 14;
+            this.metroButton1.Text = "Vincular Aplicação";
+            this.metroButton1.UseCustomBackColor = true;
+            this.metroButton1.UseCustomForeColor = true;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.UseStyleColors = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 535);
+            this.ClientSize = new System.Drawing.Size(791, 587);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.panelKitMotor);
+            this.Controls.Add(this.panelBombaOleo);
+            this.Controls.Add(this.panelBombaAgua);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.panelJunta);
@@ -616,6 +815,13 @@ namespace AplTruckMotorsDiesel
             this.metroPanel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            this.panelBombaAgua.ResumeLayout(false);
+            this.panelBombaAgua.PerformLayout();
+            this.panelBombaOleo.ResumeLayout(false);
+            this.panelBombaOleo.PerformLayout();
+            this.panelKitMotor.ResumeLayout(false);
+            this.panelKitMotor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,6 +866,20 @@ namespace AplTruckMotorsDiesel
         private MetroFramework.Controls.MetroListView listViewBMancal;
         private System.Windows.Forms.ColumnHeader clmBMancal;
         private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroPanel panelBombaAgua;
+        private MetroFramework.Controls.MetroListView listViewBombaAgua;
+        private System.Windows.Forms.ColumnHeader clmBombaAguaSelecionada;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroPanel panelBombaOleo;
+        private MetroFramework.Controls.MetroListView listViewBombaOleo;
+        private System.Windows.Forms.ColumnHeader clmBombaOleoSelecionada;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroPanel panelKitMotor;
+        private MetroFramework.Controls.MetroListView listViewKitMotor;
+        private System.Windows.Forms.ColumnHeader clmKitMotorSelecionado;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
 

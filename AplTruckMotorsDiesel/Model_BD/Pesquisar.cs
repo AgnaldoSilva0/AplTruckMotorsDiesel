@@ -77,7 +77,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         /// <param name="queryParametro"> Precisa passar a query que será executada pelo SQLite, cada MODEL tem sua própria query</param>
         /// <param name="objetoPeca"> Precisa passar um identificador para ser usado no SWITH, para criar o objeto especifico para ser retornador</param>
         /// <returns></returns>
-        public static List<Object> retornaPeca(string idDoItemRetorno, string queryParametro, int objetoPeca)
+        public static List<Object> retornaPeca(string idDoItemRetorno, string itemSelecionado, int objetoPeca)
         {
             List<Object> listaPistao = new List<Object>();
             string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
@@ -88,7 +88,12 @@ namespace AplTruckMotorsDiesel.Model_BD
             {
                 DataTable dados = new DataTable();
 
-                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(queryParametro, strConection);
+                string query = "SELECT * FROM table_aplicacao " +
+                    "INNER JOIN table_aneis ON table_aplicacao.idAneis = table_aneis.codigo " +
+                    "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
+                    "WHERE table_motor.modeloMotor LIKE '%" + itemSelecionado + "%' ";
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
 
                 conexao.Open();
 
@@ -111,6 +116,15 @@ namespace AplTruckMotorsDiesel.Model_BD
                             break;
                         case 5:
                             listaPistao.Add(new BronzinaMancal(Convert.ToString(row[idDoItemRetorno])));
+                            break;
+                        case 6:
+                            listaPistao.Add(new BombaAgua(Convert.ToString(row[idDoItemRetorno])));
+                            break;
+                        case 7:
+                            listaPistao.Add(new BombaOleo(Convert.ToString(row[idDoItemRetorno])));
+                            break;
+                        case 8:
+                            listaPistao.Add(new KitMotor(Convert.ToString(row[idDoItemRetorno])));
                             break;
                     }
                     

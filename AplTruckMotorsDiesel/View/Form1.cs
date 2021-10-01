@@ -58,34 +58,51 @@ namespace AplTruckMotorsDiesel
             string selecionado = listViewMotor.SelectedItems[0].SubItems[2].Text;
             limparTodasListas();
 
-            foreach (Pistao pistao in Pesquisar.retornaPeca("idPistao", Pistao.queryPistao(selecionado), 1))
+            foreach (Pistao pistao in Pesquisar.retornaPeca("idPistao", selecionado, 1))
             {
                 listViewPistao.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(pistao.CodigoPistao) }));
 
-                foreach (BronzinaBiela bbiela in Pesquisar.retornaPeca("idBBiela", BronzinaBiela.queryBiela(selecionado), 2))
+                foreach (BronzinaBiela bbiela in Pesquisar.retornaPeca("idBBiela", selecionado, 2))
                 {
                     listViewBBiela.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(bbiela.BBiela1) }));
                 }
 
-                foreach (Junta junta in Pesquisar.retornaPeca("idJunta", Junta.queryJunta(selecionado), 3))
+                foreach (Junta junta in Pesquisar.retornaPeca("idJunta",selecionado, 3))
                 {
                     listViewJunta.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(junta.CodigoJunta) }));
                 }
 
-                foreach (Aneis aneis in Pesquisar.retornaPeca("idAneis", Aneis.queryAneis(selecionado), 4))
+                foreach (Aneis aneis in Pesquisar.retornaPeca("idAneis", selecionado, 4))
                 {
                     listViewAneis.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(aneis.CodigoAneis) }));
                 }
 
-                //VERIFICARRRRRRRRRRRRRRRRRRRRRRRRRRR PARECE QUE NAO PRECISA DE DOIS INNERJOIN, veja junta abaixo
-                foreach (BronzinaMancal bMancal in Pesquisar.retornaPeca("idBMancal", Junta.queryJunta(selecionado), 5))
+                foreach (BronzinaMancal bMancal in Pesquisar.retornaPeca("idBMancal", selecionado, 5))
                 {
                     listViewBMancal.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(bMancal.CodigoBMancal) }));
+                }
+
+                foreach (BombaAgua bombaAgua in Pesquisar.retornaPeca("idBombaAgua", selecionado, 6))
+                {
+                    listViewBombaAgua.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(bombaAgua.CodigoBombaAgua) }));
+                }
+
+                foreach (BombaOleo bombaOleo in Pesquisar.retornaPeca("idBombaOleo", selecionado, 7))
+                {
+                    listViewBombaOleo.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(bombaOleo.CodigoBombaOleo) }));
+                }
+
+                foreach (KitMotor kitMotor in Pesquisar.retornaPeca("idKitMotor", selecionado, 8))
+                {
+                    listViewKitMotor.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(kitMotor.CodigoKitMotor) }));
                 }
             }
         }
@@ -97,6 +114,9 @@ namespace AplTruckMotorsDiesel
             listViewJunta.Items.Clear();
             listViewAneis.Items.Clear();
             listViewBMancal.Items.Clear();
+            listViewBombaAgua.Items.Clear();
+            listViewBombaOleo.Items.Clear();
+            listViewKitMotor.Items.Clear();
         }
 
     }

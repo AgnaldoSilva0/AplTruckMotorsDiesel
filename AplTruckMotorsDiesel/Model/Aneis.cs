@@ -16,13 +16,5 @@ namespace AplTruckMotorsDiesel.Model
         }
 
         public string CodigoAneis { get => codigoAneis; set => codigoAneis = value; }
-
-        public static string queryAneis(string itemSelecionado)
-        {
-            return "SELECT * FROM table_aplicacao " +
-                    "INNER JOIN table_aneis ON table_aplicacao.idAneis = table_aneis.codigo " +
-                    "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
-                    "WHERE table_motor.modeloMotor LIKE '%" + itemSelecionado + "%' ";
-        }
     }
 }

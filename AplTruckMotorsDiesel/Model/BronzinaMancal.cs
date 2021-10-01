@@ -16,13 +16,5 @@ namespace AplTruckMotorsDiesel.Model
         }
 
         public string CodigoBMancal { get => codigoBMancal; set => codigoBMancal = value; }
-
-        public static string queryBMancal(string itemSelecionado)
-        {
-            return "SELECT * FROM table_aplicacao " +
-                    "INNER JOIN table_bmancal ON table_aplicacao.idBMancal = table_bmancal.codigo " +
-                    "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
-                    "WHERE table_motor.modeloMotor LIKE '%" + itemSelecionado + "%' ";
-        }
     }
 }
