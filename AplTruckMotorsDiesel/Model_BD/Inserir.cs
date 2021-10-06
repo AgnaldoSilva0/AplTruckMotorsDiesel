@@ -77,12 +77,16 @@ namespace AplTruckMotorsDiesel.Model_BD
                 case 7:
                     inserirItem(codigo, codigoOriginal, marca, "table_bombaagua");
                     break;
+                //7 Bomba de Agua
+                case 8:
+                    inserirModeloMotor(codigo, codigoOriginal, marca);
+                    break;
             }
         }
 
         #endregion
 
-        #region InserirMotor
+        #region Comando String para Inserir Motor
         public static void inserirModeloMotor(string modeloVeiculo, string modeloMotor, string observacao)
         {
             string comandoTexto = "INSERT INTO table_motor (modeloVeiculo, modeloMotor, observacao) " +
@@ -91,11 +95,40 @@ namespace AplTruckMotorsDiesel.Model_BD
         }
         #endregion
 
+        #region Comando String para Inserir Item
         public static void inserirItem(string codigo, string codigoOriginal, string marca, string tabela)
         {
             string comandoTexto = "INSERT INTO '"+ tabela +"' (codigo, codigoOriginal, marca) " +
                         "VALUES ('" + codigo + "', '" + codigoOriginal + "', '" + marca + "')";
             inserirConexao(comandoTexto);
         }
+        #endregion
+
+        #region Comando String para Vincular Aplicação
+        public static void vincularPecas(int idMotor, 
+            string idPistao, 
+            string idAneis, 
+            string idBBiela,
+            string idBMancal,
+            string idBombaAgua,
+            string idBombaOleo,
+            string idJunta,
+            string observacao,
+            string kitMotor)
+        {
+            string comandoTexto = "INSERT INTO table_aplicacao (idMotor, idPistao, idAneis, idBBiela, idBMancal, idBombaAgua, idBombaOleo, idJunta, idobservacao, idKitMotor) " +
+                        "VALUES ('" + idMotor + "', " +
+                        "'" + idPistao + "', " +
+                        "'" + idAneis + "', " +
+                        "'"+ idBBiela +"', " +
+                        "'"+ idBMancal +"', " +
+                        "'"+ idBombaAgua +"', " +
+                        "'"+ idBombaOleo +"', " +
+                        "'"+ idJunta +"', " +
+                        "'"+ observacao +"', " +
+                        "'"+ kitMotor +"')";
+            inserirConexao(comandoTexto);
+        }
+        #endregion
     }
 }

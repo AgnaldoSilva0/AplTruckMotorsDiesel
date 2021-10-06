@@ -43,7 +43,7 @@ namespace AplTruckMotorsDiesel
         private void btPesquisaGeral_Click(object sender, EventArgs e)
         {
             listViewMotor.Items.Clear();
-            foreach (Motor item in Pesquisar.RetornarMotor(tbFonte.Text))
+            foreach (Motor item in Pesquisar.RetornarMotor(tbFonte.Text, 0))
             {
                 listViewMotor.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(item.IdMotor),
@@ -66,7 +66,7 @@ namespace AplTruckMotorsDiesel
                 foreach (BronzinaBiela bbiela in Pesquisar.retornaPeca("idBBiela", selecionado, 2))
                 {
                     listViewBBiela.Items.Add(new ListViewItem(new string[] {
-                        Convert.ToString(bbiela.BBiela1) }));
+                        Convert.ToString(bbiela.CodigoBBiela) }));
                 }
 
                 foreach (Junta junta in Pesquisar.retornaPeca("idJunta",selecionado, 3))
@@ -119,5 +119,10 @@ namespace AplTruckMotorsDiesel
             listViewKitMotor.Items.Clear();
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            VincularAplicacao vincularAplicacao = new VincularAplicacao();
+            vincularAplicacao.ShowDialog();
+        }
     }
 }

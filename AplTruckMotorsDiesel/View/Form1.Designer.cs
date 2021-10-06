@@ -80,7 +80,7 @@ namespace AplTruckMotorsDiesel
             this.clmKitMotorSelecionado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btVincularAplicacao = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -756,19 +756,20 @@ namespace AplTruckMotorsDiesel
             this.pictureBox5.TabIndex = 15;
             this.pictureBox5.TabStop = false;
             // 
-            // metroButton1
+            // btVincularAplicacao
             // 
-            this.metroButton1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.metroButton1.ForeColor = System.Drawing.SystemColors.Control;
-            this.metroButton1.Location = new System.Drawing.Point(50, 515);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(118, 26);
-            this.metroButton1.TabIndex = 14;
-            this.metroButton1.Text = "Vincular Aplicação";
-            this.metroButton1.UseCustomBackColor = true;
-            this.metroButton1.UseCustomForeColor = true;
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.UseStyleColors = true;
+            this.btVincularAplicacao.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btVincularAplicacao.ForeColor = System.Drawing.SystemColors.Control;
+            this.btVincularAplicacao.Location = new System.Drawing.Point(50, 515);
+            this.btVincularAplicacao.Name = "btVincularAplicacao";
+            this.btVincularAplicacao.Size = new System.Drawing.Size(118, 26);
+            this.btVincularAplicacao.TabIndex = 14;
+            this.btVincularAplicacao.Text = "Vincular Aplicação";
+            this.btVincularAplicacao.UseCustomBackColor = true;
+            this.btVincularAplicacao.UseCustomForeColor = true;
+            this.btVincularAplicacao.UseSelectable = true;
+            this.btVincularAplicacao.UseStyleColors = true;
+            this.btVincularAplicacao.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // Form1
             // 
@@ -776,7 +777,7 @@ namespace AplTruckMotorsDiesel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 587);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btVincularAplicacao);
             this.Controls.Add(this.panelKitMotor);
             this.Controls.Add(this.panelBombaOleo);
             this.Controls.Add(this.panelBombaAgua);
@@ -879,7 +880,7 @@ namespace AplTruckMotorsDiesel
         private System.Windows.Forms.ColumnHeader clmKitMotorSelecionado;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton btVincularAplicacao;
     }
 }
 

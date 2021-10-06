@@ -18,7 +18,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         /// </summary>
         /// <param name="codigo"></param>
         /// <returns></returns>
-        public static List<Motor> RetornarMotor(string codigo)
+        public static List<Motor> RetornarMotor(string codigo, int operacao)
         {
             List<Motor> lista = new List<Motor>();
             lista.Clear();
@@ -30,10 +30,17 @@ namespace AplTruckMotorsDiesel.Model_BD
             try
             {
                 string query = "SELECT * FROM table_motor";
-                if (codigo != "")
+                switch (operacao)
                 {
-                    //Coloca o % como se fosse um CONTAINS
-                   query = "SELECT * FROM table_motor WHERE modeloVeiculo LIKE '%" + codigo + "%' ";
+                    case 1:
+                        //Coloca o % como se fosse um CONTAINS
+                        //Essa query retorna uma lista de motores de acordo com o codigo passado
+                        query = "SELECT * FROM table_motor WHERE modeloVeiculo LIKE '%" + codigo + "%' ";
+                        break;
+                    case 2:
+                        //Essa query retorna apenas um MOTOR, usado para quando precisa apenas de um motor especifico
+                        query = "SELECT * FROM table_motor WHERE modeloVeiculo LIKE '" + codigo + "' ";
+                        break;
                 }
 
                 DataTable dados = new DataTable();
@@ -51,10 +58,7 @@ namespace AplTruckMotorsDiesel.Model_BD
                         Convert.ToString(row["modeloVeiculo"]), 
                         Convert.ToString(row["observacao"])));
                 }
-
-
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -62,11 +66,8 @@ namespace AplTruckMotorsDiesel.Model_BD
             finally
             {
                 conexao.Close();
-
             }
-
             return lista;
-
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         /// <returns></returns>
         public static List<Object> retornaPeca(string idDoItemRetorno, string itemSelecionado, int objetoPeca)
         {
-            List<Object> listaPistao = new List<Object>();
+            List<Object> lista = new List<Object>();
             string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
@@ -89,7 +90,6 @@ namespace AplTruckMotorsDiesel.Model_BD
                 DataTable dados = new DataTable();
 
                 string query = "SELECT * FROM table_aplicacao " +
-                    "INNER JOIN table_aneis ON table_aplicacao.idAneis = table_aneis.codigo " +
                     "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
                     "WHERE table_motor.modeloMotor LIKE '%" + itemSelecionado + "%' ";
 
@@ -103,28 +103,28 @@ namespace AplTruckMotorsDiesel.Model_BD
                     switch (objetoPeca)
                     {
                         case 1:
-                            listaPistao.Add(new Pistao(Convert.ToString(row[idDoItemRetorno])));
+                            lista.Add(new Pistao(Convert.ToString(row[idDoItemRetorno])));
                             break;
                         case 2:
-                            listaPistao.Add(new BronzinaBiela(Convert.ToString(row[idDoItemRetorno])));
+                            lista.Add(new BronzinaBiela(Convert.ToString(row[idDoItemRetorno])));
                             break;
                         case 3:
-                            listaPistao.Add(new Junta(Convert.ToString(row[idDoItemRetorno])));
+                            lista.Add(new Junta(Convert.ToString(row[idDoItemRetorno])));
                             break;
                         case 4:
-                            listaPistao.Add(new Aneis(Convert.ToString(row[idDoItemRetorno])));
+                            lista.Add(new Aneis(Convert.ToString(row[idDoItemRetorno])));
                             break;
                         case 5:
-                            listaPistao.Add(new BronzinaMancal(Convert.ToString(row[idDoItemRetorno])));
+                            lista.Add(new BronzinaMancal(Convert.ToString(row[idDoItemRetorno])));
                             break;
                         case 6:
-                            listaPistao.Add(new BombaAgua(Convert.ToString(row[idDoItemRetorno])));
+                            lista.Add(new BombaAgua(Convert.ToString(row[idDoItemRetorno])));
                             break;
                         case 7:
-                            listaPistao.Add(new BombaOleo(Convert.ToString(row[idDoItemRetorno])));
+                            lista.Add(new BombaOleo(Convert.ToString(row[idDoItemRetorno])));
                             break;
                         case 8:
-                            listaPistao.Add(new KitMotor(Convert.ToString(row[idDoItemRetorno])));
+                            lista.Add(new KitMotor(Convert.ToString(row[idDoItemRetorno])));
                             break;
                     }
                     
@@ -138,8 +138,78 @@ namespace AplTruckMotorsDiesel.Model_BD
             {
                 conexao.Close();
             }
-            return listaPistao;
-        } 
+            return lista;
+        }
+
+        /// <summary>
+        /// Classe usada para preencher os ComboBox na Form VincularAplicacao
+        /// </summary>
+        /// <param name="tabela">Precisa passar a tabela no banco de dados</param>
+        /// <param name="identificadorSwith">Usado para passar o inteiro para ser usado no swith</param>
+        /// <returns></returns>
+        public static List<Object> retornaPecasComboBox(string tabela, int identificadorSwith)
+        {
+            List<Object> lista = new List<Object>();
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                DataTable dados = new DataTable();
+
+                string query = "SELECT * FROM '"+ tabela +"' ";
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    switch (identificadorSwith)
+                    {
+                        case 0:
+                            lista.Add(new Motor(Convert.ToString(row["modeloVeiculo"])));
+                            break;
+                        case 1:
+                            lista.Add(new Pistao(Convert.ToString(row["codigo"])));
+                            break;
+                        case 2:
+                            lista.Add(new BronzinaBiela(Convert.ToString(row["codigo"])));
+                            break;
+                        case 3:
+                            lista.Add(new Junta(Convert.ToString(row["codigo"])));
+                            break;
+                        case 4:
+                            lista.Add(new Aneis(Convert.ToString(row["codigo"])));
+                            break;
+                        case 5:
+                            lista.Add(new BronzinaMancal(Convert.ToString(row["codigo"])));
+                            break;
+                        case 6:
+                            lista.Add(new BombaAgua(Convert.ToString(row["codigo"])));
+                            break;
+                        case 7:
+                            lista.Add(new BombaOleo(Convert.ToString(row["codigo"])));
+                            break;
+                        case 8:
+                            lista.Add(new KitMotor(Convert.ToString(row["codigo"])));
+                            break;
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lista;
+        }
 
     }
 }

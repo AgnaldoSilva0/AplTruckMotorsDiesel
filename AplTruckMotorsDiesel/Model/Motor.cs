@@ -23,6 +23,12 @@ namespace AplTruckMotorsDiesel.Model
             this.modeloVeiculo = modeloVeiculo;
             this.observacao = observacao;
         }
+
+        public Motor(string modeloVeiculo)
+        {
+            this.modeloVeiculo = modeloVeiculo;
+        }
+
         public string ModeloMotor { get => modeloMotor; set => modeloMotor = value; }
         public string ModeloVeiculo { get => modeloVeiculo; set => modeloVeiculo = value; }
         public string Observacao { get => observacao; set => observacao = value; }

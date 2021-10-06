@@ -8,13 +8,13 @@ namespace AplTruckMotorsDiesel.Model
 {
     class BronzinaBiela
     {
-        private string BBiela;
+        private string codigoBBiela;
 
-        public BronzinaBiela(string bBiela)
+        public BronzinaBiela(string codigoBBiela)
         {
-            BBiela = bBiela;
+            this.codigoBBiela = codigoBBiela;
         }
 
-        public string BBiela1 { get => BBiela; set => BBiela = value; }
+        public string CodigoBBiela { get => codigoBBiela; set => codigoBBiela = value; }
     }
 }

@@ -106,6 +106,12 @@
     <Compile Include="View\NovoRegistro.Designer.cs">
       <DependentUpon>NovoRegistro.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VincularAplicacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VincularAplicacao.Designer.cs">
+      <DependentUpon>VincularAplicacao.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\NovoRegistro.resx">
       <DependentUpon>NovoRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VincularAplicacao.resx">
+      <DependentUpon>VincularAplicacao.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
