@@ -262,6 +262,7 @@ namespace AplTruckMotorsDiesel
             this.btPesquisaMotor.UseCustomForeColor = true;
             this.btPesquisaMotor.UseSelectable = true;
             this.btPesquisaMotor.UseStyleColors = true;
+            this.btPesquisaMotor.Click += new System.EventHandler(this.btPesquisaMotor_Click);
             // 
             // btPesquisaAplicacao
             // 
@@ -276,6 +277,7 @@ namespace AplTruckMotorsDiesel
             this.btPesquisaAplicacao.UseCustomForeColor = true;
             this.btPesquisaAplicacao.UseSelectable = true;
             this.btPesquisaAplicacao.UseStyleColors = true;
+            this.btPesquisaAplicacao.Click += new System.EventHandler(this.btPesquisaAplicacao_Click);
             // 
             // btCriarNovo
             // 

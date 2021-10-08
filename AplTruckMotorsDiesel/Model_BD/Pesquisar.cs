@@ -34,12 +34,17 @@ namespace AplTruckMotorsDiesel.Model_BD
                 {
                     case 1:
                         //Coloca o % como se fosse um CONTAINS
-                        //Essa query retorna uma lista de motores de acordo com o codigo passado
+                        //Essa query retorna uma lista de motores de acordo com o Modelo Veiculo passado
                         query = "SELECT * FROM table_motor WHERE modeloVeiculo LIKE '%" + codigo + "%' ";
                         break;
                     case 2:
                         //Essa query retorna apenas um MOTOR, usado para quando precisa apenas de um motor especifico
                         query = "SELECT * FROM table_motor WHERE modeloVeiculo LIKE '" + codigo + "' ";
+                        break;
+                    case 3:
+                        //Essa query retorna uma lista de motores de acordo com o Motor passado
+                        query = "SELECT * FROM table_motor WHERE modeloMotor LIKE '%" + codigo + "%' ";
+                        break;
                         break;
                 }
 

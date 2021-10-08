@@ -18,6 +18,7 @@ namespace AplTruckMotorsDiesel
         public Form1()
         {
             InitializeComponent();
+            Conexao.conexao();
         }
 
         private void btCriarNovo_Click(object sender, EventArgs e)
@@ -43,7 +44,33 @@ namespace AplTruckMotorsDiesel
         private void btPesquisaGeral_Click(object sender, EventArgs e)
         {
             listViewMotor.Items.Clear();
-            foreach (Motor item in Pesquisar.RetornarMotor(tbFonte.Text, 0))
+            foreach (Motor item in Pesquisar.RetornarMotor(tbFonte.Text, 1))
+            {
+                listViewMotor.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(item.IdMotor),
+                        Convert.ToString(item.ModeloVeiculo),
+                        Convert.ToString(item.ModeloMotor),
+                        Convert.ToString(item.Observacao) }));
+            }
+        }
+
+        private void btPesquisaAplicacao_Click(object sender, EventArgs e)
+        {
+            listViewMotor.Items.Clear();
+            foreach (Motor item in Pesquisar.RetornarMotor(tbAplicacao.Text, 1))
+            {
+                listViewMotor.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(item.IdMotor),
+                        Convert.ToString(item.ModeloVeiculo),
+                        Convert.ToString(item.ModeloMotor),
+                        Convert.ToString(item.Observacao) }));
+            }
+        }
+
+        private void btPesquisaMotor_Click(object sender, EventArgs e)
+        {
+            listViewMotor.Items.Clear();
+            foreach (Motor item in Pesquisar.RetornarMotor(tbMotor.Text, 3))
             {
                 listViewMotor.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(item.IdMotor),

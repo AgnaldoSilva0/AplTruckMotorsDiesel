@@ -330,7 +330,7 @@ namespace AplTruckMotorsDiesel.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 325);
+            this.ClientSize = new System.Drawing.Size(461, 329);
             this.Controls.Add(this.btCadastrarMotor);
             this.Controls.Add(this.btAneis);
             this.Controls.Add(this.panelCadastro);
