@@ -45,7 +45,6 @@ namespace AplTruckMotorsDiesel.Model_BD
                         //Essa query retorna uma lista de motores de acordo com o Motor passado
                         query = "SELECT * FROM table_motor WHERE modeloMotor LIKE '%" + codigo + "%' ";
                         break;
-                        break;
                 }
 
                 DataTable dados = new DataTable();
@@ -215,6 +214,5 @@ namespace AplTruckMotorsDiesel.Model_BD
             }
             return lista;
         }
-
     }
 }

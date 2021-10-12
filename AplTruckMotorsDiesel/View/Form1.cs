@@ -148,8 +148,109 @@ namespace AplTruckMotorsDiesel
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            VincularAplicacao vincularAplicacao = new VincularAplicacao();
-            vincularAplicacao.ShowDialog();
+        }
+
+        private void listViewPistao_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                FichaTecnica fichaTecnica = new FichaTecnica(listViewPistao.SelectedItems[0].Text, 1);
+                fichaTecnica.ShowDialog();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                return;
+            }
+        }
+
+        private void listViewAneis_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                FichaTecnica fichaTecnica = new FichaTecnica(listViewAneis.SelectedItems[0].Text, 2);
+                fichaTecnica.ShowDialog();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Tente Novamente");
+            }
+        }
+
+        private void listViewBombaAgua_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                FichaTecnica fichaTecnica = new FichaTecnica(listViewBombaAgua.SelectedItems[0].Text, 3);
+                fichaTecnica.ShowDialog();
+            } catch(System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Tente Novamente");
+            }
+        }
+
+        private void listViewBombaOleo_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                FichaTecnica fichaTecnica = new FichaTecnica(listViewBombaOleo.SelectedItems[0].Text, 4);
+                fichaTecnica.ShowDialog();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Tente Novamente");
+            }
+        }
+
+        private void listViewBBiela_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                FichaTecnica fichaTecnica = new FichaTecnica(listViewBBiela.SelectedItems[0].Text, 5);
+                fichaTecnica.ShowDialog();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Tente Novamente");
+            }
+        }
+
+        private void listViewBMancal_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                FichaTecnica fichaTecnica = new FichaTecnica(listViewBMancal.SelectedItems[0].Text, 6);
+                fichaTecnica.ShowDialog();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Tente Novamente");
+            }
+        }
+
+        private void listViewJunta_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                FichaTecnica fichaTecnica = new FichaTecnica(listViewJunta.SelectedItems[0].Text, 7);
+                fichaTecnica.ShowDialog();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Tente Novamente");
+            }
+        }
+
+        private void listViewKitMotor_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                FichaTecnica fichaTecnica = new FichaTecnica(listViewKitMotor.SelectedItems[0].Text, 8);
+                fichaTecnica.ShowDialog();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Tente Novamente");
+            }
         }
     }
 }

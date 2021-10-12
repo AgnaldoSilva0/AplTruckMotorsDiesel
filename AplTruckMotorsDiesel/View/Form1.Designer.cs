@@ -327,10 +327,10 @@ namespace AplTruckMotorsDiesel
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel2.Location = new System.Drawing.Point(682, 566);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(90, 15);
+            this.metroLabel2.Size = new System.Drawing.Size(92, 15);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Magenta;
             this.metroLabel2.TabIndex = 12;
-            this.metroLabel2.Text = "Agnaldo Silva 1.0";
+            this.metroLabel2.Text = "Agnaldo Silva 2.0";
             // 
             // pictureBox4
             // 
@@ -367,6 +367,7 @@ namespace AplTruckMotorsDiesel
             this.listViewPistao.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listViewPistao.FullRowSelect = true;
             this.listViewPistao.Location = new System.Drawing.Point(3, 19);
+            this.listViewPistao.MultiSelect = false;
             this.listViewPistao.Name = "listViewPistao";
             this.listViewPistao.OwnerDraw = true;
             this.listViewPistao.Size = new System.Drawing.Size(139, 79);
@@ -374,9 +375,11 @@ namespace AplTruckMotorsDiesel
             this.listViewPistao.UseCompatibleStateImageBehavior = false;
             this.listViewPistao.UseSelectable = true;
             this.listViewPistao.View = System.Windows.Forms.View.List;
+            this.listViewPistao.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewPistao_MouseDoubleClick);
             // 
             // clmPistaoSelecionado
             // 
+            this.clmPistaoSelecionado.Text = "";
             this.clmPistaoSelecionado.Width = 135;
             // 
             // metroLabel3
@@ -418,6 +421,7 @@ namespace AplTruckMotorsDiesel
             this.listViewBBiela.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listViewBBiela.FullRowSelect = true;
             this.listViewBBiela.Location = new System.Drawing.Point(3, 19);
+            this.listViewBBiela.MultiSelect = false;
             this.listViewBBiela.Name = "listViewBBiela";
             this.listViewBBiela.OwnerDraw = true;
             this.listViewBBiela.Size = new System.Drawing.Size(139, 79);
@@ -425,6 +429,7 @@ namespace AplTruckMotorsDiesel
             this.listViewBBiela.UseCompatibleStateImageBehavior = false;
             this.listViewBBiela.UseSelectable = true;
             this.listViewBBiela.View = System.Windows.Forms.View.List;
+            this.listViewBBiela.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewBBiela_MouseDoubleClick);
             // 
             // clmBBielaSelecionada
             // 
@@ -469,6 +474,7 @@ namespace AplTruckMotorsDiesel
             this.listViewJunta.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listViewJunta.FullRowSelect = true;
             this.listViewJunta.Location = new System.Drawing.Point(3, 19);
+            this.listViewJunta.MultiSelect = false;
             this.listViewJunta.Name = "listViewJunta";
             this.listViewJunta.OwnerDraw = true;
             this.listViewJunta.Size = new System.Drawing.Size(139, 79);
@@ -476,6 +482,7 @@ namespace AplTruckMotorsDiesel
             this.listViewJunta.UseCompatibleStateImageBehavior = false;
             this.listViewJunta.UseSelectable = true;
             this.listViewJunta.View = System.Windows.Forms.View.List;
+            this.listViewJunta.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewJunta_MouseDoubleClick);
             // 
             // clmJuntaSelecionada
             // 
@@ -520,6 +527,7 @@ namespace AplTruckMotorsDiesel
             this.listViewAneis.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listViewAneis.FullRowSelect = true;
             this.listViewAneis.Location = new System.Drawing.Point(3, 19);
+            this.listViewAneis.MultiSelect = false;
             this.listViewAneis.Name = "listViewAneis";
             this.listViewAneis.OwnerDraw = true;
             this.listViewAneis.Size = new System.Drawing.Size(139, 79);
@@ -527,6 +535,7 @@ namespace AplTruckMotorsDiesel
             this.listViewAneis.UseCompatibleStateImageBehavior = false;
             this.listViewAneis.UseSelectable = true;
             this.listViewAneis.View = System.Windows.Forms.View.List;
+            this.listViewAneis.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewAneis_MouseDoubleClick);
             // 
             // clmAneisSelecionado
             // 
@@ -571,6 +580,7 @@ namespace AplTruckMotorsDiesel
             this.listViewBMancal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listViewBMancal.FullRowSelect = true;
             this.listViewBMancal.Location = new System.Drawing.Point(3, 19);
+            this.listViewBMancal.MultiSelect = false;
             this.listViewBMancal.Name = "listViewBMancal";
             this.listViewBMancal.OwnerDraw = true;
             this.listViewBMancal.Size = new System.Drawing.Size(139, 79);
@@ -578,6 +588,7 @@ namespace AplTruckMotorsDiesel
             this.listViewBMancal.UseCompatibleStateImageBehavior = false;
             this.listViewBMancal.UseSelectable = true;
             this.listViewBMancal.View = System.Windows.Forms.View.List;
+            this.listViewBMancal.DoubleClick += new System.EventHandler(this.listViewBMancal_DoubleClick);
             // 
             // clmBMancal
             // 
@@ -622,6 +633,7 @@ namespace AplTruckMotorsDiesel
             this.listViewBombaAgua.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listViewBombaAgua.FullRowSelect = true;
             this.listViewBombaAgua.Location = new System.Drawing.Point(3, 19);
+            this.listViewBombaAgua.MultiSelect = false;
             this.listViewBombaAgua.Name = "listViewBombaAgua";
             this.listViewBombaAgua.OwnerDraw = true;
             this.listViewBombaAgua.Size = new System.Drawing.Size(139, 79);
@@ -629,6 +641,7 @@ namespace AplTruckMotorsDiesel
             this.listViewBombaAgua.UseCompatibleStateImageBehavior = false;
             this.listViewBombaAgua.UseSelectable = true;
             this.listViewBombaAgua.View = System.Windows.Forms.View.List;
+            this.listViewBombaAgua.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewBombaAgua_MouseDoubleClick);
             // 
             // clmBombaAguaSelecionada
             // 
@@ -673,6 +686,7 @@ namespace AplTruckMotorsDiesel
             this.listViewBombaOleo.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listViewBombaOleo.FullRowSelect = true;
             this.listViewBombaOleo.Location = new System.Drawing.Point(3, 19);
+            this.listViewBombaOleo.MultiSelect = false;
             this.listViewBombaOleo.Name = "listViewBombaOleo";
             this.listViewBombaOleo.OwnerDraw = true;
             this.listViewBombaOleo.Size = new System.Drawing.Size(139, 79);
@@ -680,6 +694,7 @@ namespace AplTruckMotorsDiesel
             this.listViewBombaOleo.UseCompatibleStateImageBehavior = false;
             this.listViewBombaOleo.UseSelectable = true;
             this.listViewBombaOleo.View = System.Windows.Forms.View.List;
+            this.listViewBombaOleo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewBombaOleo_MouseDoubleClick);
             // 
             // clmBombaOleoSelecionada
             // 
@@ -724,6 +739,7 @@ namespace AplTruckMotorsDiesel
             this.listViewKitMotor.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.listViewKitMotor.FullRowSelect = true;
             this.listViewKitMotor.Location = new System.Drawing.Point(3, 19);
+            this.listViewKitMotor.MultiSelect = false;
             this.listViewKitMotor.Name = "listViewKitMotor";
             this.listViewKitMotor.OwnerDraw = true;
             this.listViewKitMotor.Size = new System.Drawing.Size(139, 79);
@@ -731,6 +747,7 @@ namespace AplTruckMotorsDiesel
             this.listViewKitMotor.UseCompatibleStateImageBehavior = false;
             this.listViewKitMotor.UseSelectable = true;
             this.listViewKitMotor.View = System.Windows.Forms.View.List;
+            this.listViewKitMotor.DoubleClick += new System.EventHandler(this.listViewKitMotor_DoubleClick);
             // 
             // clmKitMotorSelecionado
             // 

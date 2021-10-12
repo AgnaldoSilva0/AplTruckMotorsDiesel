@@ -45,41 +45,44 @@ namespace AplTruckMotorsDiesel.Model_BD
         #endregion
 
         #region Classe para chamar o metodo responsavel pelo insert passado por parametro
-        public static void chamaMetodo(int idMetodo, string codigo, string codigoOriginal, string marca)
+        public static void chamaMetodo(int idMetodo, string codigo, string codigoOriginal, string marca, string observacao)
         {
             switch (idMetodo)
             {
                 //1 Pistão
                 case 1:
-                    inserirItem(codigo, codigoOriginal, marca, "table_pistao");
+                    inserirItem(codigo, codigoOriginal, marca, "table_pistao", observacao);
                     break;
                 //2 Aneis
                 case 2:
-                    inserirItem(codigo, codigoOriginal, marca, "table_aneis");
+                    inserirItem(codigo, codigoOriginal, marca, "table_aneis", observacao);
                     break;
                 //3 Bronzina Biela
                 case 3:
-                    inserirItem(codigo, codigoOriginal, marca, "table_bbiela");
+                    inserirItem(codigo, codigoOriginal, marca, "table_bbiela", observacao);
                     break;
                 //4 Junta
                 case 4:
-                    inserirItem(codigo, codigoOriginal, marca, "table_junta");
+                    inserirItem(codigo, codigoOriginal, marca, "table_junta", observacao);
                     break;
                 //5 Bomba Oleo
                 case 5:
-                    inserirItem(codigo, codigoOriginal, marca, "table_bombaoleo");
+                    inserirItem(codigo, codigoOriginal, marca, "table_bombaoleo", observacao);
                     break;
                 //6 Bronzina Mancal
                 case 6:
-                    inserirItem(codigo, codigoOriginal, marca, "table_bmancal");
+                    inserirItem(codigo, codigoOriginal, marca, "table_bmancal", observacao);
                     break;
                 //7 Bomba de Agua
                 case 7:
-                    inserirItem(codigo, codigoOriginal, marca, "table_bombaagua");
+                    inserirItem(codigo, codigoOriginal, marca, "table_bombaagua", observacao);
                     break;
                 //7 Bomba de Agua
                 case 8:
                     inserirModeloMotor(codigo, codigoOriginal, marca);
+                    break;
+                case 9:
+                    inserirKitMotor(codigo, codigoOriginal, marca, "table_kitmotor", observacao);
                     break;
             }
         }
@@ -96,10 +99,19 @@ namespace AplTruckMotorsDiesel.Model_BD
         #endregion
 
         #region Comando String para Inserir Item
-        public static void inserirItem(string codigo, string codigoOriginal, string marca, string tabela)
+        public static void inserirItem(string codigo, string codigoOriginal, string marca, string tabela, string observacao)
         {
-            string comandoTexto = "INSERT INTO '"+ tabela +"' (codigo, codigoOriginal, marca) " +
-                        "VALUES ('" + codigo + "', '" + codigoOriginal + "', '" + marca + "')";
+            string comandoTexto = "INSERT INTO '"+ tabela +"' (codigo, codigoOriginal, marca, observacao) " +
+                        "VALUES ('" + codigo + "', '" + codigoOriginal + "', '" + marca + "', '"+ observacao +"')";
+            inserirConexao(comandoTexto);
+        }
+        #endregion
+
+        #region Comando String para Inserir KitMotor
+        public static void inserirKitMotor(string codigo, string codigoOriginal, string marca, string tabela, string observacao)
+        {
+            string comandoTexto = "INSERT INTO '" + tabela + "' (codigo, itenskit, Marca, observacao) " +
+                        "VALUES ('" + codigo + "', '" + codigoOriginal + "', '" + marca + "', '"+ observacao +"')";
             inserirConexao(comandoTexto);
         }
         #endregion

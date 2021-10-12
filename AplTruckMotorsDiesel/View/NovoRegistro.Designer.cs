@@ -44,6 +44,8 @@ namespace AplTruckMotorsDiesel.View
             this.lbItemSelecionado = new System.Windows.Forms.Label();
             this.btAneis = new MetroFramework.Controls.MetroButton();
             this.btCadastrarMotor = new MetroFramework.Controls.MetroButton();
+            this.btKitMotor = new MetroFramework.Controls.MetroButton();
+            this.tbObervacao = new MetroFramework.Controls.MetroTextBox();
             this.panelCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCadastro)).BeginInit();
             this.SuspendLayout();
@@ -146,6 +148,7 @@ namespace AplTruckMotorsDiesel.View
             // 
             // panelCadastro
             // 
+            this.panelCadastro.Controls.Add(this.tbObervacao);
             this.panelCadastro.Controls.Add(this.tbMarca);
             this.panelCadastro.Controls.Add(this.pictureBoxCadastro);
             this.panelCadastro.Controls.Add(this.btCadastrar);
@@ -157,7 +160,7 @@ namespace AplTruckMotorsDiesel.View
             this.panelCadastro.HorizontalScrollbarSize = 10;
             this.panelCadastro.Location = new System.Drawing.Point(182, 63);
             this.panelCadastro.Name = "panelCadastro";
-            this.panelCadastro.Size = new System.Drawing.Size(269, 251);
+            this.panelCadastro.Size = new System.Drawing.Size(269, 283);
             this.panelCadastro.TabIndex = 15;
             this.panelCadastro.VerticalScrollbarBarColor = true;
             this.panelCadastro.VerticalScrollbarHighlightOnWheel = false;
@@ -209,7 +212,7 @@ namespace AplTruckMotorsDiesel.View
             this.btCadastrar.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btCadastrar.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btCadastrar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btCadastrar.Location = new System.Drawing.Point(54, 146);
+            this.btCadastrar.Location = new System.Drawing.Point(55, 175);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(153, 93);
             this.btCadastrar.TabIndex = 16;
@@ -326,11 +329,60 @@ namespace AplTruckMotorsDiesel.View
             this.btCadastrarMotor.UseStyleColors = true;
             this.btCadastrarMotor.Click += new System.EventHandler(this.btCadastrarMotor_Click);
             // 
+            // btKitMotor
+            // 
+            this.btKitMotor.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btKitMotor.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btKitMotor.ForeColor = System.Drawing.SystemColors.Control;
+            this.btKitMotor.Location = new System.Drawing.Point(23, 320);
+            this.btKitMotor.Name = "btKitMotor";
+            this.btKitMotor.Size = new System.Drawing.Size(153, 26);
+            this.btKitMotor.TabIndex = 18;
+            this.btKitMotor.Text = "Kit Motor";
+            this.btKitMotor.UseCustomBackColor = true;
+            this.btKitMotor.UseCustomForeColor = true;
+            this.btKitMotor.UseSelectable = true;
+            this.btKitMotor.UseStyleColors = true;
+            this.btKitMotor.Click += new System.EventHandler(this.btKitMotor_Click);
+            // 
+            // tbObervacao
+            // 
+            // 
+            // 
+            // 
+            this.tbObervacao.CustomButton.Image = null;
+            this.tbObervacao.CustomButton.Location = new System.Drawing.Point(228, 1);
+            this.tbObervacao.CustomButton.Name = "";
+            this.tbObervacao.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tbObervacao.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.tbObervacao.CustomButton.TabIndex = 1;
+            this.tbObervacao.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.tbObervacao.CustomButton.UseSelectable = true;
+            this.tbObervacao.CustomButton.Visible = false;
+            this.tbObervacao.Lines = new string[0];
+            this.tbObervacao.Location = new System.Drawing.Point(6, 125);
+            this.tbObervacao.MaxLength = 32767;
+            this.tbObervacao.Name = "tbObervacao";
+            this.tbObervacao.PasswordChar = '\0';
+            this.tbObervacao.PromptText = "Observação";
+            this.tbObervacao.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.tbObervacao.SelectedText = "";
+            this.tbObervacao.SelectionLength = 0;
+            this.tbObervacao.SelectionStart = 0;
+            this.tbObervacao.ShortcutsEnabled = true;
+            this.tbObervacao.Size = new System.Drawing.Size(250, 23);
+            this.tbObervacao.TabIndex = 19;
+            this.tbObervacao.UseSelectable = true;
+            this.tbObervacao.WaterMark = "Observação";
+            this.tbObervacao.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.tbObervacao.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // NovoRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 329);
+            this.ClientSize = new System.Drawing.Size(461, 354);
+            this.Controls.Add(this.btKitMotor);
             this.Controls.Add(this.btCadastrarMotor);
             this.Controls.Add(this.btAneis);
             this.Controls.Add(this.panelCadastro);
@@ -366,5 +418,7 @@ namespace AplTruckMotorsDiesel.View
         private MetroFramework.Controls.MetroButton btAneis;
         private MetroFramework.Controls.MetroTextBox tbMarca;
         private MetroFramework.Controls.MetroButton btCadastrarMotor;
+        private MetroFramework.Controls.MetroButton btKitMotor;
+        private MetroFramework.Controls.MetroTextBox tbObervacao;
     }
 }

@@ -90,6 +90,15 @@ namespace AplTruckMotorsDiesel.View
             alterarWaterMark(1);
         }
 
+        private void btKitMotor_Click(object sender, EventArgs e)
+        {
+            verificarPanelVisivel(panelCadastro);
+            IdMetodoInsert = 9;
+            pictureBoxCadastro.Image = Image.FromFile("pictures/kitmotor.png");
+            lbItemSelecionado.Text = "Kit Motor";
+            alterarWaterMark(3);
+        }
+
         private void verificarPanelVisivel(Panel panel)
         {
             if (panel.Visible != true)
@@ -101,12 +110,12 @@ namespace AplTruckMotorsDiesel.View
         private int IdMetodoInsert;
         private void btCadastrar_Click(object sender, EventArgs e)
         {
-            Inserir.chamaMetodo(IdMetodoInsert, tbCodigo.Text, tbCodigoOriginal.Text, tbMarca.Text);
+            Inserir.chamaMetodo(IdMetodoInsert, tbCodigo.Text, tbCodigoOriginal.Text, tbMarca.Text, tbObervacao.Text);
 
             tbCodigo.Text = "";
             tbCodigoOriginal.Text = "";
             tbMarca.Text = "";
-
+            tbObervacao.Text = "";
         }
 
         private void alterarWaterMark(int botaoSelecionado)
@@ -123,9 +132,12 @@ namespace AplTruckMotorsDiesel.View
                     tbCodigoOriginal.WaterMark = "Código Original";
                     tbMarca.WaterMark = "Marca";
                     break;
+                case 3:
+                    tbCodigo.WaterMark = "Código";
+                    tbCodigoOriginal.WaterMark = "Itens do Kit";
+                    tbMarca.WaterMark = "Marca";
+                    break;
             }
         }
-
-
     }
 }
