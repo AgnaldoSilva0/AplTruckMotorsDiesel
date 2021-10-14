@@ -148,6 +148,8 @@ namespace AplTruckMotorsDiesel
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            VincularAplicacao vincularAplicacao = new VincularAplicacao();
+            vincularAplicacao.ShowDialog();
         }
 
         private void listViewPistao_MouseDoubleClick(object sender, MouseEventArgs e)

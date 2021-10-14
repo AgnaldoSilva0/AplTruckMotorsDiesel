@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Model\BombaAgua.cs" />
     <Compile Include="Model\BronzinaMancal.cs" />
+    <Compile Include="Model\Icones.cs" />
     <Compile Include="Model_BD\Conexao.cs" />
     <Compile Include="Model_BD\Inserir.cs" />
     <Compile Include="Model_BD\Pesquisar.cs" />

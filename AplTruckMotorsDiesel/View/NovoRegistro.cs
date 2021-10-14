@@ -1,4 +1,5 @@
-﻿using AplTruckMotorsDiesel.Model_BD;
+﻿using AplTruckMotorsDiesel.Model;
+using AplTruckMotorsDiesel.Model_BD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             IdMetodoInsert = 1;
-            pictureBoxCadastro.Image = Image.FromFile("pictures/pistao.png");
+            pictureBoxCadastro.Image = Icones.ImgPistao;
             lbItemSelecionado.Text = "Pistão";
             alterarWaterMark(2);
         }
@@ -31,7 +32,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             IdMetodoInsert = 2;
-            pictureBoxCadastro.Image = Image.FromFile("pictures/pistao.png");
+            pictureBoxCadastro.Image = Icones.ImgPistao;
             lbItemSelecionado.Text = "Anéis";
             alterarWaterMark(2);
         }
@@ -40,7 +41,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             IdMetodoInsert = 3;
-            pictureBoxCadastro.Image = Image.FromFile("pictures/bronzina.png");
+            pictureBoxCadastro.Image = Icones.ImgBronzina;
             lbItemSelecionado.Text = "Bronzina Biela";
             alterarWaterMark(2);
         }
@@ -49,7 +50,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             IdMetodoInsert = 4;
-            pictureBoxCadastro.Image = Image.FromFile("pictures/junta.png");
+            pictureBoxCadastro.Image = Icones.ImgJunta;
             lbItemSelecionado.Text = "Jogo Junta";
             alterarWaterMark(2);
         }
@@ -58,7 +59,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             IdMetodoInsert = 5;
-            pictureBoxCadastro.Image = Image.FromFile("pictures/bombaOleo.png");
+            pictureBoxCadastro.Image = Icones.ImgBombaOleo;
             lbItemSelecionado.Text = "Bomba de Oleo";
             alterarWaterMark(2);
         }
@@ -67,7 +68,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             IdMetodoInsert = 6;
-            pictureBoxCadastro.Image = Image.FromFile("pictures/bronzina.png");
+            pictureBoxCadastro.Image = Icones.ImgBronzina;
             lbItemSelecionado.Text = "Bronzina Mancal";
             alterarWaterMark(2);
         }
@@ -76,7 +77,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             IdMetodoInsert = 7;
-            pictureBoxCadastro.Image = Image.FromFile("pictures/bombaAgua.png");
+            pictureBoxCadastro.Image = Icones.ImgBombaAgua;
             lbItemSelecionado.Text = "Bomba Agua";
             alterarWaterMark(2);
         }
@@ -85,7 +86,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             IdMetodoInsert = 8;
-            pictureBoxCadastro.Image = Image.FromFile("pictures/motor.png");
+            pictureBoxCadastro.Image = Icones.ImgMotor;
             lbItemSelecionado.Text = "Motor";
             alterarWaterMark(1);
         }
@@ -94,7 +95,7 @@ namespace AplTruckMotorsDiesel.View
         {
             verificarPanelVisivel(panelCadastro);
             IdMetodoInsert = 9;
-            pictureBoxCadastro.Image = Image.FromFile("pictures/kitmotor.png");
+            pictureBoxCadastro.Image = Icones.ImgKitMotor;
             lbItemSelecionado.Text = "Kit Motor";
             alterarWaterMark(3);
         }

@@ -34,7 +34,6 @@ namespace AplTruckMotorsDiesel.View
             this.lbMarca = new MetroFramework.Controls.MetroLabel();
             this.lbObservacao = new MetroFramework.Controls.MetroLabel();
             this.lbItem = new MetroFramework.Controls.MetroLabel();
-            this.btSair = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // lbCodigo
@@ -78,30 +77,11 @@ namespace AplTruckMotorsDiesel.View
             this.lbItem.TabIndex = 4;
             this.lbItem.Text = "Item";
             // 
-            // btSair
-            // 
-            this.btSair.BackColor = System.Drawing.Color.Aqua;
-            this.btSair.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btSair.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.btSair.ForeColor = System.Drawing.Color.Black;
-            this.btSair.Highlight = true;
-            this.btSair.Location = new System.Drawing.Point(20, 246);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(453, 41);
-            this.btSair.TabIndex = 5;
-            this.btSair.Text = "EXIT";
-            this.btSair.UseCustomBackColor = true;
-            this.btSair.UseCustomForeColor = true;
-            this.btSair.UseSelectable = true;
-            this.btSair.UseStyleColors = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
             // FichaTecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 307);
-            this.Controls.Add(this.btSair);
+            this.ClientSize = new System.Drawing.Size(493, 228);
             this.Controls.Add(this.lbItem);
             this.Controls.Add(this.lbObservacao);
             this.Controls.Add(this.lbMarca);
@@ -120,6 +100,5 @@ namespace AplTruckMotorsDiesel.View
         private MetroFramework.Controls.MetroLabel lbMarca;
         private MetroFramework.Controls.MetroLabel lbObservacao;
         private MetroFramework.Controls.MetroLabel lbItem;
-        private MetroFramework.Controls.MetroButton btSair;
     }
 }
