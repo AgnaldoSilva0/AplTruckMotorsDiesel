@@ -24,7 +24,12 @@ namespace AplTruckMotorsDiesel
         private void btCriarNovo_Click(object sender, EventArgs e)
         {
             NovoRegistro novoRegistro = new NovoRegistro();
-            novoRegistro.ShowDialog();
+            if (Program.VarGlobalPermissaoUsuario > 1)
+            {
+                novoRegistro.ShowDialog();
+                return;
+            }
+            MessageBox.Show("Usuário não permitido para essa ação");
         }
 
         //Variavel criada para dar sinal de positivo ou não para a form de login
@@ -149,7 +154,12 @@ namespace AplTruckMotorsDiesel
         private void metroButton1_Click(object sender, EventArgs e)
         {
             VincularAplicacao vincularAplicacao = new VincularAplicacao();
-            vincularAplicacao.ShowDialog();
+            if (Program.VarGlobalPermissaoUsuario > 1)
+            {
+                vincularAplicacao.ShowDialog();
+                return;
+            }
+            MessageBox.Show("Usuário não permitido para essa ação");
         }
 
         private void listViewPistao_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -253,6 +263,17 @@ namespace AplTruckMotorsDiesel
             {
                 MessageBox.Show("Tente Novamente");
             }
+        }
+
+        private void btGerenciarUsuarios_Click(object sender, EventArgs e)
+        {
+            GerenciarUsuarios gerenciarUsuarios = new GerenciarUsuarios();
+            if (Program.VarGlobalPermissaoUsuario > 2)
+            {
+                gerenciarUsuarios.ShowDialog();
+                return;
+            }
+            MessageBox.Show("Usuário não permitido para essa ação");
         }
     }
 }

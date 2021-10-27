@@ -81,6 +81,8 @@ namespace AplTruckMotorsDiesel
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btVincularAplicacao = new MetroFramework.Controls.MetroButton();
+            this.btGerenciarUsuarios = new MetroFramework.Controls.MetroButton();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -94,6 +96,7 @@ namespace AplTruckMotorsDiesel
             this.panelBombaOleo.SuspendLayout();
             this.panelKitMotor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewMotor
@@ -790,11 +793,37 @@ namespace AplTruckMotorsDiesel
             this.btVincularAplicacao.UseStyleColors = true;
             this.btVincularAplicacao.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // btGerenciarUsuarios
+            // 
+            this.btGerenciarUsuarios.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btGerenciarUsuarios.ForeColor = System.Drawing.SystemColors.Control;
+            this.btGerenciarUsuarios.Location = new System.Drawing.Point(50, 547);
+            this.btGerenciarUsuarios.Name = "btGerenciarUsuarios";
+            this.btGerenciarUsuarios.Size = new System.Drawing.Size(118, 26);
+            this.btGerenciarUsuarios.TabIndex = 16;
+            this.btGerenciarUsuarios.Text = "Gerenciar Usuários";
+            this.btGerenciarUsuarios.UseCustomBackColor = true;
+            this.btGerenciarUsuarios.UseCustomForeColor = true;
+            this.btGerenciarUsuarios.UseSelectable = true;
+            this.btGerenciarUsuarios.UseStyleColors = true;
+            this.btGerenciarUsuarios.Click += new System.EventHandler(this.btGerenciarUsuarios_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(23, 547);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(30, 26);
+            this.pictureBox6.TabIndex = 17;
+            this.pictureBox6.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 587);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.btGerenciarUsuarios);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btVincularAplicacao);
             this.Controls.Add(this.panelKitMotor);
@@ -842,6 +871,7 @@ namespace AplTruckMotorsDiesel
             this.panelKitMotor.ResumeLayout(false);
             this.panelKitMotor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -900,6 +930,8 @@ namespace AplTruckMotorsDiesel
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private System.Windows.Forms.PictureBox pictureBox5;
         private MetroFramework.Controls.MetroButton btVincularAplicacao;
+        private MetroFramework.Controls.MetroButton btGerenciarUsuarios;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
 

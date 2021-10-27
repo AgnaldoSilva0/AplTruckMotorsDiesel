@@ -19,5 +19,8 @@ namespace AplTruckMotorsDiesel
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
+        public static int VarGlobalPermissaoUsuario = 0;
+
     }
 }
