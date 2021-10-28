@@ -214,5 +214,45 @@ namespace AplTruckMotorsDiesel.Model_BD
             }
             return lista;
         }
+
+        /// <summary>
+        /// Retorna todos os usuários para a lista que chamar
+        /// </summary>
+        /// <returns></returns>
+        public static List<Usuario> retornaListaUsuario()
+        {
+            List<Usuario> lista = new List<Usuario>();
+
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                DataTable dados = new DataTable();
+
+                string query = "SELECT * FROM table_login";
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    lista.Add(new Usuario(Convert.ToString(row["usuario"]), Convert.ToString(row["senha"]), Convert.ToString(row["permissao"])));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lista;
+        }
     }
 }
