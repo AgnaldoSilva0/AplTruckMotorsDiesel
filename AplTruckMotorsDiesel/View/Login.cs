@@ -22,7 +22,6 @@ namespace AplTruckMotorsDiesel.View
         {
             if (RetornarLogin(tbUsuario.Text, tbSenha.Text) == true)
             {
-                Console.WriteLine(Program.VarGlobalPermissaoUsuario);
                 Form1.dialogResult = true;
                 this.Close();
             }
@@ -68,5 +67,18 @@ namespace AplTruckMotorsDiesel.View
             return autorizado;
         }
 
+        private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbMostrarSenha.Checked == true)
+            {
+                tbSenha.PasswordChar = '\0';
+                Console.WriteLine("s");
+            }
+            else
+            {
+                tbSenha.PasswordChar = '*';
+                Console.WriteLine("d");
+            }
+        }
     }
 }

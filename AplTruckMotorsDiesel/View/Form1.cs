@@ -44,6 +44,7 @@ namespace AplTruckMotorsDiesel
                 Application.Exit();
                 return;
             }
+            UsuarioLogado();
         }
 
         private void btPesquisaGeral_Click(object sender, EventArgs e)
@@ -275,5 +276,23 @@ namespace AplTruckMotorsDiesel
             }
             MessageBox.Show("Usuário não permitido para essa ação");
         }
+
+        public void UsuarioLogado()
+        {
+            switch (Program.VarGlobalPermissaoUsuario)
+            {
+                case 1:
+                    lbTipoUsuario.Text = "Logado como Visitante";
+                    break;
+                case 2:
+                    lbTipoUsuario.Text = "Logado como Comprador";
+                    break;
+                case 3:
+                    lbTipoUsuario.Text = "Logado como Administrador";
+                    break;
+            }
+        }
+
     }
+
 }

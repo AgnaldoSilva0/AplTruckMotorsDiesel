@@ -109,5 +109,37 @@ namespace AplTruckMotorsDiesel.Model_BD
                 conexao.Close();
             }
         }
+
+        public static void ExecutarComandoSql(string comandoTexto)
+        {
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConexao = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConexao);
+
+            try
+            {
+                conexao.Open();
+                SQLiteCommand comando = new SQLiteCommand();
+
+                comando.Connection = conexao;
+
+                comando.CommandText = comandoTexto;
+
+                comando.ExecuteNonQuery();
+
+                MessageBox.Show("Registro Editado ");
+                comando.Dispose();
+
+            }
+            catch (SQLiteException e)
+            {
+                MessageBox.Show("Erro ao inserir Registro " + e.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

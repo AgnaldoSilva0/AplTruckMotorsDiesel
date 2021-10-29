@@ -142,5 +142,14 @@ namespace AplTruckMotorsDiesel.Model_BD
             inserirConexao(comandoTexto);
         }
         #endregion
+
+        #region Comando String para Inserir Usuario
+        public static void inserirUsuario(string nome, string senha, int permissao)
+        {
+            string comando = "INSERT INTO table_login (usuario, senha, permissao) " +
+                "VALUES ('" + nome.ToUpper() + "', '" + senha.ToUpper() + "', '" + permissao + "') ";
+            inserirConexao(comando);
+        }
+        #endregion
     }
 }

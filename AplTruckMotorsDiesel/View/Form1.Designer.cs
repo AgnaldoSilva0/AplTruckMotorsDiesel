@@ -83,6 +83,7 @@ namespace AplTruckMotorsDiesel
             this.btVincularAplicacao = new MetroFramework.Controls.MetroButton();
             this.btGerenciarUsuarios = new MetroFramework.Controls.MetroButton();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lbTipoUsuario = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -817,11 +818,21 @@ namespace AplTruckMotorsDiesel
             this.pictureBox6.TabIndex = 17;
             this.pictureBox6.TabStop = false;
             // 
+            // lbTipoUsuario
+            // 
+            this.lbTipoUsuario.AutoSize = true;
+            this.lbTipoUsuario.Location = new System.Drawing.Point(515, 7);
+            this.lbTipoUsuario.Name = "lbTipoUsuario";
+            this.lbTipoUsuario.Size = new System.Drawing.Size(21, 19);
+            this.lbTipoUsuario.TabIndex = 18;
+            this.lbTipoUsuario.Text = "....";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 587);
+            this.Controls.Add(this.lbTipoUsuario);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.btGerenciarUsuarios);
             this.Controls.Add(this.pictureBox5);
@@ -932,6 +943,7 @@ namespace AplTruckMotorsDiesel
         private MetroFramework.Controls.MetroButton btVincularAplicacao;
         private MetroFramework.Controls.MetroButton btGerenciarUsuarios;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private MetroFramework.Controls.MetroLabel lbTipoUsuario;
     }
 }
 

@@ -34,6 +34,7 @@ namespace AplTruckMotorsDiesel.View
             this.btAcessar = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbSenha = new MetroFramework.Controls.MetroTextBox();
+            this.cbMostrarSenha = new MetroFramework.Controls.MetroCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +113,7 @@ namespace AplTruckMotorsDiesel.View
             this.tbSenha.Location = new System.Drawing.Point(71, 174);
             this.tbSenha.MaxLength = 32767;
             this.tbSenha.Name = "tbSenha";
-            this.tbSenha.PasswordChar = '\0';
+            this.tbSenha.PasswordChar = '*';
             this.tbSenha.PromptText = "Senha";
             this.tbSenha.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbSenha.SelectedText = "";
@@ -126,12 +127,24 @@ namespace AplTruckMotorsDiesel.View
             this.tbSenha.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbSenha.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // cbMostrarSenha
+            // 
+            this.cbMostrarSenha.AutoSize = true;
+            this.cbMostrarSenha.Location = new System.Drawing.Point(230, 179);
+            this.cbMostrarSenha.Name = "cbMostrarSenha";
+            this.cbMostrarSenha.Size = new System.Drawing.Size(64, 15);
+            this.cbMostrarSenha.TabIndex = 13;
+            this.cbMostrarSenha.Text = "Mostrar";
+            this.cbMostrarSenha.UseSelectable = true;
+            this.cbMostrarSenha.CheckedChanged += new System.EventHandler(this.cbMostrarSenha_CheckedChanged);
+            // 
             // Login
             // 
             this.AcceptButton = this.btAcessar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 243);
+            this.Controls.Add(this.cbMostrarSenha);
             this.Controls.Add(this.tbSenha);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btAcessar);
@@ -140,6 +153,7 @@ namespace AplTruckMotorsDiesel.View
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -149,5 +163,6 @@ namespace AplTruckMotorsDiesel.View
         private MetroFramework.Controls.MetroButton btAcessar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTextBox tbSenha;
+        private MetroFramework.Controls.MetroCheckBox cbMostrarSenha;
     }
 }
