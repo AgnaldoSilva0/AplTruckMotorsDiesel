@@ -42,7 +42,7 @@ namespace AplTruckMotorsDiesel.Model
         /// </summary>
         /// <param name="codigo">Codigo do item usado para pesquisar o mesmo no banco de dados</param>
         /// <returns></returns>
-        public static KitMotor retornaFichaTecnica(string codigo)
+        public static KitMotor retornaFichaTecnicaPorCodigo(string codigo)
         {
             KitMotor kitMotor = new KitMotor();
             string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
@@ -80,5 +80,45 @@ namespace AplTruckMotorsDiesel.Model
             }
             return kitMotor;
         }
+
+        public static KitMotor retornaFichaTecnicaPorId(string id)
+        {
+            KitMotor kitMotor = new KitMotor();
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                string query = "SELECT * FROM table_kitmotor WHERE id LIKE '" + id + "' ";
+
+                DataTable dados = new DataTable();
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    kitMotor = new KitMotor(Convert.ToString(row["codigo"]),
+                        Convert.ToString(row["itenskit"]),
+                        Convert.ToString(row["Marca"]),
+                        Convert.ToString(row["observacao"]));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return kitMotor;
+        }
+
     }
 }

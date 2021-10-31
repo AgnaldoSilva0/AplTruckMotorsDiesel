@@ -92,7 +92,7 @@ namespace AplTruckMotorsDiesel.Model_BD
             try
             {
                 DataTable dados = new DataTable();
-
+                
                 string query = "SELECT * FROM table_aplicacao " +
                     "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
                     "WHERE table_motor.modeloMotor LIKE '%" + itemSelecionado + "%' ";
@@ -107,28 +107,36 @@ namespace AplTruckMotorsDiesel.Model_BD
                     switch (objetoPeca)
                     {
                         case 1:
-                            lista.Add(new Pistao(Convert.ToString(row[idDoItemRetorno])));
+                            string idPistaoAplicacao = Convert.ToString(row["idPistao"]);
+                            lista.Add(new Pistao(Convert.ToString(Pistao.retornaFichaTecnicaPorId(idPistaoAplicacao).CodigoPistao)));
                             break;
                         case 2:
-                            lista.Add(new BronzinaBiela(Convert.ToString(row[idDoItemRetorno])));
+                            string idBBielaAplicacao = Convert.ToString(row["idBBiela"]);
+                            lista.Add(new BronzinaBiela(Convert.ToString(BronzinaBiela.retornaFichaTecnicaPorId(idBBielaAplicacao).CodigoBBiela)));
                             break;
                         case 3:
-                            lista.Add(new Junta(Convert.ToString(row[idDoItemRetorno])));
+                            string idJuntaAplicacao = Convert.ToString(row["idJunta"]);
+                            lista.Add(new Junta(Convert.ToString(Junta.retornaFichaTecnicaPorId(idJuntaAplicacao).CodigoJunta)));
                             break;
                         case 4:
-                            lista.Add(new Aneis(Convert.ToString(row[idDoItemRetorno])));
+                            string idAneisAplicacao = Convert.ToString(row["idAneis"]);
+                            lista.Add(new Aneis(Convert.ToString(Aneis.retornaFichaTecnicaPorId(idAneisAplicacao).CodigoAneis)));
                             break;
                         case 5:
-                            lista.Add(new BronzinaMancal(Convert.ToString(row[idDoItemRetorno])));
+                            string idBMancalAplicacao = Convert.ToString(row["idBMancal"]);
+                            lista.Add(new BronzinaMancal(Convert.ToString(BronzinaMancal.retornaFichaTecnicaPorId(idBMancalAplicacao).CodigoBMancal)));
                             break;
                         case 6:
-                            lista.Add(new BombaAgua(Convert.ToString(row[idDoItemRetorno])));
+                            string idBombaAguaAplicacao = Convert.ToString(row["idBombaAgua"]);
+                            lista.Add(new BombaAgua(Convert.ToString(BombaAgua.retornaFichaTecnicaPorId(idBombaAguaAplicacao).CodigoBombaAgua)));
                             break;
                         case 7:
-                            lista.Add(new BombaOleo(Convert.ToString(row[idDoItemRetorno])));
+                            string idBombaOleoAplicacao = Convert.ToString(row["idBombaOleo"]);
+                            lista.Add(new BombaOleo(Convert.ToString(BombaOleo.retornaFichaTecnicaPorId(idBombaOleoAplicacao).CodigoBombaOleo)));
                             break;
                         case 8:
-                            lista.Add(new KitMotor(Convert.ToString(row[idDoItemRetorno])));
+                            string idKitMotorAplicacao = Convert.ToString(row["idBombaOleo"]);
+                            lista.Add(new KitMotor(Convert.ToString(KitMotor.retornaFichaTecnicaPorId(idKitMotorAplicacao).CodigoKitMotor)));
                             break;
                     }
                     

@@ -42,7 +42,7 @@ namespace AplTruckMotorsDiesel.Model
         /// </summary>
         /// <param name="codigo">Codigo do item usado para pesquisar o mesmo no banco de dados</param>
         /// <returns></returns>
-        public static BombaAgua retornaFichaTecnica(string codigo)
+        public static BombaAgua retornaFichaTecnicaPorCodigo(string codigo)
         {
             BombaAgua bombaAgua = new BombaAgua();
             string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
@@ -81,5 +81,44 @@ namespace AplTruckMotorsDiesel.Model
             return bombaAgua;
         }
 
+        public static BombaAgua retornaFichaTecnicaPorId(string id)
+        {
+            BombaAgua bombaAgua = new BombaAgua();
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                string query = "SELECT * FROM table_bombaagua WHERE id LIKE '" + id + "' ";
+
+                DataTable dados = new DataTable();
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    bombaAgua = new BombaAgua(Convert.ToString(row["codigo"]),
+                        Convert.ToString(row["codigoOriginal"]),
+                        Convert.ToString(row["marca"]),
+                        Convert.ToString(row["observacao"]));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return bombaAgua;
+
+        }
     }
 }

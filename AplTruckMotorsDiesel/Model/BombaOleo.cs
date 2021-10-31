@@ -42,7 +42,7 @@ namespace AplTruckMotorsDiesel.Model
         /// </summary>
         /// <param name="codigo">Codigo do item usado para pesquisar o mesmo no banco de dados</param>
         /// <returns></returns>
-        public static BombaOleo retornaFichaTecnica(string codigo)
+        public static BombaOleo retornaFichaTecnicaPorCodigo(string codigo)
         {
             BombaOleo bombaOleo = new BombaOleo();
             string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
@@ -52,6 +52,45 @@ namespace AplTruckMotorsDiesel.Model
             try
             {
                 string query = "SELECT * FROM table_bombaoleo WHERE codigo LIKE '" + codigo + "' ";
+
+                DataTable dados = new DataTable();
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    bombaOleo = new BombaOleo(Convert.ToString(row["codigo"]),
+                        Convert.ToString(row["codigoOriginal"]),
+                        Convert.ToString(row["marca"]),
+                        Convert.ToString(row["observacao"]));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return bombaOleo;
+        }
+
+        public static BombaOleo retornaFichaTecnicaPorId(string id)
+        {
+            BombaOleo bombaOleo = new BombaOleo();
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                string query = "SELECT * FROM table_bombaoleo WHERE id LIKE '" + id + "' ";
 
                 DataTable dados = new DataTable();
 
