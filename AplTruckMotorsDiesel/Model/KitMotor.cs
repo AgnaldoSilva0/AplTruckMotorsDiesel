@@ -11,6 +11,7 @@ namespace AplTruckMotorsDiesel.Model
 {
     class KitMotor
     {
+        private string id;
         private string codigoKitMotor;
         private string itensKit;
         private string marca;
@@ -25,8 +26,10 @@ namespace AplTruckMotorsDiesel.Model
             this.codigoKitMotor = codigoKitMotor;
         }
 
-        public KitMotor(string codigoKitMotor, string itensKit, string marca, string observacao) : this(codigoKitMotor)
+        public KitMotor(string id, string codigoKitMotor, string itensKit, string marca, string observacao)
         {
+            this.id = id;
+            this.codigoKitMotor = codigoKitMotor;
             this.itensKit = itensKit;
             this.marca = marca;
             this.observacao = observacao;
@@ -36,6 +39,7 @@ namespace AplTruckMotorsDiesel.Model
         public string ItensKit { get => itensKit; set => itensKit = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Observacao { get => observacao; set => observacao = value; }
+        public string Id { get => id; set => id = value; }
 
         /// <summary>
         /// Método para retornar ficha tecnica do item, precisa passar o codigo como parametro
@@ -63,7 +67,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    kitMotor = new KitMotor(Convert.ToString(row["codigo"]),
+                    kitMotor = new KitMotor(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["itenskit"]),
                         Convert.ToString(row["Marca"]),
                         Convert.ToString(row["observacao"]));
@@ -102,7 +107,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    kitMotor = new KitMotor(Convert.ToString(row["codigo"]),
+                    kitMotor = new KitMotor(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["itenskit"]),
                         Convert.ToString(row["Marca"]),
                         Convert.ToString(row["observacao"]));

@@ -11,6 +11,7 @@ namespace AplTruckMotorsDiesel.Model
 {
     class BronzinaBiela
     {
+        private string id;
         private string codigoBBiela;
         private string codigoOriginal;
         private string marca;
@@ -25,8 +26,10 @@ namespace AplTruckMotorsDiesel.Model
             this.codigoBBiela = codigoBBiela;
         }
 
-        public BronzinaBiela(string codigoBBiela, string codigoOriginal, string marca, string observacao) : this(codigoBBiela)
+        public BronzinaBiela(string id, string codigoBBiela, string codigoOriginal, string marca, string observacao)
         {
+            this.id = id;
+            this.codigoBBiela = codigoBBiela;
             this.codigoOriginal = codigoOriginal;
             this.marca = marca;
             this.observacao = observacao;
@@ -36,6 +39,7 @@ namespace AplTruckMotorsDiesel.Model
         public string CodigoOriginal { get => codigoOriginal; set => codigoOriginal = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Observacao { get => observacao; set => observacao = value; }
+        public string Id { get => id; set => id = value; }
 
         /// <summary>
         /// Método para retornar ficha tecnica do item, precisa passar o codigo como parametro
@@ -63,7 +67,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    bronzinaBiela = new BronzinaBiela(Convert.ToString(row["codigo"]),
+                    bronzinaBiela = new BronzinaBiela(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["codigoOriginal"]),
                         Convert.ToString(row["marca"]),
                         Convert.ToString(row["observacao"]));
@@ -102,7 +107,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    bronzinaBiela = new BronzinaBiela(Convert.ToString(row["codigo"]),
+                    bronzinaBiela = new BronzinaBiela(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["codigoOriginal"]),
                         Convert.ToString(row["marca"]),
                         Convert.ToString(row["observacao"]));

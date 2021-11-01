@@ -11,6 +11,7 @@ namespace AplTruckMotorsDiesel.Model
 {
     class Aneis
     {
+        private string id;
         private string codigoAneis;
         private string codigoOriginal;
         private string marca;
@@ -25,8 +26,10 @@ namespace AplTruckMotorsDiesel.Model
             this.codigoAneis = codigoAneis;
         }
 
-        public Aneis(string codigoAneis, string codigoOriginal, string marca, string observacao) : this(codigoAneis)
+        public Aneis(string id, string codigoAneis, string codigoOriginal, string marca, string observacao)
         {
+            this.id = id;
+            this.codigoAneis = codigoAneis;
             this.codigoOriginal = codigoOriginal;
             this.marca = marca;
             this.observacao = observacao;
@@ -36,6 +39,8 @@ namespace AplTruckMotorsDiesel.Model
         public string CodigoOriginal { get => codigoOriginal; set => codigoOriginal = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Observacao { get => observacao; set => observacao = value; }
+        public string Id { get => id; set => id = value; }
+
 
 
         /// <summary>
@@ -64,7 +69,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    aneis = new Aneis(Convert.ToString(row["codigo"]),
+                    aneis = new Aneis(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["codigoOriginal"]),
                         Convert.ToString(row["marca"]),
                         Convert.ToString(row["observacao"]));
@@ -103,7 +109,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    aneis = new Aneis(Convert.ToString(row["codigo"]),
+                    aneis = new Aneis(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["codigoOriginal"]),
                         Convert.ToString(row["marca"]),
                         Convert.ToString(row["observacao"]));

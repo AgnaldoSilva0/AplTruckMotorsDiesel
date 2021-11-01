@@ -11,6 +11,7 @@ namespace AplTruckMotorsDiesel.Model
 {
     class Junta
     {
+        private string id; 
         private string codigoJunta;
         private string codigoOriginal;
         private string marca;
@@ -25,8 +26,10 @@ namespace AplTruckMotorsDiesel.Model
             this.codigoJunta = codigoJunta;
         }
 
-        public Junta(string codigoJunta, string codigoOriginal, string marca, string observacao) : this(codigoJunta)
+        public Junta(string id, string codigoJunta, string codigoOriginal, string marca, string observacao)
         {
+            this.id = id;
+            this.codigoJunta = codigoJunta;
             this.codigoOriginal = codigoOriginal;
             this.marca = marca;
             this.observacao = observacao;
@@ -36,6 +39,7 @@ namespace AplTruckMotorsDiesel.Model
         public string CodigoOriginal { get => codigoOriginal; set => codigoOriginal = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Observacao { get => observacao; set => observacao = value; }
+        public string Id { get => id; set => id = value; }
 
         /// <summary>
         /// Método para retornar ficha tecnica do item, precisa passar o codigo como parametro
@@ -63,7 +67,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    junta = new Junta(Convert.ToString(row["codigo"]),
+                    junta = new Junta(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["codigoOriginal"]),
                         Convert.ToString(row["marca"]),
                         Convert.ToString(row["observacao"]));
@@ -102,7 +107,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    junta = new Junta(Convert.ToString(row["codigo"]),
+                    junta = new Junta(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["codigoOriginal"]),
                         Convert.ToString(row["marca"]),
                         Convert.ToString(row["observacao"]));

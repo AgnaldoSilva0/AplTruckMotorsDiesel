@@ -28,7 +28,16 @@ namespace AplTruckMotorsDiesel.View
                 idMotor = item.IdMotor;
             }
 
-            Inserir.vincularPecas(idMotor, cbPistao.Text, cbAneis.Text, cbBbiela.Text, cbBmancal.Text, cbBagua.Text, cbBoleo.Text, cbJunta.Text, "NULL", cbKitMotor.Text);
+            string pistao = Pistao.retornaFichaTecnicaPorCodigo(cbPistao.Text).Id;
+            string aneis = Aneis.retornaFichaTecnicaPorCodigo(cbAneis.Text).Id;
+            string bBiela = BronzinaBiela.retornaFichaTecnicaPorCodigo(cbBbiela.Text).Id;
+            string bMancal = BronzinaMancal.retornaFichaTecnicaPorCodigo(cbBmancal.Text).Id;
+            string bAgua = BombaAgua.retornaFichaTecnicaPorCodigo(cbBagua.Text).Id;
+            string bOleo = BombaOleo.retornaFichaTecnicaPorCodigo(cbBoleo.Text).Id;
+            string junta = Junta.retornaFichaTecnicaPorCodigo(cbJunta.Text).Id;
+            string kitMotor = KitMotor.retornaFichaTecnicaPorCodigo(cbKitMotor.Text).Id;
+
+            Inserir.vincularPecas(idMotor, pistao, aneis, bBiela, bMancal, bAgua, bOleo, junta, "NULL", kitMotor);
         }
 
         /// <summary>

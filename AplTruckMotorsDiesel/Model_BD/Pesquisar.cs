@@ -95,7 +95,7 @@ namespace AplTruckMotorsDiesel.Model_BD
                 
                 string query = "SELECT * FROM table_aplicacao " +
                     "INNER JOIN table_motor ON table_aplicacao.idMotor = table_motor.id " +
-                    "WHERE table_motor.modeloMotor LIKE '%" + itemSelecionado + "%' ";
+                    "WHERE table_motor.modeloVeiculo LIKE '%" + itemSelecionado + "%' ";
 
                 SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
 

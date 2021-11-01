@@ -88,51 +88,75 @@ namespace AplTruckMotorsDiesel
 
         private void listViewMotor_MouseClick(object sender, MouseEventArgs e)
         {
-            string selecionado = listViewMotor.SelectedItems[0].SubItems[2].Text;
+            string selecionado = listViewMotor.SelectedItems[0].SubItems[1].Text;
             limparTodasListas();
 
             foreach (Pistao pistao in Pesquisar.retornaPeca("idPistao", selecionado, 1))
             {
-                listViewPistao.Items.Add(new ListViewItem(new string[] {
-                        Convert.ToString(pistao.CodigoPistao) }));
+                if (pistao.CodigoPistao != null)
+                {
+                    listViewPistao.Items.Add(new ListViewItem(new string[] {
+                                Convert.ToString(pistao.CodigoPistao) }));
+                }
+            }
 
-                foreach (BronzinaBiela bbiela in Pesquisar.retornaPeca("idBBiela", selecionado, 2))
+            foreach (BronzinaBiela bbiela in Pesquisar.retornaPeca("idBBiela", selecionado, 2))
+            {
+                if (bbiela.CodigoBBiela != null)
                 {
                     listViewBBiela.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(bbiela.CodigoBBiela) }));
                 }
+            }
 
-                foreach (Junta junta in Pesquisar.retornaPeca("idJunta",selecionado, 3))
+            foreach (Junta junta in Pesquisar.retornaPeca("idJunta", selecionado, 3))
+            {
+                if (junta.CodigoJunta != null)
                 {
                     listViewJunta.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(junta.CodigoJunta) }));
                 }
+            }
 
-                foreach (Aneis aneis in Pesquisar.retornaPeca("idAneis", selecionado, 4))
+            foreach (Aneis aneis in Pesquisar.retornaPeca("idAneis", selecionado, 4))
+            {
+                if (aneis.CodigoAneis != null)
                 {
                     listViewAneis.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(aneis.CodigoAneis) }));
                 }
+            }
 
-                foreach (BronzinaMancal bMancal in Pesquisar.retornaPeca("idBMancal", selecionado, 5))
+            foreach (BronzinaMancal bMancal in Pesquisar.retornaPeca("idBMancal", selecionado, 5))
+            {
+                if (bMancal.CodigoBMancal != null)
                 {
                     listViewBMancal.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(bMancal.CodigoBMancal) }));
                 }
+            }
 
-                foreach (BombaAgua bombaAgua in Pesquisar.retornaPeca("idBombaAgua", selecionado, 6))
+            foreach (BombaAgua bombaAgua in Pesquisar.retornaPeca("idBombaAgua", selecionado, 6))
+            {
+                if (bombaAgua.CodigoBombaAgua != null)
                 {
                     listViewBombaAgua.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(bombaAgua.CodigoBombaAgua) }));
                 }
+            }
 
-                foreach (BombaOleo bombaOleo in Pesquisar.retornaPeca("idBombaOleo", selecionado, 7))
+            foreach (BombaOleo bombaOleo in Pesquisar.retornaPeca("idBombaOleo", selecionado, 7))
+            {
+                if (bombaOleo.CodigoBombaOleo != null)
                 {
                     listViewBombaOleo.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(bombaOleo.CodigoBombaOleo) }));
                 }
+            }
 
-                foreach (KitMotor kitMotor in Pesquisar.retornaPeca("idKitMotor", selecionado, 8))
+            foreach (KitMotor kitMotor in Pesquisar.retornaPeca("idKitMotor", selecionado, 8))
+            {
+                if (kitMotor.CodigoKitMotor != null)
                 {
                     listViewKitMotor.Items.Add(new ListViewItem(new string[] {
                         Convert.ToString(kitMotor.CodigoKitMotor) }));
@@ -195,7 +219,8 @@ namespace AplTruckMotorsDiesel
             {
                 FichaTecnica fichaTecnica = new FichaTecnica(listViewBombaAgua.SelectedItems[0].Text, 3);
                 fichaTecnica.ShowDialog();
-            } catch(System.ArgumentOutOfRangeException)
+            }
+            catch (System.ArgumentOutOfRangeException)
             {
                 MessageBox.Show("Tente Novamente");
             }

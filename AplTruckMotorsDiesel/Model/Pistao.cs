@@ -11,6 +11,7 @@ namespace AplTruckMotorsDiesel.Model
 {
     class Pistao
     {
+        private string id;
         private string codigoPistao;
         private string codigoOriginal;
         private string marca;
@@ -20,6 +21,7 @@ namespace AplTruckMotorsDiesel.Model
         public string CodigoOriginal { get => codigoOriginal; set => codigoOriginal = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Observacao { get => observacao; set => observacao = value; }
+        public string Id { get => id; }
 
         public Pistao()
         {
@@ -30,12 +32,16 @@ namespace AplTruckMotorsDiesel.Model
             this.codigoPistao = codigoPistao;
         }
 
-        public Pistao(string codigoPistao, string codigoOriginal, string marca, string observacao) : this(codigoPistao)
+        public Pistao(string id, string codigoPistao, string codigoOriginal, string marca, string observacao)
         {
+            this.id = id;
+            this.codigoPistao = codigoPistao;
             this.codigoOriginal = codigoOriginal;
             this.marca = marca;
             this.observacao = observacao;
         }
+
+
 
         /// <summary>
         /// Método para retornar ficha tecnica do item, precisa passar o id como parametro
@@ -62,7 +68,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    pistao = new Pistao(Convert.ToString(row["codigoPistao"]),
+                    pistao = new Pistao(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["codigoOriginal"]),
                         Convert.ToString(row["marca"]),
                         Convert.ToString(row["observacao"]));
@@ -94,7 +101,7 @@ namespace AplTruckMotorsDiesel.Model
             SQLiteConnection conexao = new SQLiteConnection(strConection);
             try
             {
-                string query = "SELECT * FROM table_pistao WHERE codigoPistao LIKE '" + codigo + "' ";
+                string query = "SELECT * FROM table_pistao WHERE codigo LIKE '" + codigo + "' ";
 
                 DataTable dados = new DataTable();
 
@@ -106,7 +113,8 @@ namespace AplTruckMotorsDiesel.Model
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
-                    pistao = new Pistao(Convert.ToString(row["codigoPistao"]),
+                    pistao = new Pistao(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
                         Convert.ToString(row["codigoOriginal"]),
                         Convert.ToString(row["marca"]),
                         Convert.ToString(row["observacao"]));
