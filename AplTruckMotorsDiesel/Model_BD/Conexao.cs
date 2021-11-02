@@ -57,28 +57,28 @@ namespace AplTruckMotorsDiesel.Model_BD
 
                 comando.Connection = conexao;
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_aneis (codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (codigo)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_aneis (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bbiela (codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (codigo)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bbiela (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bmancal (codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (codigo)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bmancal (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bombaagua (codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (codigo)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bombaagua (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bombaoleo (codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (codigo)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bombaoleo (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_junta (codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (codigo)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_junta (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_kitmotor (codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (codigo)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_kitmotor (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_pistao (codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (codigo)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_pistao (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
                 comando.CommandText = "CREATE TABLE IF NOT EXISTS table_motor (id INTEGER, modeloVeiculo TEXT, modeloMotor TEXT, observacao TEXT, PRIMARY KEY (id)) ";
@@ -86,14 +86,14 @@ namespace AplTruckMotorsDiesel.Model_BD
 
                 comando.CommandText = "CREATE TABLE IF NOT EXISTS table_aplicacao " +
                     "(idMotor TEXT, idPistao TEXT, idAneis TEXT, idBBiela TEXT, idBMancal TEXT, idBombaAgua TEXT, idBombaOleo TEXT, idJunta TEXT, idobservacao TEXT, idKitMotor TEXT, " +
-                    "FOREIGN KEY(idJunta) REFERENCES table_junta(codigo), " +
-                    "FOREIGN KEY(idAneis) REFERENCES table_aneis(codigo), " +
-                    "FOREIGN KEY(idPistao) REFERENCES table_pistao(codigo), " +
+                    "FOREIGN KEY(idJunta) REFERENCES table_junta(id), " +
+                    "FOREIGN KEY(idAneis) REFERENCES table_aneis(id), " +
+                    "FOREIGN KEY(idPistao) REFERENCES table_pistao(id), " +
                     "FOREIGN KEY(idMotor) REFERENCES table_motor(id), " +
-                    "FOREIGN KEY(idBombaOleo) REFERENCES table_bombaoleo(codigo), " +
-                    "FOREIGN KEY(idBMancal) REFERENCES table_bmancal(codigo), " +
-                    "FOREIGN KEY(idBBiela) REFERENCES table_bbiela(codigo), " +
-                    "FOREIGN KEY(idBombaAgua) REFERENCES table_bombaagua(codigo)) ";
+                    "FOREIGN KEY(idBombaOleo) REFERENCES table_bombaoleo(id), " +
+                    "FOREIGN KEY(idBMancal) REFERENCES table_bmancal(id), " +
+                    "FOREIGN KEY(idBBiela) REFERENCES table_bbiela(id), " +
+                    "FOREIGN KEY(idBombaAgua) REFERENCES table_bombaagua(id)) ";
                 comando.ExecuteNonQuery();
 
                 MessageBox.Show("Tabela Criada ");
