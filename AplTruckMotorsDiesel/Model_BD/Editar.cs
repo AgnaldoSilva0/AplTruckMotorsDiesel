@@ -14,5 +14,20 @@ namespace AplTruckMotorsDiesel.Model_BD
                 " WHERE id LIKE '"+id+"' ";
             Conexao.ExecutarComandoSql(comando);
         }
+
+        public static void StringEditarItem(string tabela, int id, string codigo, string codigoOriginal, string marca, string observacao)
+        {
+            string comando = "UPDATE '"+ tabela +"' SET codigo = '" + codigo + "', codigoOriginal = '" + codigoOriginal + "', marca = '" + marca + "', observacao = '" + observacao + "' " +
+                            " WHERE id LIKE '" + id + "' ";
+            Conexao.ExecutarComandoSql(comando);
+        }
+
+        public static void StringEditarKitMotor(string tabela, int id, string codigo, string itensKit, string marca, string observacao)
+        {
+            string comando = "UPDATE table_kitmotor SET codigo = '" + codigo + "', itensKit = '" + itensKit + "', Marca = '" + marca + "', observacao = '" + observacao + "' " +
+                            " WHERE id LIKE '" + id + "' ";
+            Conexao.ExecutarComandoSql(comando);
+        }
+
     }
 }

@@ -307,7 +307,7 @@ namespace AplTruckMotorsDiesel
             switch (Program.VarGlobalPermissaoUsuario)
             {
                 case 1:
-                    lbTipoUsuario.Text = "Logado como Visitante";
+                    lbTipoUsuario.Text = "Logado como Visitante/Vendedor";
                     break;
                 case 2:
                     lbTipoUsuario.Text = "Logado como Comprador";
@@ -317,7 +317,5 @@ namespace AplTruckMotorsDiesel
                     break;
             }
         }
-
     }
-
 }

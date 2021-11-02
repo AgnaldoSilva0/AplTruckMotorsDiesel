@@ -334,7 +334,7 @@ namespace AplTruckMotorsDiesel
             this.metroLabel2.Size = new System.Drawing.Size(92, 15);
             this.metroLabel2.Style = MetroFramework.MetroColorStyle.Magenta;
             this.metroLabel2.TabIndex = 12;
-            this.metroLabel2.Text = "Agnaldo Silva 2.0";
+            this.metroLabel2.Text = "Agnaldo Silva 4.2";
             // 
             // pictureBox4
             // 
