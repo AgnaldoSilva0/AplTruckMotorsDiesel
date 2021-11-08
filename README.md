@@ -17,4 +17,4 @@ Definições:
  
  - Depedência: Icones, fornecidos junto ao instalador
 
-![Imagem](https://prnt.sc/1ytjq9m)
+ - Interface: https://prnt.sc/1ytjq9m
