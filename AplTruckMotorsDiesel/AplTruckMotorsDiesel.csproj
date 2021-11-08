@@ -116,6 +116,12 @@
     <Compile Include="View\GerenciarUsuarios.Designer.cs">
       <DependentUpon>GerenciarUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ListarItens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ListarItens.Designer.cs">
+      <DependentUpon>ListarItens.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="View\GerenciarUsuarios.resx">
       <DependentUpon>GerenciarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ListarItens.resx">
+      <DependentUpon>ListarItens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
