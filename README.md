@@ -16,3 +16,5 @@ Definições:
  - Banco de Dados: SQLite
  
  - Depedência: Icones, fornecidos junto ao instalador
+
+![alt text](https://prnt.sc/1ytjq9m)
