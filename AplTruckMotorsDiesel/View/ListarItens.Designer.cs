@@ -29,15 +29,15 @@ namespace AplTruckMotorsDiesel.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.btKitMotor = new MetroFramework.Controls.MetroButton();
-            this.btCadastrarMotor = new MetroFramework.Controls.MetroButton();
-            this.btAneis = new MetroFramework.Controls.MetroButton();
-            this.btNovoBAgua = new MetroFramework.Controls.MetroButton();
-            this.btNovoBOleo = new MetroFramework.Controls.MetroButton();
-            this.btNovoJunta = new MetroFramework.Controls.MetroButton();
-            this.btNovoBMancal = new MetroFramework.Controls.MetroButton();
-            this.btNovoBBiela = new MetroFramework.Controls.MetroButton();
-            this.btNovoPistao = new MetroFramework.Controls.MetroButton();
+            this.btListarKitMotor = new MetroFramework.Controls.MetroButton();
+            this.btListarMotor = new MetroFramework.Controls.MetroButton();
+            this.btListarAneis = new MetroFramework.Controls.MetroButton();
+            this.btListarBAgua = new MetroFramework.Controls.MetroButton();
+            this.btListarBOleo = new MetroFramework.Controls.MetroButton();
+            this.btListarJunta = new MetroFramework.Controls.MetroButton();
+            this.btListarBMancal = new MetroFramework.Controls.MetroButton();
+            this.btListarBBiela = new MetroFramework.Controls.MetroButton();
+            this.btListarPistao = new MetroFramework.Controls.MetroButton();
             this.listViewItens = new System.Windows.Forms.ListView();
             this.clmId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmCodigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,140 +48,141 @@ namespace AplTruckMotorsDiesel.View
             this.btExcluirRegistro = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // btKitMotor
+            // btListarKitMotor
             // 
-            this.btKitMotor.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btKitMotor.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btKitMotor.ForeColor = System.Drawing.SystemColors.Control;
-            this.btKitMotor.Location = new System.Drawing.Point(23, 319);
-            this.btKitMotor.Name = "btKitMotor";
-            this.btKitMotor.Size = new System.Drawing.Size(153, 26);
-            this.btKitMotor.TabIndex = 27;
-            this.btKitMotor.Text = "Kit Motor";
-            this.btKitMotor.UseCustomBackColor = true;
-            this.btKitMotor.UseCustomForeColor = true;
-            this.btKitMotor.UseSelectable = true;
-            this.btKitMotor.UseStyleColors = true;
+            this.btListarKitMotor.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btListarKitMotor.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btListarKitMotor.ForeColor = System.Drawing.SystemColors.Control;
+            this.btListarKitMotor.Location = new System.Drawing.Point(23, 319);
+            this.btListarKitMotor.Name = "btListarKitMotor";
+            this.btListarKitMotor.Size = new System.Drawing.Size(153, 26);
+            this.btListarKitMotor.TabIndex = 27;
+            this.btListarKitMotor.Text = "Kit Motor";
+            this.btListarKitMotor.UseCustomBackColor = true;
+            this.btListarKitMotor.UseCustomForeColor = true;
+            this.btListarKitMotor.UseSelectable = true;
+            this.btListarKitMotor.UseStyleColors = true;
             // 
-            // btCadastrarMotor
+            // btListarMotor
             // 
-            this.btCadastrarMotor.BackColor = System.Drawing.Color.Green;
-            this.btCadastrarMotor.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btCadastrarMotor.ForeColor = System.Drawing.SystemColors.Control;
-            this.btCadastrarMotor.Location = new System.Drawing.Point(23, 63);
-            this.btCadastrarMotor.Name = "btCadastrarMotor";
-            this.btCadastrarMotor.Size = new System.Drawing.Size(153, 26);
-            this.btCadastrarMotor.TabIndex = 26;
-            this.btCadastrarMotor.Text = "Motor";
-            this.btCadastrarMotor.UseCustomBackColor = true;
-            this.btCadastrarMotor.UseCustomForeColor = true;
-            this.btCadastrarMotor.UseSelectable = true;
-            this.btCadastrarMotor.UseStyleColors = true;
+            this.btListarMotor.BackColor = System.Drawing.Color.Green;
+            this.btListarMotor.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btListarMotor.ForeColor = System.Drawing.SystemColors.Control;
+            this.btListarMotor.Location = new System.Drawing.Point(23, 63);
+            this.btListarMotor.Name = "btListarMotor";
+            this.btListarMotor.Size = new System.Drawing.Size(153, 26);
+            this.btListarMotor.TabIndex = 26;
+            this.btListarMotor.Text = "Motor";
+            this.btListarMotor.UseCustomBackColor = true;
+            this.btListarMotor.UseCustomForeColor = true;
+            this.btListarMotor.UseSelectable = true;
+            this.btListarMotor.UseStyleColors = true;
             // 
-            // btAneis
+            // btListarAneis
             // 
-            this.btAneis.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btAneis.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btAneis.ForeColor = System.Drawing.SystemColors.Control;
-            this.btAneis.Location = new System.Drawing.Point(23, 287);
-            this.btAneis.Name = "btAneis";
-            this.btAneis.Size = new System.Drawing.Size(153, 26);
-            this.btAneis.TabIndex = 25;
-            this.btAneis.Text = "Anéis";
-            this.btAneis.UseCustomBackColor = true;
-            this.btAneis.UseCustomForeColor = true;
-            this.btAneis.UseSelectable = true;
-            this.btAneis.UseStyleColors = true;
+            this.btListarAneis.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btListarAneis.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btListarAneis.ForeColor = System.Drawing.SystemColors.Control;
+            this.btListarAneis.Location = new System.Drawing.Point(23, 287);
+            this.btListarAneis.Name = "btListarAneis";
+            this.btListarAneis.Size = new System.Drawing.Size(153, 26);
+            this.btListarAneis.TabIndex = 25;
+            this.btListarAneis.Text = "Anéis";
+            this.btListarAneis.UseCustomBackColor = true;
+            this.btListarAneis.UseCustomForeColor = true;
+            this.btListarAneis.UseSelectable = true;
+            this.btListarAneis.UseStyleColors = true;
             // 
-            // btNovoBAgua
+            // btListarBAgua
             // 
-            this.btNovoBAgua.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btNovoBAgua.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btNovoBAgua.ForeColor = System.Drawing.SystemColors.Control;
-            this.btNovoBAgua.Location = new System.Drawing.Point(23, 254);
-            this.btNovoBAgua.Name = "btNovoBAgua";
-            this.btNovoBAgua.Size = new System.Drawing.Size(153, 26);
-            this.btNovoBAgua.TabIndex = 24;
-            this.btNovoBAgua.Text = "Bomba Agua";
-            this.btNovoBAgua.UseCustomBackColor = true;
-            this.btNovoBAgua.UseCustomForeColor = true;
-            this.btNovoBAgua.UseSelectable = true;
-            this.btNovoBAgua.UseStyleColors = true;
+            this.btListarBAgua.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btListarBAgua.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btListarBAgua.ForeColor = System.Drawing.SystemColors.Control;
+            this.btListarBAgua.Location = new System.Drawing.Point(23, 254);
+            this.btListarBAgua.Name = "btListarBAgua";
+            this.btListarBAgua.Size = new System.Drawing.Size(153, 26);
+            this.btListarBAgua.TabIndex = 24;
+            this.btListarBAgua.Text = "Bomba Agua";
+            this.btListarBAgua.UseCustomBackColor = true;
+            this.btListarBAgua.UseCustomForeColor = true;
+            this.btListarBAgua.UseSelectable = true;
+            this.btListarBAgua.UseStyleColors = true;
             // 
-            // btNovoBOleo
+            // btListarBOleo
             // 
-            this.btNovoBOleo.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btNovoBOleo.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btNovoBOleo.ForeColor = System.Drawing.SystemColors.Control;
-            this.btNovoBOleo.Location = new System.Drawing.Point(23, 222);
-            this.btNovoBOleo.Name = "btNovoBOleo";
-            this.btNovoBOleo.Size = new System.Drawing.Size(153, 26);
-            this.btNovoBOleo.TabIndex = 23;
-            this.btNovoBOleo.Text = "Bomba Oleo";
-            this.btNovoBOleo.UseCustomBackColor = true;
-            this.btNovoBOleo.UseCustomForeColor = true;
-            this.btNovoBOleo.UseSelectable = true;
-            this.btNovoBOleo.UseStyleColors = true;
+            this.btListarBOleo.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btListarBOleo.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btListarBOleo.ForeColor = System.Drawing.SystemColors.Control;
+            this.btListarBOleo.Location = new System.Drawing.Point(23, 222);
+            this.btListarBOleo.Name = "btListarBOleo";
+            this.btListarBOleo.Size = new System.Drawing.Size(153, 26);
+            this.btListarBOleo.TabIndex = 23;
+            this.btListarBOleo.Text = "Bomba Oleo";
+            this.btListarBOleo.UseCustomBackColor = true;
+            this.btListarBOleo.UseCustomForeColor = true;
+            this.btListarBOleo.UseSelectable = true;
+            this.btListarBOleo.UseStyleColors = true;
             // 
-            // btNovoJunta
+            // btListarJunta
             // 
-            this.btNovoJunta.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btNovoJunta.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btNovoJunta.ForeColor = System.Drawing.SystemColors.Control;
-            this.btNovoJunta.Location = new System.Drawing.Point(23, 190);
-            this.btNovoJunta.Name = "btNovoJunta";
-            this.btNovoJunta.Size = new System.Drawing.Size(153, 26);
-            this.btNovoJunta.TabIndex = 22;
-            this.btNovoJunta.Text = "Junta";
-            this.btNovoJunta.UseCustomBackColor = true;
-            this.btNovoJunta.UseCustomForeColor = true;
-            this.btNovoJunta.UseSelectable = true;
-            this.btNovoJunta.UseStyleColors = true;
+            this.btListarJunta.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btListarJunta.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btListarJunta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btListarJunta.Location = new System.Drawing.Point(23, 190);
+            this.btListarJunta.Name = "btListarJunta";
+            this.btListarJunta.Size = new System.Drawing.Size(153, 26);
+            this.btListarJunta.TabIndex = 22;
+            this.btListarJunta.Text = "Junta";
+            this.btListarJunta.UseCustomBackColor = true;
+            this.btListarJunta.UseCustomForeColor = true;
+            this.btListarJunta.UseSelectable = true;
+            this.btListarJunta.UseStyleColors = true;
             // 
-            // btNovoBMancal
+            // btListarBMancal
             // 
-            this.btNovoBMancal.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btNovoBMancal.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btNovoBMancal.ForeColor = System.Drawing.SystemColors.Control;
-            this.btNovoBMancal.Location = new System.Drawing.Point(23, 158);
-            this.btNovoBMancal.Name = "btNovoBMancal";
-            this.btNovoBMancal.Size = new System.Drawing.Size(153, 26);
-            this.btNovoBMancal.TabIndex = 21;
-            this.btNovoBMancal.Text = "B.Mancal";
-            this.btNovoBMancal.UseCustomBackColor = true;
-            this.btNovoBMancal.UseCustomForeColor = true;
-            this.btNovoBMancal.UseSelectable = true;
-            this.btNovoBMancal.UseStyleColors = true;
+            this.btListarBMancal.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btListarBMancal.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btListarBMancal.ForeColor = System.Drawing.SystemColors.Control;
+            this.btListarBMancal.Location = new System.Drawing.Point(23, 158);
+            this.btListarBMancal.Name = "btListarBMancal";
+            this.btListarBMancal.Size = new System.Drawing.Size(153, 26);
+            this.btListarBMancal.TabIndex = 21;
+            this.btListarBMancal.Text = "B.Mancal";
+            this.btListarBMancal.UseCustomBackColor = true;
+            this.btListarBMancal.UseCustomForeColor = true;
+            this.btListarBMancal.UseSelectable = true;
+            this.btListarBMancal.UseStyleColors = true;
             // 
-            // btNovoBBiela
+            // btListarBBiela
             // 
-            this.btNovoBBiela.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btNovoBBiela.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btNovoBBiela.ForeColor = System.Drawing.SystemColors.Control;
-            this.btNovoBBiela.Location = new System.Drawing.Point(23, 126);
-            this.btNovoBBiela.Name = "btNovoBBiela";
-            this.btNovoBBiela.Size = new System.Drawing.Size(153, 26);
-            this.btNovoBBiela.TabIndex = 20;
-            this.btNovoBBiela.Text = "B.Biela";
-            this.btNovoBBiela.UseCustomBackColor = true;
-            this.btNovoBBiela.UseCustomForeColor = true;
-            this.btNovoBBiela.UseSelectable = true;
-            this.btNovoBBiela.UseStyleColors = true;
+            this.btListarBBiela.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btListarBBiela.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btListarBBiela.ForeColor = System.Drawing.SystemColors.Control;
+            this.btListarBBiela.Location = new System.Drawing.Point(23, 126);
+            this.btListarBBiela.Name = "btListarBBiela";
+            this.btListarBBiela.Size = new System.Drawing.Size(153, 26);
+            this.btListarBBiela.TabIndex = 20;
+            this.btListarBBiela.Text = "B.Biela";
+            this.btListarBBiela.UseCustomBackColor = true;
+            this.btListarBBiela.UseCustomForeColor = true;
+            this.btListarBBiela.UseSelectable = true;
+            this.btListarBBiela.UseStyleColors = true;
             // 
-            // btNovoPistao
+            // btListarPistao
             // 
-            this.btNovoPistao.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btNovoPistao.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btNovoPistao.ForeColor = System.Drawing.SystemColors.Control;
-            this.btNovoPistao.Location = new System.Drawing.Point(23, 94);
-            this.btNovoPistao.Name = "btNovoPistao";
-            this.btNovoPistao.Size = new System.Drawing.Size(153, 26);
-            this.btNovoPistao.TabIndex = 19;
-            this.btNovoPistao.Text = "Pistão";
-            this.btNovoPistao.UseCustomBackColor = true;
-            this.btNovoPistao.UseCustomForeColor = true;
-            this.btNovoPistao.UseSelectable = true;
-            this.btNovoPistao.UseStyleColors = true;
+            this.btListarPistao.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btListarPistao.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btListarPistao.ForeColor = System.Drawing.SystemColors.Control;
+            this.btListarPistao.Location = new System.Drawing.Point(23, 94);
+            this.btListarPistao.Name = "btListarPistao";
+            this.btListarPistao.Size = new System.Drawing.Size(153, 26);
+            this.btListarPistao.TabIndex = 19;
+            this.btListarPistao.Text = "Pistão";
+            this.btListarPistao.UseCustomBackColor = true;
+            this.btListarPistao.UseCustomForeColor = true;
+            this.btListarPistao.UseSelectable = true;
+            this.btListarPistao.UseStyleColors = true;
+            this.btListarPistao.Click += new System.EventHandler(this.btListarPistao_Click);
             // 
             // listViewItens
             // 
@@ -266,15 +267,15 @@ namespace AplTruckMotorsDiesel.View
             this.Controls.Add(this.btExcluirRegistro);
             this.Controls.Add(this.btEditarRegistro);
             this.Controls.Add(this.listViewItens);
-            this.Controls.Add(this.btKitMotor);
-            this.Controls.Add(this.btCadastrarMotor);
-            this.Controls.Add(this.btAneis);
-            this.Controls.Add(this.btNovoBAgua);
-            this.Controls.Add(this.btNovoBOleo);
-            this.Controls.Add(this.btNovoJunta);
-            this.Controls.Add(this.btNovoBMancal);
-            this.Controls.Add(this.btNovoBBiela);
-            this.Controls.Add(this.btNovoPistao);
+            this.Controls.Add(this.btListarKitMotor);
+            this.Controls.Add(this.btListarMotor);
+            this.Controls.Add(this.btListarAneis);
+            this.Controls.Add(this.btListarBAgua);
+            this.Controls.Add(this.btListarBOleo);
+            this.Controls.Add(this.btListarJunta);
+            this.Controls.Add(this.btListarBMancal);
+            this.Controls.Add(this.btListarBBiela);
+            this.Controls.Add(this.btListarPistao);
             this.Name = "ListarItens";
             this.Text = "ListarItens";
             this.ResumeLayout(false);
@@ -283,15 +284,15 @@ namespace AplTruckMotorsDiesel.View
 
         #endregion
 
-        private MetroFramework.Controls.MetroButton btKitMotor;
-        private MetroFramework.Controls.MetroButton btCadastrarMotor;
-        private MetroFramework.Controls.MetroButton btAneis;
-        private MetroFramework.Controls.MetroButton btNovoBAgua;
-        private MetroFramework.Controls.MetroButton btNovoBOleo;
-        private MetroFramework.Controls.MetroButton btNovoJunta;
-        private MetroFramework.Controls.MetroButton btNovoBMancal;
-        private MetroFramework.Controls.MetroButton btNovoBBiela;
-        private MetroFramework.Controls.MetroButton btNovoPistao;
+        private MetroFramework.Controls.MetroButton btListarKitMotor;
+        private MetroFramework.Controls.MetroButton btListarMotor;
+        private MetroFramework.Controls.MetroButton btListarAneis;
+        private MetroFramework.Controls.MetroButton btListarBAgua;
+        private MetroFramework.Controls.MetroButton btListarBOleo;
+        private MetroFramework.Controls.MetroButton btListarJunta;
+        private MetroFramework.Controls.MetroButton btListarBMancal;
+        private MetroFramework.Controls.MetroButton btListarBBiela;
+        private MetroFramework.Controls.MetroButton btListarPistao;
         private System.Windows.Forms.ListView listViewItens;
         private System.Windows.Forms.ColumnHeader clmId;
         private System.Windows.Forms.ColumnHeader clmCodigo;

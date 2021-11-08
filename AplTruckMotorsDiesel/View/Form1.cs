@@ -322,5 +322,11 @@ namespace AplTruckMotorsDiesel
         {
             this.Close();
         }
+
+        private void metroButton1_Click_1(object sender, EventArgs e)
+        {
+            ListarItens listarItens = new ListarItens();
+            listarItens.ShowDialog();
+        }
     }
 }
