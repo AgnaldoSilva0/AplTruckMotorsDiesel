@@ -126,5 +126,45 @@ namespace AplTruckMotorsDiesel.Model
             return bombaOleo;
         }
 
+        public static List<BombaOleo> retornaTodosBombaOleo()
+        {
+            List<BombaOleo> lista = new List<BombaOleo>();
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                string query = "SELECT * FROM table_bombaoleo";
+
+                DataTable dados = new DataTable();
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    lista.Add(new BombaOleo(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
+                        Convert.ToString(row["codigoOriginal"]),
+                        Convert.ToString(row["marca"]),
+                        Convert.ToString(row["observacao"])));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lista;
+        }
+
     }
 }

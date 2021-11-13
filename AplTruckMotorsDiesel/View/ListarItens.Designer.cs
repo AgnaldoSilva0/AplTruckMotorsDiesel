@@ -62,6 +62,7 @@ namespace AplTruckMotorsDiesel.View
             this.btListarKitMotor.UseCustomForeColor = true;
             this.btListarKitMotor.UseSelectable = true;
             this.btListarKitMotor.UseStyleColors = true;
+            this.btListarKitMotor.Click += new System.EventHandler(this.btListarKitMotor_Click);
             // 
             // btListarMotor
             // 
@@ -77,6 +78,7 @@ namespace AplTruckMotorsDiesel.View
             this.btListarMotor.UseCustomForeColor = true;
             this.btListarMotor.UseSelectable = true;
             this.btListarMotor.UseStyleColors = true;
+            this.btListarMotor.Click += new System.EventHandler(this.btListarMotor_Click);
             // 
             // btListarAneis
             // 
@@ -92,6 +94,7 @@ namespace AplTruckMotorsDiesel.View
             this.btListarAneis.UseCustomForeColor = true;
             this.btListarAneis.UseSelectable = true;
             this.btListarAneis.UseStyleColors = true;
+            this.btListarAneis.Click += new System.EventHandler(this.btListarAneis_Click);
             // 
             // btListarBAgua
             // 
@@ -107,6 +110,7 @@ namespace AplTruckMotorsDiesel.View
             this.btListarBAgua.UseCustomForeColor = true;
             this.btListarBAgua.UseSelectable = true;
             this.btListarBAgua.UseStyleColors = true;
+            this.btListarBAgua.Click += new System.EventHandler(this.btListarBAgua_Click);
             // 
             // btListarBOleo
             // 
@@ -122,6 +126,7 @@ namespace AplTruckMotorsDiesel.View
             this.btListarBOleo.UseCustomForeColor = true;
             this.btListarBOleo.UseSelectable = true;
             this.btListarBOleo.UseStyleColors = true;
+            this.btListarBOleo.Click += new System.EventHandler(this.btListarBOleo_Click);
             // 
             // btListarJunta
             // 
@@ -137,6 +142,7 @@ namespace AplTruckMotorsDiesel.View
             this.btListarJunta.UseCustomForeColor = true;
             this.btListarJunta.UseSelectable = true;
             this.btListarJunta.UseStyleColors = true;
+            this.btListarJunta.Click += new System.EventHandler(this.btListarJunta_Click);
             // 
             // btListarBMancal
             // 
@@ -152,6 +158,7 @@ namespace AplTruckMotorsDiesel.View
             this.btListarBMancal.UseCustomForeColor = true;
             this.btListarBMancal.UseSelectable = true;
             this.btListarBMancal.UseStyleColors = true;
+            this.btListarBMancal.Click += new System.EventHandler(this.btListarBMancal_Click);
             // 
             // btListarBBiela
             // 
@@ -167,6 +174,7 @@ namespace AplTruckMotorsDiesel.View
             this.btListarBBiela.UseCustomForeColor = true;
             this.btListarBBiela.UseSelectable = true;
             this.btListarBBiela.UseStyleColors = true;
+            this.btListarBBiela.Click += new System.EventHandler(this.btListarBBiela_Click);
             // 
             // btListarPistao
             // 
@@ -192,8 +200,10 @@ namespace AplTruckMotorsDiesel.View
             this.clmCodigoOriginal,
             this.clmMarca,
             this.clmObservacao});
+            this.listViewItens.FullRowSelect = true;
             this.listViewItens.HideSelection = false;
             this.listViewItens.Location = new System.Drawing.Point(182, 63);
+            this.listViewItens.MultiSelect = false;
             this.listViewItens.Name = "listViewItens";
             this.listViewItens.Size = new System.Drawing.Size(701, 282);
             this.listViewItens.TabIndex = 28;

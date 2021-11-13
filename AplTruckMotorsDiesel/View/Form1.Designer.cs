@@ -905,6 +905,7 @@ namespace AplTruckMotorsDiesel
             this.Controls.Add(this.tbMotor);
             this.Controls.Add(this.tbFonte);
             this.Controls.Add(this.listViewMotor);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Aplicação Diesel Motors";
             this.Load += new System.EventHandler(this.Form1_Load);

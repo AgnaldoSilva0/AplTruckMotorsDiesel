@@ -126,5 +126,45 @@ namespace AplTruckMotorsDiesel.Model
             return bronzinaMancal;
         }
 
+        public static List<BronzinaMancal> retornaTodosBronzinaMancal()
+        {
+            List<BronzinaMancal> lista = new List<BronzinaMancal>();
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                string query = "SELECT * FROM table_bmancal";
+
+                DataTable dados = new DataTable();
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    lista.Add(new BronzinaMancal(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
+                        Convert.ToString(row["codigoOriginal"]),
+                        Convert.ToString(row["marca"]),
+                        Convert.ToString(row["observacao"])));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lista;
+        }
+
     }
 }

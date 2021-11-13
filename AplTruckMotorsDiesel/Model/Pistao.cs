@@ -57,6 +57,7 @@ namespace AplTruckMotorsDiesel.Model
             try
             {
                 string query = "SELECT * FROM table_pistao WHERE id LIKE '" + id + "' ";
+                //Implementar reaproveitamento de código com a lista por codigo
 
                 DataTable dados = new DataTable();
 

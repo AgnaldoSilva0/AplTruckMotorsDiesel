@@ -125,6 +125,45 @@ namespace AplTruckMotorsDiesel.Model
             }
             return kitMotor;
         }
+        public static List<KitMotor> retornaTodosKitMotor()
+        {
+            List<KitMotor> lista = new List<KitMotor>();
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                string query = "SELECT * FROM table_kitmotor";
+
+                DataTable dados = new DataTable();
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    lista.Add(new KitMotor(Convert.ToString(row["id"]),
+                        Convert.ToString(row["codigo"]),
+                        Convert.ToString(row["itenskit"]),
+                        Convert.ToString(row["Marca"]),
+                        Convert.ToString(row["observacao"])));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lista;
+        }
 
     }
 }

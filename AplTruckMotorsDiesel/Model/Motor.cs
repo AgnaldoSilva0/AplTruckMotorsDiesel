@@ -80,5 +80,44 @@ namespace AplTruckMotorsDiesel.Model
             return pistao;
         }
 
+        public static List<Motor> retornaTodosMotor()
+        {
+            List<Motor> lista = new List<Motor>();
+            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                string query = "SELECT * FROM table_motor";
+
+                DataTable dados = new DataTable();
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    lista.Add(new Motor(Convert.ToInt32(row["id"]),
+                        Convert.ToString(row["modeloVeiculo"]),
+                        Convert.ToString(row["modeloMotor"]),
+                        Convert.ToString(row["observacao"])));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lista;
+        }
+
     }
 }
