@@ -149,6 +149,7 @@ namespace AplTruckMotorsDiesel.View
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btAcessar);
             this.Controls.Add(this.tbUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
