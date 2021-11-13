@@ -14,11 +14,6 @@ namespace AplTruckMotorsDiesel.View
 {
     public partial class FichaTecnica : MetroFramework.Forms.MetroForm
     {
-        public FichaTecnica()
-        {
-            InitializeComponent();
-        }
-
         public FichaTecnica(string codigoItem, int operacao)
         {
             InitializeComponent();

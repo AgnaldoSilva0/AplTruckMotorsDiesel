@@ -325,8 +325,14 @@ namespace AplTruckMotorsDiesel
 
         private void metroButton1_Click_1(object sender, EventArgs e)
         {
-            ListarItens listarItens = new ListarItens();
-            listarItens.ShowDialog();
+            if (Program.VarGlobalPermissaoUsuario >= 2)
+            {
+                ListarItens listarItens = new ListarItens();
+                listarItens.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Usuário não permitido para essa ação");
+            }
         }
     }
 }

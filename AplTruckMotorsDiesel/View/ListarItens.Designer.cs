@@ -253,6 +253,7 @@ namespace AplTruckMotorsDiesel.View
             this.btEditarRegistro.UseCustomForeColor = true;
             this.btEditarRegistro.UseSelectable = true;
             this.btEditarRegistro.UseStyleColors = true;
+            this.btEditarRegistro.Click += new System.EventHandler(this.btEditarRegistro_Click);
             // 
             // btExcluirRegistro
             // 
@@ -268,6 +269,7 @@ namespace AplTruckMotorsDiesel.View
             this.btExcluirRegistro.UseCustomForeColor = true;
             this.btExcluirRegistro.UseSelectable = true;
             this.btExcluirRegistro.UseStyleColors = true;
+            this.btExcluirRegistro.Click += new System.EventHandler(this.btExcluirRegistro_Click);
             // 
             // ListarItens
             // 
