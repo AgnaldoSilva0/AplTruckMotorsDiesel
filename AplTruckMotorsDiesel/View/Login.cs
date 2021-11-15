@@ -80,5 +80,11 @@ namespace AplTruckMotorsDiesel.View
                 Console.WriteLine("d");
             }
         }
+
+        private void lbCriarUsuario_Click(object sender, EventArgs e)
+        {
+            NovoUsuario novoUsuario = new NovoUsuario("Novo usuário visitante");
+            novoUsuario.ShowDialog();
+        }
     }
 }

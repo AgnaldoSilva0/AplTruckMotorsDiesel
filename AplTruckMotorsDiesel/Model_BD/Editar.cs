@@ -28,13 +28,5 @@ namespace AplTruckMotorsDiesel.Model_BD
                             " WHERE id LIKE '" + id + "' ";
             Conexao.ExecutarComandoSql(comando);
         }
-
-        public static void StringEditarAplicacao(int id, string coluna)
-        {
-            Console.WriteLine(id);
-            string comando = "UPDATE table_aplicacao SET idPistao = 1 " +
-                            " WHERE idPistao LIKE '" + id + "' ";
-            Conexao.ExecutarComandoSql(comando);
-        }
     }
 }

@@ -35,6 +35,7 @@ namespace AplTruckMotorsDiesel.View
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbSenha = new MetroFramework.Controls.MetroTextBox();
             this.cbMostrarSenha = new MetroFramework.Controls.MetroCheckBox();
+            this.lbCriarUsuario = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,12 +139,25 @@ namespace AplTruckMotorsDiesel.View
             this.cbMostrarSenha.UseSelectable = true;
             this.cbMostrarSenha.CheckedChanged += new System.EventHandler(this.cbMostrarSenha_CheckedChanged);
             // 
+            // lbCriarUsuario
+            // 
+            this.lbCriarUsuario.AutoSize = true;
+            this.lbCriarUsuario.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbCriarUsuario.Location = new System.Drawing.Point(228, 144);
+            this.lbCriarUsuario.Name = "lbCriarUsuario";
+            this.lbCriarUsuario.Size = new System.Drawing.Size(38, 19);
+            this.lbCriarUsuario.TabIndex = 14;
+            this.lbCriarUsuario.Text = "Criar";
+            this.lbCriarUsuario.UseCustomForeColor = true;
+            this.lbCriarUsuario.Click += new System.EventHandler(this.lbCriarUsuario_Click);
+            // 
             // Login
             // 
             this.AcceptButton = this.btAcessar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 243);
+            this.Controls.Add(this.lbCriarUsuario);
             this.Controls.Add(this.cbMostrarSenha);
             this.Controls.Add(this.tbSenha);
             this.Controls.Add(this.pictureBox1);
@@ -165,5 +179,6 @@ namespace AplTruckMotorsDiesel.View
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTextBox tbSenha;
         private MetroFramework.Controls.MetroCheckBox cbMostrarSenha;
+        private MetroFramework.Controls.MetroLabel lbCriarUsuario;
     }
 }

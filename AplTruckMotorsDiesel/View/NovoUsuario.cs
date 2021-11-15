@@ -18,6 +18,15 @@ namespace AplTruckMotorsDiesel.View
             InitializeComponent();
         }
 
+        public NovoUsuario(string novousuariovisitante)
+        {
+            InitializeComponent();
+            MessageBox.Show("Para criar usuário com permissões é necessário o login como administrador");
+            cbPermissao.SelectedIndex = 0;
+            cbPermissao.Items.RemoveAt(1);
+            cbPermissao.Items.RemoveAt(1);
+        }
+
         private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
             if (cbMostrarSenha.Checked == true)
