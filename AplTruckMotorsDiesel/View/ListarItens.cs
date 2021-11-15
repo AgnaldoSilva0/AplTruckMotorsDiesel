@@ -141,6 +141,7 @@ namespace AplTruckMotorsDiesel.View
 
         private void btListarMotor_Click(object sender, EventArgs e)
         {
+            itemSelecionado = 9;
             listViewItens.Items.Clear();
             foreach (Motor item in Motor.retornaTodosMotor())
             {

@@ -135,7 +135,7 @@ namespace AplTruckMotorsDiesel.Model_BD
                             lista.Add(new BombaOleo(Convert.ToString(BombaOleo.retornaFichaTecnicaPorId(idBombaOleoAplicacao).CodigoBombaOleo)));
                             break;
                         case 8:
-                            string idKitMotorAplicacao = Convert.ToString(row["idBombaOleo"]);
+                            string idKitMotorAplicacao = Convert.ToString(row["idKitMotor"]);
                             lista.Add(new KitMotor(Convert.ToString(KitMotor.retornaFichaTecnicaPorId(idKitMotorAplicacao).CodigoKitMotor)));
                             break;
                     }
