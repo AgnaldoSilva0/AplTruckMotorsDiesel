@@ -87,6 +87,8 @@ namespace AplTruckMotorsDiesel
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btSair = new MetroFramework.Controls.MetroButton();
+            this.btImprimirRelacao = new MetroFramework.Controls.MetroButton();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -102,6 +104,7 @@ namespace AplTruckMotorsDiesel
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewMotor
@@ -777,7 +780,7 @@ namespace AplTruckMotorsDiesel
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(627, 413);
+            this.pictureBox5.Location = new System.Drawing.Point(627, 411);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(30, 26);
             this.pictureBox5.TabIndex = 15;
@@ -787,7 +790,7 @@ namespace AplTruckMotorsDiesel
             // 
             this.btVincularAplicacao.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btVincularAplicacao.ForeColor = System.Drawing.SystemColors.Control;
-            this.btVincularAplicacao.Location = new System.Drawing.Point(654, 413);
+            this.btVincularAplicacao.Location = new System.Drawing.Point(654, 411);
             this.btVincularAplicacao.Name = "btVincularAplicacao";
             this.btVincularAplicacao.Size = new System.Drawing.Size(118, 26);
             this.btVincularAplicacao.TabIndex = 14;
@@ -802,7 +805,7 @@ namespace AplTruckMotorsDiesel
             // 
             this.btGerenciarUsuarios.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btGerenciarUsuarios.ForeColor = System.Drawing.SystemColors.Control;
-            this.btGerenciarUsuarios.Location = new System.Drawing.Point(654, 448);
+            this.btGerenciarUsuarios.Location = new System.Drawing.Point(654, 443);
             this.btGerenciarUsuarios.Name = "btGerenciarUsuarios";
             this.btGerenciarUsuarios.Size = new System.Drawing.Size(118, 26);
             this.btGerenciarUsuarios.TabIndex = 16;
@@ -816,7 +819,7 @@ namespace AplTruckMotorsDiesel
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(627, 448);
+            this.pictureBox6.Location = new System.Drawing.Point(627, 443);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(30, 26);
             this.pictureBox6.TabIndex = 17;
@@ -835,7 +838,7 @@ namespace AplTruckMotorsDiesel
             // 
             this.metroButton1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.metroButton1.ForeColor = System.Drawing.SystemColors.Control;
-            this.metroButton1.Location = new System.Drawing.Point(654, 483);
+            this.metroButton1.Location = new System.Drawing.Point(654, 476);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(118, 26);
             this.metroButton1.TabIndex = 19;
@@ -849,7 +852,7 @@ namespace AplTruckMotorsDiesel
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(627, 483);
+            this.pictureBox7.Location = new System.Drawing.Point(627, 476);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(30, 26);
             this.pictureBox7.TabIndex = 20;
@@ -860,9 +863,9 @@ namespace AplTruckMotorsDiesel
             this.btSair.BackColor = System.Drawing.Color.Red;
             this.btSair.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btSair.ForeColor = System.Drawing.Color.Ivory;
-            this.btSair.Location = new System.Drawing.Point(627, 515);
+            this.btSair.Location = new System.Drawing.Point(627, 540);
             this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(145, 51);
+            this.btSair.Size = new System.Drawing.Size(145, 26);
             this.btSair.TabIndex = 21;
             this.btSair.Text = "Sair";
             this.btSair.UseCustomBackColor = true;
@@ -871,11 +874,37 @@ namespace AplTruckMotorsDiesel
             this.btSair.UseStyleColors = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
+            // btImprimirRelacao
+            // 
+            this.btImprimirRelacao.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btImprimirRelacao.ForeColor = System.Drawing.SystemColors.Control;
+            this.btImprimirRelacao.Location = new System.Drawing.Point(654, 508);
+            this.btImprimirRelacao.Name = "btImprimirRelacao";
+            this.btImprimirRelacao.Size = new System.Drawing.Size(118, 26);
+            this.btImprimirRelacao.TabIndex = 22;
+            this.btImprimirRelacao.Text = "Imprimir Relação";
+            this.btImprimirRelacao.UseCustomBackColor = true;
+            this.btImprimirRelacao.UseCustomForeColor = true;
+            this.btImprimirRelacao.UseSelectable = true;
+            this.btImprimirRelacao.UseStyleColors = true;
+            this.btImprimirRelacao.Click += new System.EventHandler(this.btImprimirRelacao_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(627, 508);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(30, 26);
+            this.pictureBox8.TabIndex = 23;
+            this.pictureBox8.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 591);
+            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.btImprimirRelacao);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.metroButton1);
@@ -932,6 +961,7 @@ namespace AplTruckMotorsDiesel
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -996,6 +1026,8 @@ namespace AplTruckMotorsDiesel
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private MetroFramework.Controls.MetroButton btSair;
+        private MetroFramework.Controls.MetroButton btImprimirRelacao;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
 

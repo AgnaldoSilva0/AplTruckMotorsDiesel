@@ -1,4 +1,5 @@
-﻿using AplTruckMotorsDiesel.Model;
+﻿using AplTruckMotorsDiesel.Impressao;
+using AplTruckMotorsDiesel.Model;
 using AplTruckMotorsDiesel.Model_BD;
 using AplTruckMotorsDiesel.View;
 using System;
@@ -333,6 +334,28 @@ namespace AplTruckMotorsDiesel
             {
                 MessageBox.Show("Usuário não permitido para essa ação");
             }
+        }
+
+        private void btImprimirRelacao_Click(object sender, EventArgs e)
+        {
+            string kitmotor = " ";
+            if (listViewKitMotor.SelectedItems.Count > 0)
+            {
+                kitmotor = listViewKitMotor.SelectedItems[0].Text;
+            }
+
+            //CONTINUAR DAQUI
+
+            Imprimir.ImprimirRelacao("MB  710",
+                "OM 364", 
+                "Pistao", 
+                "Aneis", 
+                "bombaagua", 
+                "bombaoleo", 
+                "bronzinamancal", 
+                "bronzinabiela", 
+                "junta", 
+                kitmotor);
         }
     }
 }
