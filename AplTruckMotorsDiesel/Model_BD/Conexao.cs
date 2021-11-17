@@ -75,7 +75,7 @@ namespace AplTruckMotorsDiesel.Model_BD
                 comando.CommandText = "CREATE TABLE IF NOT EXISTS table_junta (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_kitmotor (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_kitmotor (id INTEGER, codigo TEXT, itenskit TEXT, Marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
                 comando.CommandText = "CREATE TABLE IF NOT EXISTS table_pistao (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
