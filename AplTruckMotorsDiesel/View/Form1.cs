@@ -339,22 +339,69 @@ namespace AplTruckMotorsDiesel
         private void btImprimirRelacao_Click(object sender, EventArgs e)
         {
             string kitmotor = " ";
+            string modeloVeiculo = " ";
+            string motor = " ";
+            string pistao = " ";
+            string aneis = " ";
+            string bombaAgua = " ";
+            string bombaOleo = " ";
+            string bronzinaMancal = " ";
+            string bronzinaBiela = " ";
+            string junta = " ";
+
+            if (listViewMotor.SelectedItems.Count > 0)
+            {
+                motor = listViewMotor.SelectedItems[0].SubItems[2].Text;
+                modeloVeiculo = listViewMotor.SelectedItems[0].SubItems[1].Text;
+            } else
+            {
+                MessageBox.Show("Selecione um motor para gerar o PDF!");
+                return;
+            }
             if (listViewKitMotor.SelectedItems.Count > 0)
             {
                 kitmotor = listViewKitMotor.SelectedItems[0].Text;
             }
+            if (listViewPistao.SelectedItems.Count > 0)
+            {
+                pistao = listViewPistao.SelectedItems[0].Text;
+            }
+            if (listViewAneis.SelectedItems.Count > 0)
+            {
+                aneis = listViewAneis.SelectedItems[0].Text;
+            }
+            if (listViewBombaAgua.SelectedItems.Count > 0)
+            {
+                bombaAgua = listViewBombaAgua.SelectedItems[0].Text;
+            }
+            if (listViewBombaOleo.SelectedItems.Count > 0)
+            {
+                bombaOleo = listViewBombaOleo.SelectedItems[0].Text;
+            }
+            if (listViewBMancal.SelectedItems.Count > 0)
+            {
+                bronzinaMancal = listViewBMancal.SelectedItems[0].Text;
+            }
+            if (listViewBBiela.SelectedItems.Count > 0)
+            {
+                bronzinaBiela = listViewBBiela.SelectedItems[0].Text;
+            }
+            if (listViewJunta.SelectedItems.Count > 0)
+            {
+                junta = listViewJunta.SelectedItems[0].Text;
+            }
 
             //CONTINUAR DAQUI
 
-            Imprimir.ImprimirRelacao("MB  710",
-                "OM 364", 
-                "Pistao", 
-                "Aneis", 
-                "bombaagua", 
-                "bombaoleo", 
-                "bronzinamancal", 
-                "bronzinabiela", 
-                "junta", 
+            Imprimir.ImprimirRelacao(modeloVeiculo,
+                motor, 
+                pistao, 
+                aneis, 
+                bombaAgua, 
+                bombaOleo, 
+                bronzinaMancal, 
+                bronzinaBiela, 
+                junta, 
                 kitmotor);
         }
     }

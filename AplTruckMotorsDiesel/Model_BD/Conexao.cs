@@ -57,31 +57,34 @@ namespace AplTruckMotorsDiesel.Model_BD
 
                 comando.Connection = conexao;
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_aneis (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_aneis (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bbiela (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bbiela (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bmancal (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bmancal (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bombaagua (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bombaagua (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bombaoleo (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_bombaoleo (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_junta (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_junta (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_kitmotor (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_kitmotor (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
-                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_pistao (int id, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_pistao (id INTEGER, codigo TEXT, codigoOriginal TEXT, marca TEXT, observacao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
                 comando.CommandText = "CREATE TABLE IF NOT EXISTS table_motor (id INTEGER, modeloVeiculo TEXT, modeloMotor TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.ExecuteNonQuery();
+
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_login (id INTEGER, usuario TEXT, senha TEXT, permissao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
                 comando.CommandText = "CREATE TABLE IF NOT EXISTS table_aplicacao " +
