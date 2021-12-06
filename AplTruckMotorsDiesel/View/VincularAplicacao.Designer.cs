@@ -49,6 +49,14 @@ namespace AplTruckMotorsDiesel.View
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.cbKitMotor = new MetroFramework.Controls.MetroComboBox();
             this.btVincular = new MetroFramework.Controls.MetroButton();
+            this.lbPistaoSelecionado = new MetroFramework.Controls.MetroLabel();
+            this.lbAneisSelecionado = new MetroFramework.Controls.MetroLabel();
+            this.lbBielaSelecionado = new MetroFramework.Controls.MetroLabel();
+            this.lbMancalSelecionado = new MetroFramework.Controls.MetroLabel();
+            this.lbJuntaSelecionado = new MetroFramework.Controls.MetroLabel();
+            this.lbBombaOleoSelecionado = new MetroFramework.Controls.MetroLabel();
+            this.lbBombaAguaSelecionado = new MetroFramework.Controls.MetroLabel();
+            this.lbKitSelecionado = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // cbModeloVeiculo
@@ -71,6 +79,7 @@ namespace AplTruckMotorsDiesel.View
             this.cbBbiela.Size = new System.Drawing.Size(121, 29);
             this.cbBbiela.TabIndex = 1;
             this.cbBbiela.UseSelectable = true;
+            this.cbBbiela.SelectedIndexChanged += new System.EventHandler(this.cbBbiela_SelectedIndexChanged);
             // 
             // cbBmancal
             // 
@@ -81,6 +90,7 @@ namespace AplTruckMotorsDiesel.View
             this.cbBmancal.Size = new System.Drawing.Size(121, 29);
             this.cbBmancal.TabIndex = 2;
             this.cbBmancal.UseSelectable = true;
+            this.cbBmancal.SelectedIndexChanged += new System.EventHandler(this.cbBmancal_SelectedIndexChanged);
             // 
             // cbJunta
             // 
@@ -91,6 +101,7 @@ namespace AplTruckMotorsDiesel.View
             this.cbJunta.Size = new System.Drawing.Size(121, 29);
             this.cbJunta.TabIndex = 3;
             this.cbJunta.UseSelectable = true;
+            this.cbJunta.SelectedIndexChanged += new System.EventHandler(this.cbJunta_SelectedIndexChanged);
             // 
             // cbPistao
             // 
@@ -101,6 +112,7 @@ namespace AplTruckMotorsDiesel.View
             this.cbPistao.Size = new System.Drawing.Size(121, 29);
             this.cbPistao.TabIndex = 4;
             this.cbPistao.UseSelectable = true;
+            this.cbPistao.SelectedIndexChanged += new System.EventHandler(this.cbPistao_SelectedIndexChanged);
             // 
             // cbBoleo
             // 
@@ -111,6 +123,7 @@ namespace AplTruckMotorsDiesel.View
             this.cbBoleo.Size = new System.Drawing.Size(121, 29);
             this.cbBoleo.TabIndex = 5;
             this.cbBoleo.UseSelectable = true;
+            this.cbBoleo.SelectedIndexChanged += new System.EventHandler(this.cbBoleo_SelectedIndexChanged);
             // 
             // cbAneis
             // 
@@ -121,15 +134,16 @@ namespace AplTruckMotorsDiesel.View
             this.cbAneis.Size = new System.Drawing.Size(121, 29);
             this.cbAneis.TabIndex = 6;
             this.cbAneis.UseSelectable = true;
+            this.cbAneis.SelectedIndexChanged += new System.EventHandler(this.cbAneis_SelectedIndexChanged);
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(26, 73);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(53, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(59, 19);
             this.metroLabel1.TabIndex = 7;
-            this.metroLabel1.Text = "Veiculo:";
+            this.metroLabel1.Text = "Veiculo*:";
             // 
             // lbVeiculoSelecionado
             // 
@@ -138,9 +152,9 @@ namespace AplTruckMotorsDiesel.View
             this.lbVeiculoSelecionado.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbVeiculoSelecionado.Location = new System.Drawing.Point(221, 73);
             this.lbVeiculoSelecionado.Name = "lbVeiculoSelecionado";
-            this.lbVeiculoSelecionado.Size = new System.Drawing.Size(121, 19);
+            this.lbVeiculoSelecionado.Size = new System.Drawing.Size(179, 19);
             this.lbVeiculoSelecionado.TabIndex = 8;
-            this.lbVeiculoSelecionado.Text = "Motor Selecionado";
+            this.lbVeiculoSelecionado.Text = "Nenhum Motor Selecionado!";
             this.lbVeiculoSelecionado.UseCustomForeColor = true;
             this.lbVeiculoSelecionado.UseStyleColors = true;
             // 
@@ -216,6 +230,7 @@ namespace AplTruckMotorsDiesel.View
             this.cbBagua.Size = new System.Drawing.Size(121, 29);
             this.cbBagua.TabIndex = 16;
             this.cbBagua.UseSelectable = true;
+            this.cbBagua.SelectedIndexChanged += new System.EventHandler(this.cbBagua_SelectedIndexChanged);
             // 
             // metroLabel11
             // 
@@ -235,24 +250,99 @@ namespace AplTruckMotorsDiesel.View
             this.cbKitMotor.Size = new System.Drawing.Size(121, 29);
             this.cbKitMotor.TabIndex = 18;
             this.cbKitMotor.UseSelectable = true;
+            this.cbKitMotor.SelectedIndexChanged += new System.EventHandler(this.cbKitMotor_SelectedIndexChanged);
             // 
             // btVincular
             // 
             this.btVincular.BackColor = System.Drawing.Color.Cyan;
+            this.btVincular.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btVincular.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btVincular.Location = new System.Drawing.Point(-1, 401);
             this.btVincular.Name = "btVincular";
-            this.btVincular.Size = new System.Drawing.Size(370, 48);
+            this.btVincular.Size = new System.Drawing.Size(466, 48);
             this.btVincular.TabIndex = 20;
             this.btVincular.Text = "Vincular";
             this.btVincular.UseCustomBackColor = true;
             this.btVincular.UseSelectable = true;
             this.btVincular.Click += new System.EventHandler(this.btVincular_Click);
             // 
+            // lbPistaoSelecionado
+            // 
+            this.lbPistaoSelecionado.Location = new System.Drawing.Point(221, 109);
+            this.lbPistaoSelecionado.Name = "lbPistaoSelecionado";
+            this.lbPistaoSelecionado.Size = new System.Drawing.Size(233, 23);
+            this.lbPistaoSelecionado.TabIndex = 21;
+            this.lbPistaoSelecionado.Text = "NULL";
+            // 
+            // lbAneisSelecionado
+            // 
+            this.lbAneisSelecionado.Location = new System.Drawing.Point(221, 142);
+            this.lbAneisSelecionado.Name = "lbAneisSelecionado";
+            this.lbAneisSelecionado.Size = new System.Drawing.Size(233, 23);
+            this.lbAneisSelecionado.TabIndex = 22;
+            this.lbAneisSelecionado.Text = "NULL";
+            // 
+            // lbBielaSelecionado
+            // 
+            this.lbBielaSelecionado.Location = new System.Drawing.Point(221, 176);
+            this.lbBielaSelecionado.Name = "lbBielaSelecionado";
+            this.lbBielaSelecionado.Size = new System.Drawing.Size(233, 23);
+            this.lbBielaSelecionado.TabIndex = 23;
+            this.lbBielaSelecionado.Text = "NULL";
+            // 
+            // lbMancalSelecionado
+            // 
+            this.lbMancalSelecionado.Location = new System.Drawing.Point(221, 211);
+            this.lbMancalSelecionado.Name = "lbMancalSelecionado";
+            this.lbMancalSelecionado.Size = new System.Drawing.Size(233, 23);
+            this.lbMancalSelecionado.TabIndex = 24;
+            this.lbMancalSelecionado.Text = "NULL";
+            // 
+            // lbJuntaSelecionado
+            // 
+            this.lbJuntaSelecionado.Location = new System.Drawing.Point(221, 245);
+            this.lbJuntaSelecionado.Name = "lbJuntaSelecionado";
+            this.lbJuntaSelecionado.Size = new System.Drawing.Size(233, 23);
+            this.lbJuntaSelecionado.TabIndex = 25;
+            this.lbJuntaSelecionado.Text = "NULL";
+            // 
+            // lbBombaOleoSelecionado
+            // 
+            this.lbBombaOleoSelecionado.Location = new System.Drawing.Point(221, 280);
+            this.lbBombaOleoSelecionado.Name = "lbBombaOleoSelecionado";
+            this.lbBombaOleoSelecionado.Size = new System.Drawing.Size(233, 23);
+            this.lbBombaOleoSelecionado.TabIndex = 26;
+            this.lbBombaOleoSelecionado.Text = "NULL";
+            // 
+            // lbBombaAguaSelecionado
+            // 
+            this.lbBombaAguaSelecionado.Location = new System.Drawing.Point(221, 316);
+            this.lbBombaAguaSelecionado.Name = "lbBombaAguaSelecionado";
+            this.lbBombaAguaSelecionado.Size = new System.Drawing.Size(233, 23);
+            this.lbBombaAguaSelecionado.TabIndex = 27;
+            this.lbBombaAguaSelecionado.Text = "NULL";
+            // 
+            // lbKitSelecionado
+            // 
+            this.lbKitSelecionado.Location = new System.Drawing.Point(221, 350);
+            this.lbKitSelecionado.Name = "lbKitSelecionado";
+            this.lbKitSelecionado.Size = new System.Drawing.Size(233, 23);
+            this.lbKitSelecionado.TabIndex = 28;
+            this.lbKitSelecionado.Text = "NULL";
+            // 
             // VincularAplicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 461);
+            this.ClientSize = new System.Drawing.Size(464, 461);
+            this.Controls.Add(this.lbKitSelecionado);
+            this.Controls.Add(this.lbBombaAguaSelecionado);
+            this.Controls.Add(this.lbBombaOleoSelecionado);
+            this.Controls.Add(this.lbJuntaSelecionado);
+            this.Controls.Add(this.lbMancalSelecionado);
+            this.Controls.Add(this.lbBielaSelecionado);
+            this.Controls.Add(this.lbAneisSelecionado);
+            this.Controls.Add(this.lbPistaoSelecionado);
             this.Controls.Add(this.btVincular);
             this.Controls.Add(this.metroLabel11);
             this.Controls.Add(this.cbKitMotor);
@@ -274,7 +364,7 @@ namespace AplTruckMotorsDiesel.View
             this.Controls.Add(this.cbBbiela);
             this.Controls.Add(this.cbModeloVeiculo);
             this.Name = "VincularAplicacao";
-            this.Text = "VincularAplicacao";
+            this.Text = "Vincular Aplicação";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,5 +392,13 @@ namespace AplTruckMotorsDiesel.View
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroComboBox cbKitMotor;
         private MetroFramework.Controls.MetroButton btVincular;
+        private MetroFramework.Controls.MetroLabel lbPistaoSelecionado;
+        private MetroFramework.Controls.MetroLabel lbAneisSelecionado;
+        private MetroFramework.Controls.MetroLabel lbBielaSelecionado;
+        private MetroFramework.Controls.MetroLabel lbMancalSelecionado;
+        private MetroFramework.Controls.MetroLabel lbJuntaSelecionado;
+        private MetroFramework.Controls.MetroLabel lbBombaOleoSelecionado;
+        private MetroFramework.Controls.MetroLabel lbBombaAguaSelecionado;
+        private MetroFramework.Controls.MetroLabel lbKitSelecionado;
     }
 }

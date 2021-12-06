@@ -38,6 +38,7 @@ namespace AplTruckMotorsDiesel.View
             string kitMotor = KitMotor.retornaFichaTecnicaPorCodigo(cbKitMotor.Text).Id;
 
             Inserir.vincularPecas(idMotor, pistao, aneis, bBiela, bMancal, bAgua, bOleo, junta, "NULL", kitMotor);
+            LimparComboBox();
         }
 
         /// <summary>
@@ -91,9 +92,62 @@ namespace AplTruckMotorsDiesel.View
             }
         }
 
+        private void LimparComboBox()
+        {
+            cbModeloVeiculo.SelectedIndex = -1;
+            cbAneis.SelectedIndex = -1;
+            cbBagua.SelectedIndex = -1;
+            cbBbiela.SelectedIndex = -1;
+            cbBmancal.SelectedIndex = -1;
+            cbBoleo.SelectedIndex = -1;
+            cbJunta.SelectedIndex = -1;
+            cbKitMotor.SelectedIndex = -1;
+            cbPistao.SelectedIndex = -1;
+        }
+
         private void cbModeloVeiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbVeiculoSelecionado.Text = cbModeloVeiculo.Text;
+        }
+
+        private void cbPistao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbPistaoSelecionado.Text = Pistao.retornaFichaTecnicaPorCodigo(cbPistao.Text).Observacao;
+        }
+
+        private void cbAneis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbAneisSelecionado.Text = Aneis.retornaFichaTecnicaPorCodigo(cbAneis.Text).Observacao;
+        }
+
+        private void cbBbiela_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbBielaSelecionado.Text = BronzinaBiela.retornaFichaTecnicaPorCodigo(cbBbiela.Text).Observacao;
+        }
+
+        private void cbBmancal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbMancalSelecionado.Text = BronzinaMancal.retornaFichaTecnicaPorCodigo(cbBmancal.Text).Observacao;
+        }
+
+        private void cbJunta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbJuntaSelecionado.Text = Junta.retornaFichaTecnicaPorCodigo(cbJunta.Text).Observacao;
+        }
+
+        private void cbBoleo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbBombaOleoSelecionado.Text = BombaOleo.retornaFichaTecnicaPorCodigo(cbBoleo.Text).Observacao;
+        }
+
+        private void cbBagua_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbBombaAguaSelecionado.Text = BombaAgua.retornaFichaTecnicaPorCodigo(cbBagua.Text).Observacao;
+        }
+
+        private void cbKitMotor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbKitSelecionado.Text = KitMotor.retornaFichaTecnicaPorCodigo(cbKitMotor.Text).Observacao;
         }
     }
 }
