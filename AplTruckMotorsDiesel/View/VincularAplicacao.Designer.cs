@@ -57,6 +57,7 @@ namespace AplTruckMotorsDiesel.View
             this.lbBombaOleoSelecionado = new MetroFramework.Controls.MetroLabel();
             this.lbBombaAguaSelecionado = new MetroFramework.Controls.MetroLabel();
             this.lbKitSelecionado = new MetroFramework.Controls.MetroLabel();
+            this.btLimparTudo = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // cbModeloVeiculo
@@ -255,11 +256,12 @@ namespace AplTruckMotorsDiesel.View
             // btVincular
             // 
             this.btVincular.BackColor = System.Drawing.Color.Cyan;
+            this.btVincular.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btVincular.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btVincular.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btVincular.Location = new System.Drawing.Point(-1, 401);
+            this.btVincular.Location = new System.Drawing.Point(20, 421);
             this.btVincular.Name = "btVincular";
-            this.btVincular.Size = new System.Drawing.Size(466, 48);
+            this.btVincular.Size = new System.Drawing.Size(424, 48);
             this.btVincular.TabIndex = 20;
             this.btVincular.Text = "Vincular";
             this.btVincular.UseCustomBackColor = true;
@@ -330,11 +332,27 @@ namespace AplTruckMotorsDiesel.View
             this.lbKitSelecionado.TabIndex = 28;
             this.lbKitSelecionado.Text = "NULL";
             // 
+            // btLimparTudo
+            // 
+            this.btLimparTudo.BackColor = System.Drawing.Color.Red;
+            this.btLimparTudo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btLimparTudo.Location = new System.Drawing.Point(94, 383);
+            this.btLimparTudo.Name = "btLimparTudo";
+            this.btLimparTudo.Size = new System.Drawing.Size(121, 23);
+            this.btLimparTudo.TabIndex = 29;
+            this.btLimparTudo.Text = "Limpar Seleção";
+            this.btLimparTudo.UseCustomBackColor = true;
+            this.btLimparTudo.UseCustomForeColor = true;
+            this.btLimparTudo.UseSelectable = true;
+            this.btLimparTudo.UseStyleColors = true;
+            this.btLimparTudo.Click += new System.EventHandler(this.btLimparTudo_Click);
+            // 
             // VincularAplicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 461);
+            this.ClientSize = new System.Drawing.Size(464, 489);
+            this.Controls.Add(this.btLimparTudo);
             this.Controls.Add(this.lbKitSelecionado);
             this.Controls.Add(this.lbBombaAguaSelecionado);
             this.Controls.Add(this.lbBombaOleoSelecionado);
@@ -400,5 +418,6 @@ namespace AplTruckMotorsDiesel.View
         private MetroFramework.Controls.MetroLabel lbBombaOleoSelecionado;
         private MetroFramework.Controls.MetroLabel lbBombaAguaSelecionado;
         private MetroFramework.Controls.MetroLabel lbKitSelecionado;
+        private MetroFramework.Controls.MetroButton btLimparTudo;
     }
 }

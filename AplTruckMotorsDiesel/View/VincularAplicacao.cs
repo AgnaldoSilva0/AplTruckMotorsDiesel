@@ -105,6 +105,7 @@ namespace AplTruckMotorsDiesel.View
             cbPistao.SelectedIndex = -1;
         }
 
+        #region Comandos para alterar label ao selecionar algum item!
         private void cbModeloVeiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbVeiculoSelecionado.Text = cbModeloVeiculo.Text;
@@ -148,6 +149,16 @@ namespace AplTruckMotorsDiesel.View
         private void cbKitMotor_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbKitSelecionado.Text = KitMotor.retornaFichaTecnicaPorCodigo(cbKitMotor.Text).Observacao;
+        }
+        #endregion
+
+        private void btLimparTudo_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Tem certeza que deseja limpar todos os campos?", "", MessageBoxButtons.YesNo);
+            if (resultado == DialogResult.Yes)
+            {
+                LimparComboBox();
+            }
         }
     }
 }
