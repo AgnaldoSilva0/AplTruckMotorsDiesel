@@ -190,5 +190,10 @@ namespace AplTruckMotorsDiesel.View
             }
             
         }
+
+        private void btOutras_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

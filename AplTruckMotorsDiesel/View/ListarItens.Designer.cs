@@ -46,6 +46,7 @@ namespace AplTruckMotorsDiesel.View
             this.clmObservacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btEditarRegistro = new MetroFramework.Controls.MetroButton();
             this.btExcluirRegistro = new MetroFramework.Controls.MetroButton();
+            this.btOutras = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // btListarKitMotor
@@ -205,7 +206,7 @@ namespace AplTruckMotorsDiesel.View
             this.listViewItens.Location = new System.Drawing.Point(182, 63);
             this.listViewItens.MultiSelect = false;
             this.listViewItens.Name = "listViewItens";
-            this.listViewItens.Size = new System.Drawing.Size(701, 282);
+            this.listViewItens.Size = new System.Drawing.Size(701, 312);
             this.listViewItens.TabIndex = 28;
             this.listViewItens.UseCompatibleStateImageBehavior = false;
             this.listViewItens.View = System.Windows.Forms.View.Details;
@@ -244,7 +245,7 @@ namespace AplTruckMotorsDiesel.View
             this.btEditarRegistro.BackColor = System.Drawing.Color.Green;
             this.btEditarRegistro.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btEditarRegistro.ForeColor = System.Drawing.SystemColors.Control;
-            this.btEditarRegistro.Location = new System.Drawing.Point(571, 351);
+            this.btEditarRegistro.Location = new System.Drawing.Point(570, 381);
             this.btEditarRegistro.Name = "btEditarRegistro";
             this.btEditarRegistro.Size = new System.Drawing.Size(153, 26);
             this.btEditarRegistro.TabIndex = 29;
@@ -260,7 +261,7 @@ namespace AplTruckMotorsDiesel.View
             this.btExcluirRegistro.BackColor = System.Drawing.Color.Red;
             this.btExcluirRegistro.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btExcluirRegistro.ForeColor = System.Drawing.SystemColors.Control;
-            this.btExcluirRegistro.Location = new System.Drawing.Point(730, 351);
+            this.btExcluirRegistro.Location = new System.Drawing.Point(730, 381);
             this.btExcluirRegistro.Name = "btExcluirRegistro";
             this.btExcluirRegistro.Size = new System.Drawing.Size(153, 26);
             this.btExcluirRegistro.TabIndex = 30;
@@ -271,11 +272,28 @@ namespace AplTruckMotorsDiesel.View
             this.btExcluirRegistro.UseStyleColors = true;
             this.btExcluirRegistro.Click += new System.EventHandler(this.btExcluirRegistro_Click);
             // 
+            // btOutras
+            // 
+            this.btOutras.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btOutras.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btOutras.ForeColor = System.Drawing.SystemColors.Control;
+            this.btOutras.Location = new System.Drawing.Point(23, 349);
+            this.btOutras.Name = "btOutras";
+            this.btOutras.Size = new System.Drawing.Size(153, 26);
+            this.btOutras.TabIndex = 31;
+            this.btOutras.Text = "Outras";
+            this.btOutras.UseCustomBackColor = true;
+            this.btOutras.UseCustomForeColor = true;
+            this.btOutras.UseSelectable = true;
+            this.btOutras.UseStyleColors = true;
+            this.btOutras.Click += new System.EventHandler(this.btOutras_Click);
+            // 
             // ListarItens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 385);
+            this.ClientSize = new System.Drawing.Size(906, 411);
+            this.Controls.Add(this.btOutras);
             this.Controls.Add(this.btExcluirRegistro);
             this.Controls.Add(this.btEditarRegistro);
             this.Controls.Add(this.listViewItens);
@@ -313,5 +331,6 @@ namespace AplTruckMotorsDiesel.View
         private System.Windows.Forms.ColumnHeader clmObservacao;
         private MetroFramework.Controls.MetroButton btEditarRegistro;
         private MetroFramework.Controls.MetroButton btExcluirRegistro;
+        private MetroFramework.Controls.MetroButton btOutras;
     }
 }

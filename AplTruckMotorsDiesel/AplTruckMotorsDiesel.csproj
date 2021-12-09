@@ -84,6 +84,7 @@
     <Compile Include="Model\BombaAgua.cs" />
     <Compile Include="Model\BronzinaMancal.cs" />
     <Compile Include="Model\Icones.cs" />
+    <Compile Include="Model\Outra.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Model_BD\Conexao.cs" />
     <Compile Include="Model_BD\Deletar.cs" />

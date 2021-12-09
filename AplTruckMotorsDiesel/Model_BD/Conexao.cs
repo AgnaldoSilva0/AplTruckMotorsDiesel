@@ -87,6 +87,9 @@ namespace AplTruckMotorsDiesel.Model_BD
                 comando.CommandText = "CREATE TABLE IF NOT EXISTS table_login (id INTEGER, usuario TEXT, senha TEXT, permissao TEXT, PRIMARY KEY (id)) ";
                 comando.ExecuteNonQuery();
 
+                comando.CommandText = "CREATE TABLE IF NOT EXISTS table_outra (id INTEGER, descricao TEXT, codigo TEXT, modeloVeiculo TEXT, observacao TEXT, PRIMARY KEY (id)) ";
+                comando.ExecuteNonQuery();
+
                 comando.CommandText = "CREATE TABLE IF NOT EXISTS table_aplicacao " +
                     "(idMotor TEXT, idPistao TEXT, idAneis TEXT, idBBiela TEXT, idBMancal TEXT, idBombaAgua TEXT, idBombaOleo TEXT, idJunta TEXT, idobservacao TEXT, idKitMotor TEXT, " +
                     "FOREIGN KEY(idJunta) REFERENCES table_junta(id), " +
@@ -96,6 +99,7 @@ namespace AplTruckMotorsDiesel.Model_BD
                     "FOREIGN KEY(idBombaOleo) REFERENCES table_bombaoleo(id), " +
                     "FOREIGN KEY(idBMancal) REFERENCES table_bmancal(id), " +
                     "FOREIGN KEY(idBBiela) REFERENCES table_bbiela(id), " +
+                    "FOREIGN KEY(idOutra) REFERENCES table_outra(id), " +
                     "FOREIGN KEY(idBombaAgua) REFERENCES table_bombaagua(id)) ";
                 comando.ExecuteNonQuery();
 
