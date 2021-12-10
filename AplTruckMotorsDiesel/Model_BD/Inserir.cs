@@ -49,40 +49,36 @@ namespace AplTruckMotorsDiesel.Model_BD
         {
             switch (idMetodo)
             {
-                //1 Pistão
-                case 1:
+                
+                case 1: //1 Pistão
                     inserirItem(codigo, codigoOriginal, marca, "table_pistao", observacao);
                     break;
-                //2 Aneis
-                case 2:
+                case 2: //2 Aneis
                     inserirItem(codigo, codigoOriginal, marca, "table_aneis", observacao);
                     break;
-                //3 Bronzina Biela
-                case 3:
+                case 3: //3 Bronzina Biela
                     inserirItem(codigo, codigoOriginal, marca, "table_bbiela", observacao);
                     break;
-                //4 Junta
-                case 4:
+                case 4: //4 Junta
                     inserirItem(codigo, codigoOriginal, marca, "table_junta", observacao);
                     break;
-                //5 Bomba Oleo
-                case 5:
+                case 5: //5 Bomba Oleo
                     inserirItem(codigo, codigoOriginal, marca, "table_bombaoleo", observacao);
                     break;
-                //6 Bronzina Mancal
-                case 6:
+                case 6: //6 Bronzina Mancal
                     inserirItem(codigo, codigoOriginal, marca, "table_bmancal", observacao);
                     break;
-                //7 Bomba de Agua
-                case 7:
+                case 7: //7 Bomba de Agua
                     inserirItem(codigo, codigoOriginal, marca, "table_bombaagua", observacao);
                     break;
-                //7 Bomba de Agua
-                case 8:
+                case 8: //8 Motor
                     inserirModeloMotor(codigo, codigoOriginal, marca);
                     break;
-                case 9:
+                case 9: //Kit Motor
                     inserirKitMotor(codigo, codigoOriginal, marca, "table_kitmotor", observacao);
+                    break;
+                case 10: //Kit Motor
+                    inserirOutrosItens(codigo, codigoOriginal, marca, observacao);
                     break;
             }
         }
@@ -107,6 +103,15 @@ namespace AplTruckMotorsDiesel.Model_BD
         }
         #endregion
 
+        #region Comando String para Inserir Outros Itens
+        public static void inserirOutrosItens(string codigo, string descricao, string marca, string observacao)
+        {
+            string comandoTexto = "INSERT INTO table_outra (codigo, descricao, marca, observacao) " +
+                        "VALUES ('" + codigo + "', '" + descricao + "', '" + marca + "', '" + observacao + "')";
+            inserirConexao(comandoTexto);
+        }
+        #endregion
+
         #region Comando String para Inserir KitMotor
         public static void inserirKitMotor(string codigo, string codigoOriginal, string marca, string tabela, string observacao)
         {
@@ -126,9 +131,10 @@ namespace AplTruckMotorsDiesel.Model_BD
             string idBombaOleo,
             string idJunta,
             string observacao,
-            string kitMotor)
+            string kitMotor,
+            int outra)
         {
-            string comandoTexto = "INSERT INTO table_aplicacao (idMotor, idPistao, idAneis, idBBiela, idBMancal, idBombaAgua, idBombaOleo, idJunta, idobservacao, idKitMotor) " +
+            string comandoTexto = "INSERT INTO table_aplicacao (idMotor, idPistao, idAneis, idBBiela, idBMancal, idBombaAgua, idBombaOleo, idJunta, idobservacao, idKitMotor, idOutra) " +
                         "VALUES ('" + idMotor + "', " +
                         "'" + idPistao + "', " +
                         "'" + idAneis + "', " +
@@ -138,7 +144,8 @@ namespace AplTruckMotorsDiesel.Model_BD
                         "'"+ idBombaOleo +"', " +
                         "'"+ idJunta +"', " +
                         "'"+ observacao +"', " +
-                        "'"+ kitMotor +"')";
+                        "'"+ kitMotor +"', " +
+                        "'" + outra + "')";
             inserirConexao(comandoTexto);
         }
         #endregion

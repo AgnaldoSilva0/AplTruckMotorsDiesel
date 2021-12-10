@@ -153,13 +153,28 @@ namespace AplTruckMotorsDiesel.View
             }
         }
 
+        private void btOutras_Click(object sender, EventArgs e)
+        {
+            itemSelecionado = 10;
+            listViewItens.Items.Clear();
+            foreach (Outra item in Outra.retornaTodosOutra())
+            {
+                listViewItens.Items.Add(new ListViewItem(new string[] {
+                                Convert.ToString(item.Id),
+                                Convert.ToString(item.Codigo),
+                                Convert.ToString(item.Descricao),
+                                Convert.ToString(item.Marca),
+                                Convert.ToString(item.Observacao)}));
+            }
+        }
+
         private int itemSelecionado;
         private void btEditarRegistro_Click(object sender, EventArgs e)
         {
             try
             {
-                string codigoItemSelecionado = listViewItens.SelectedItems[0].SubItems[1].Text;
-                FichaTecnica fichaTecnica = new FichaTecnica(codigoItemSelecionado, itemSelecionado);
+                string idItemSelecionado = listViewItens.SelectedItems[0].SubItems[0].Text;
+                FichaTecnica fichaTecnica = new FichaTecnica(idItemSelecionado, itemSelecionado);
                 fichaTecnica.ShowDialog();
             }
             catch (Exception)
@@ -191,9 +206,6 @@ namespace AplTruckMotorsDiesel.View
             
         }
 
-        private void btOutras_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }

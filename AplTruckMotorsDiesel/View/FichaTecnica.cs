@@ -14,24 +14,19 @@ namespace AplTruckMotorsDiesel.View
 {
     public partial class FichaTecnica : MetroFramework.Forms.MetroForm
     {
-        public FichaTecnica(string codigoItem, int operacao)
+        public FichaTecnica(string idItemSelecionado, int operacao)
         {
             InitializeComponent();
-            PreencherDados(codigoItem, operacao);
+            PreencherDados(idItemSelecionado, operacao);
             itemSelecionado = operacao;
         }
 
-        private void btSair_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PreencherDados(string codigoItem, int operacao)
+        private void PreencherDados(string idItemSelecionado, int operacao)
         {
             switch (operacao)
             {
                 case 1:
-                    Pistao pistao = Pistao.retornaFichaTecnicaPorCodigo(codigoItem);
+                    Pistao pistao = Pistao.retornaFichaTecnicaPorId(idItemSelecionado);
                     lbCodigo.Text = pistao.CodigoPistao;
                     lbCodigoOriginal.Text = pistao.CodigoOriginal;
                     lbMarca.Text = pistao.Marca;
@@ -39,7 +34,7 @@ namespace AplTruckMotorsDiesel.View
                     lbId.Text = pistao.Id;
                     break;
                 case 2:
-                    Aneis aneis = Aneis.retornaFichaTecnicaPorCodigo(codigoItem);
+                    Aneis aneis = Aneis.retornaFichaTecnicaPorId(idItemSelecionado);
                     lbCodigo.Text = aneis.CodigoAneis;
                     lbCodigoOriginal.Text = aneis.CodigoOriginal;
                     lbMarca.Text = aneis.Marca;
@@ -47,7 +42,7 @@ namespace AplTruckMotorsDiesel.View
                     lbId.Text = aneis.Id;
                     break;
                 case 3:
-                    BombaAgua bombaAgua = BombaAgua.retornaFichaTecnicaPorCodigo(codigoItem);
+                    BombaAgua bombaAgua = BombaAgua.retornaFichaTecnicaPorId(idItemSelecionado);
                     lbCodigo.Text = bombaAgua.CodigoBombaAgua;
                     lbCodigoOriginal.Text = bombaAgua.CodigoOriginal;
                     lbMarca.Text = bombaAgua.Marca;
@@ -55,7 +50,7 @@ namespace AplTruckMotorsDiesel.View
                     lbId.Text = bombaAgua.Id;
                     break;
                 case 4:
-                    BombaOleo bombaOleo = BombaOleo.retornaFichaTecnicaPorCodigo(codigoItem);
+                    BombaOleo bombaOleo = BombaOleo.retornaFichaTecnicaPorId(idItemSelecionado);
                     lbCodigo.Text = bombaOleo.CodigoBombaOleo;
                     lbCodigoOriginal.Text = bombaOleo.CodigoOriginal;
                     lbMarca.Text = bombaOleo.Marca;
@@ -63,7 +58,7 @@ namespace AplTruckMotorsDiesel.View
                     lbId.Text = bombaOleo.Id;
                     break;
                 case 5:
-                    BronzinaBiela bronzinaBiela = BronzinaBiela.retornaFichaTecnicaPorCodigo(codigoItem);
+                    BronzinaBiela bronzinaBiela = BronzinaBiela.retornaFichaTecnicaPorId(idItemSelecionado);
                     lbCodigo.Text = bronzinaBiela.CodigoBBiela;
                     lbCodigoOriginal.Text = bronzinaBiela.CodigoOriginal;
                     lbMarca.Text = bronzinaBiela.Marca;
@@ -71,7 +66,7 @@ namespace AplTruckMotorsDiesel.View
                     lbId.Text = bronzinaBiela.Id;
                     break;
                 case 6:
-                    BronzinaMancal bronzinaMancal = BronzinaMancal.retornaFichaTecnicaPorCodigo(codigoItem);
+                    BronzinaMancal bronzinaMancal = BronzinaMancal.retornaFichaTecnicaPorId(idItemSelecionado);
                     lbCodigo.Text = bronzinaMancal.CodigoBMancal;
                     lbCodigoOriginal.Text = bronzinaMancal.CodigoOriginal;
                     lbMarca.Text = bronzinaMancal.Marca;
@@ -79,7 +74,7 @@ namespace AplTruckMotorsDiesel.View
                     lbId.Text = bronzinaMancal.Id;
                     break;
                 case 7:
-                    Junta junta = Junta.retornaFichaTecnicaPorCodigo(codigoItem);
+                    Junta junta = Junta.retornaFichaTecnicaPorId(idItemSelecionado);
                     lbCodigo.Text = junta.CodigoJunta;
                     lbCodigoOriginal.Text = junta.CodigoOriginal;
                     lbMarca.Text = junta.Marca;
@@ -87,12 +82,27 @@ namespace AplTruckMotorsDiesel.View
                     lbId.Text = junta.Id;
                     break;
                 case 8:
-                    KitMotor kitMotor = KitMotor.retornaFichaTecnicaPorCodigo(codigoItem);
+                    KitMotor kitMotor = KitMotor.retornaFichaTecnicaPorId(idItemSelecionado);
                     lbCodigo.Text = kitMotor.CodigoKitMotor;
                     lbCodigoOriginal.Text = kitMotor.ItensKit;
                     lbMarca.Text = kitMotor.Marca;
                     lbObservacao.Text = kitMotor.Observacao;
                     lbId.Text = kitMotor.Id;
+                    break;
+                case 9:
+                    Motor motor = Motor.retornaFichaTecnicaPorId(idItemSelecionado);
+                    lbCodigo.Text = motor.ModeloMotor;
+                    lbMarca.Text = motor.ModeloVeiculo;
+                    lbObservacao.Text = motor.Observacao;
+                    lbId.Text = Convert.ToString(motor.IdMotor);
+                    break;
+                case 10:
+                    Outra outra = Outra.retornaFichaTecnicaPorId(idItemSelecionado);
+                    lbCodigo.Text = outra.Codigo;
+                    lbMarca.Text = outra.Marca;
+                    lbObservacao.Text = outra.Observacao;
+                    lbCodigoOriginal.Text = outra.Descricao;
+                    lbId.Text = Convert.ToString(outra.Id);
                     break;
             }
         }
@@ -158,7 +168,13 @@ namespace AplTruckMotorsDiesel.View
                     Editar.StringEditarItem("table_junta", id, codigo, codigoOriginal, marca, observacao);
                     break;
                 case 8: //KitMotor
-                    Editar.StringEditarKitMotor("table_kitmotor", id, codigo, codigoOriginal, marca, observacao);
+                    Editar.StringEditarKitMotor(id, codigo, codigoOriginal, marca, observacao);
+                    break;
+                case 9: //Motor
+                    Editar.StringEditarMotor(id, codigo, marca, observacao);
+                    break;
+                case 10: //Outra
+                    Editar.StringEditarOutra(id, codigoOriginal, codigo, marca, observacao);
                     break;
             }
         }

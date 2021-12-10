@@ -100,6 +100,10 @@ namespace AplTruckMotorsDiesel.Model_BD
                     case 9:
                         comandoString = "DELETE FROM table_motor WHERE id LIKE '" + id + "' ";
                         break;
+                    case 10:
+                        Conexao.ExecutarComandoSql("UPDATE table_aplicacao SET idOutra = NULL WHERE idOutra LIKE '" + id + "' ");
+                        comandoString = "DELETE FROM table_outra WHERE id LIKE '" + id + "' ";
+                        break;
                 }
 
                 comando.CommandText = comandoString;

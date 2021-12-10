@@ -58,6 +58,9 @@ namespace AplTruckMotorsDiesel.View
             this.lbBombaAguaSelecionado = new MetroFramework.Controls.MetroLabel();
             this.lbKitSelecionado = new MetroFramework.Controls.MetroLabel();
             this.btLimparTudo = new MetroFramework.Controls.MetroButton();
+            this.lbOutrasPecas = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.cbOutrasPecas = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // cbModeloVeiculo
@@ -236,7 +239,7 @@ namespace AplTruckMotorsDiesel.View
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(26, 358);
+            this.metroLabel11.Location = new System.Drawing.Point(26, 355);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(67, 19);
             this.metroLabel11.TabIndex = 19;
@@ -259,7 +262,7 @@ namespace AplTruckMotorsDiesel.View
             this.btVincular.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btVincular.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btVincular.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btVincular.Location = new System.Drawing.Point(20, 421);
+            this.btVincular.Location = new System.Drawing.Point(20, 448);
             this.btVincular.Name = "btVincular";
             this.btVincular.Size = new System.Drawing.Size(424, 48);
             this.btVincular.TabIndex = 20;
@@ -336,7 +339,7 @@ namespace AplTruckMotorsDiesel.View
             // 
             this.btLimparTudo.BackColor = System.Drawing.Color.Red;
             this.btLimparTudo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btLimparTudo.Location = new System.Drawing.Point(94, 383);
+            this.btLimparTudo.Location = new System.Drawing.Point(94, 419);
             this.btLimparTudo.Name = "btLimparTudo";
             this.btLimparTudo.Size = new System.Drawing.Size(121, 23);
             this.btLimparTudo.TabIndex = 29;
@@ -347,11 +350,41 @@ namespace AplTruckMotorsDiesel.View
             this.btLimparTudo.UseStyleColors = true;
             this.btLimparTudo.Click += new System.EventHandler(this.btLimparTudo_Click);
             // 
+            // lbOutrasPecas
+            // 
+            this.lbOutrasPecas.Location = new System.Drawing.Point(221, 386);
+            this.lbOutrasPecas.Name = "lbOutrasPecas";
+            this.lbOutrasPecas.Size = new System.Drawing.Size(233, 23);
+            this.lbOutrasPecas.TabIndex = 32;
+            this.lbOutrasPecas.Text = "NULL";
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.Location = new System.Drawing.Point(26, 389);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel9.TabIndex = 31;
+            this.metroLabel9.Text = "Outras";
+            // 
+            // cbOutrasPecas
+            // 
+            this.cbOutrasPecas.FormattingEnabled = true;
+            this.cbOutrasPecas.ItemHeight = 23;
+            this.cbOutrasPecas.Location = new System.Drawing.Point(94, 384);
+            this.cbOutrasPecas.Name = "cbOutrasPecas";
+            this.cbOutrasPecas.Size = new System.Drawing.Size(121, 29);
+            this.cbOutrasPecas.TabIndex = 30;
+            this.cbOutrasPecas.UseSelectable = true;
+            // 
             // VincularAplicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 489);
+            this.ClientSize = new System.Drawing.Size(464, 516);
+            this.Controls.Add(this.lbOutrasPecas);
+            this.Controls.Add(this.metroLabel9);
+            this.Controls.Add(this.cbOutrasPecas);
             this.Controls.Add(this.btLimparTudo);
             this.Controls.Add(this.lbKitSelecionado);
             this.Controls.Add(this.lbBombaAguaSelecionado);
@@ -419,5 +452,8 @@ namespace AplTruckMotorsDiesel.View
         private MetroFramework.Controls.MetroLabel lbBombaAguaSelecionado;
         private MetroFramework.Controls.MetroLabel lbKitSelecionado;
         private MetroFramework.Controls.MetroButton btLimparTudo;
+        private MetroFramework.Controls.MetroLabel lbOutrasPecas;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroComboBox cbOutrasPecas;
     }
 }

@@ -205,7 +205,7 @@ namespace AplTruckMotorsDiesel.View
             this.Controls.Add(this.lbCodigo);
             this.Controls.Add(this.lbId);
             this.Name = "FichaTecnica";
-            this.Text = "FichaTecnica";
+            this.Text = "Ficha Tecnica";
             this.ResumeLayout(false);
 
         }

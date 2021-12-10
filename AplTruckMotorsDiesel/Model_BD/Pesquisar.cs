@@ -138,6 +138,10 @@ namespace AplTruckMotorsDiesel.Model_BD
                             string idKitMotorAplicacao = Convert.ToString(row["idKitMotor"]);
                             lista.Add(new KitMotor(Convert.ToString(KitMotor.retornaFichaTecnicaPorId(idKitMotorAplicacao).CodigoKitMotor)));
                             break;
+                        case 9:
+                            string idOutraPeca = Convert.ToString(row["idOutra"]);
+                            lista.Add(new Outra(Convert.ToString(Outra.retornaFichaTecnicaPorId(idOutraPeca).Descricao)));
+                            break;
                     }
                     
                 }
@@ -207,6 +211,9 @@ namespace AplTruckMotorsDiesel.Model_BD
                             break;
                         case 8:
                             lista.Add(new KitMotor(Convert.ToString(row["codigo"])));
+                            break;
+                        case 9:
+                            lista.Add(new Outra(Convert.ToString(row["descricao"])));
                             break;
                     }
 

@@ -163,6 +163,15 @@ namespace AplTruckMotorsDiesel
                         Convert.ToString(kitMotor.CodigoKitMotor) }));
                 }
             }
+
+            foreach (Outra outra in Pesquisar.retornaPeca("idOutra", selecionado, 9))
+            {
+                if (outra.Descricao != null)
+                {
+                    listViewOutrasPecas.Items.Add(new ListViewItem(new string[] {
+                        Convert.ToString(outra.Descricao) }));
+                }
+            }
         }
 
         private void limparTodasListas()
@@ -175,6 +184,7 @@ namespace AplTruckMotorsDiesel
             listViewBombaAgua.Items.Clear();
             listViewBombaOleo.Items.Clear();
             listViewKitMotor.Items.Clear();
+            listViewOutrasPecas.Items.Clear();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -192,7 +202,8 @@ namespace AplTruckMotorsDiesel
         {
             try
             {
-                FichaTecnica fichaTecnica = new FichaTecnica(listViewPistao.SelectedItems[0].Text, 1);
+                string idPistaoSelecionado = Pistao.retornaFichaTecnicaPorCodigo(listViewPistao.SelectedItems[0].Text).Id;
+                FichaTecnica fichaTecnica = new FichaTecnica(idPistaoSelecionado, 1);
                 fichaTecnica.ShowDialog();
             }
             catch (System.ArgumentOutOfRangeException)
@@ -205,7 +216,8 @@ namespace AplTruckMotorsDiesel
         {
             try
             {
-                FichaTecnica fichaTecnica = new FichaTecnica(listViewAneis.SelectedItems[0].Text, 2);
+                string idAneisSelecionado = Aneis.retornaFichaTecnicaPorCodigo(listViewAneis.SelectedItems[0].Text).Id;
+                FichaTecnica fichaTecnica = new FichaTecnica(idAneisSelecionado, 2);
                 fichaTecnica.ShowDialog();
             }
             catch (System.ArgumentOutOfRangeException)
@@ -218,7 +230,8 @@ namespace AplTruckMotorsDiesel
         {
             try
             {
-                FichaTecnica fichaTecnica = new FichaTecnica(listViewBombaAgua.SelectedItems[0].Text, 3);
+                string idBombaAguaSelecionada = BombaAgua.retornaFichaTecnicaPorCodigo(listViewBombaAgua.SelectedItems[0].Text).Id;
+                FichaTecnica fichaTecnica = new FichaTecnica(idBombaAguaSelecionada, 3);
                 fichaTecnica.ShowDialog();
             }
             catch (System.ArgumentOutOfRangeException)
@@ -231,7 +244,8 @@ namespace AplTruckMotorsDiesel
         {
             try
             {
-                FichaTecnica fichaTecnica = new FichaTecnica(listViewBombaOleo.SelectedItems[0].Text, 4);
+                string idBombaOleoSelecionada = BombaOleo.retornaFichaTecnicaPorCodigo(listViewBombaOleo.SelectedItems[0].Text).Id;
+                FichaTecnica fichaTecnica = new FichaTecnica(idBombaOleoSelecionada, 4);
                 fichaTecnica.ShowDialog();
             }
             catch (System.ArgumentOutOfRangeException)
@@ -244,7 +258,8 @@ namespace AplTruckMotorsDiesel
         {
             try
             {
-                FichaTecnica fichaTecnica = new FichaTecnica(listViewBBiela.SelectedItems[0].Text, 5);
+                string idBielaSelecionada = BronzinaBiela.retornaFichaTecnicaPorCodigo(listViewBBiela.SelectedItems[0].Text).Id;
+                FichaTecnica fichaTecnica = new FichaTecnica(idBielaSelecionada, 5);
                 fichaTecnica.ShowDialog();
             }
             catch (System.ArgumentOutOfRangeException)
@@ -257,7 +272,8 @@ namespace AplTruckMotorsDiesel
         {
             try
             {
-                FichaTecnica fichaTecnica = new FichaTecnica(listViewBMancal.SelectedItems[0].Text, 6);
+                string idMancalSelecionado = BronzinaMancal.retornaFichaTecnicaPorCodigo(listViewBMancal.SelectedItems[0].Text).Id;
+                FichaTecnica fichaTecnica = new FichaTecnica(idMancalSelecionado, 6);
                 fichaTecnica.ShowDialog();
             }
             catch (System.ArgumentOutOfRangeException)
@@ -270,7 +286,22 @@ namespace AplTruckMotorsDiesel
         {
             try
             {
-                FichaTecnica fichaTecnica = new FichaTecnica(listViewJunta.SelectedItems[0].Text, 7);
+                string idJuntaSelecionada = Junta.retornaFichaTecnicaPorCodigo(listViewJunta.SelectedItems[0].Text).Id;
+                FichaTecnica fichaTecnica = new FichaTecnica(idJuntaSelecionada, 7);
+                fichaTecnica.ShowDialog();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Tente Novamente");
+            }
+        }
+
+        private void listViewOutrasPecas_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                int idPecaSelecionada = Outra.retornaFichaTecnicaPorCodigo(listViewOutrasPecas.SelectedItems[0].Text).Id;
+                FichaTecnica fichaTecnica = new FichaTecnica(Convert.ToString(idPecaSelecionada), 10);
                 fichaTecnica.ShowDialog();
             }
             catch (System.ArgumentOutOfRangeException)
@@ -283,7 +314,8 @@ namespace AplTruckMotorsDiesel
         {
             try
             {
-                FichaTecnica fichaTecnica = new FichaTecnica(listViewKitMotor.SelectedItems[0].Text, 8);
+                string idKitSelecionado = KitMotor.retornaFichaTecnicaPorCodigo(listViewKitMotor.SelectedItems[0].Text).Id;
+                FichaTecnica fichaTecnica = new FichaTecnica(idKitSelecionado, 8);
                 fichaTecnica.ShowDialog();
             }
             catch (System.ArgumentOutOfRangeException)
@@ -348,6 +380,7 @@ namespace AplTruckMotorsDiesel
             string bronzinaMancal = " ";
             string bronzinaBiela = " ";
             string junta = " ";
+            string outrasPecas = " ";
 
             if (listViewMotor.SelectedItems.Count > 0)
             {
@@ -390,6 +423,10 @@ namespace AplTruckMotorsDiesel
             {
                 junta = listViewJunta.SelectedItems[0].Text;
             }
+            if (listViewOutrasPecas.SelectedItems.Count > 0)
+            {
+                outrasPecas = listViewOutrasPecas.SelectedItems[0].Text;
+            }
 
             //CONTINUAR DAQUI
 
@@ -402,7 +439,10 @@ namespace AplTruckMotorsDiesel
                 bronzinaMancal, 
                 bronzinaBiela, 
                 junta, 
-                kitmotor);
+                kitmotor,
+                outrasPecas);
         }
+
+        
     }
 }

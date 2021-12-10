@@ -89,7 +89,7 @@ namespace AplTruckMotorsDiesel
             this.btSair = new MetroFramework.Controls.MetroButton();
             this.btImprimirRelacao = new MetroFramework.Controls.MetroButton();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.metroListView1 = new MetroFramework.Controls.MetroListView();
+            this.listViewOutrasPecas = new MetroFramework.Controls.MetroListView();
             this.clmDescricao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
@@ -141,13 +141,13 @@ namespace AplTruckMotorsDiesel
             // 
             this.clmModeloVeiculo.Text = "Modelo Veículo";
             this.clmModeloVeiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmModeloVeiculo.Width = 189;
+            this.clmModeloVeiculo.Width = 260;
             // 
             // clmModeloMotor
             // 
             this.clmModeloMotor.Text = "Modelo Motor";
             this.clmModeloMotor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmModeloMotor.Width = 129;
+            this.clmModeloMotor.Width = 203;
             // 
             // clmObservacao
             // 
@@ -904,21 +904,22 @@ namespace AplTruckMotorsDiesel
             this.pictureBox8.TabIndex = 23;
             this.pictureBox8.TabStop = false;
             // 
-            // metroListView1
+            // listViewOutrasPecas
             // 
-            this.metroListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewOutrasPecas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmDescricao});
-            this.metroListView1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.metroListView1.FullRowSelect = true;
-            this.metroListView1.Location = new System.Drawing.Point(3, 19);
-            this.metroListView1.MultiSelect = false;
-            this.metroListView1.Name = "metroListView1";
-            this.metroListView1.OwnerDraw = true;
-            this.metroListView1.Size = new System.Drawing.Size(139, 183);
-            this.metroListView1.TabIndex = 3;
-            this.metroListView1.UseCompatibleStateImageBehavior = false;
-            this.metroListView1.UseSelectable = true;
-            this.metroListView1.View = System.Windows.Forms.View.List;
+            this.listViewOutrasPecas.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.listViewOutrasPecas.FullRowSelect = true;
+            this.listViewOutrasPecas.Location = new System.Drawing.Point(3, 19);
+            this.listViewOutrasPecas.MultiSelect = false;
+            this.listViewOutrasPecas.Name = "listViewOutrasPecas";
+            this.listViewOutrasPecas.OwnerDraw = true;
+            this.listViewOutrasPecas.Size = new System.Drawing.Size(139, 183);
+            this.listViewOutrasPecas.TabIndex = 3;
+            this.listViewOutrasPecas.UseCompatibleStateImageBehavior = false;
+            this.listViewOutrasPecas.UseSelectable = true;
+            this.listViewOutrasPecas.View = System.Windows.Forms.View.List;
+            this.listViewOutrasPecas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewOutrasPecas_MouseDoubleClick);
             // 
             // clmDescricao
             // 
@@ -927,7 +928,7 @@ namespace AplTruckMotorsDiesel
             // metroPanel3
             // 
             this.metroPanel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.metroPanel3.Controls.Add(this.metroListView1);
+            this.metroPanel3.Controls.Add(this.listViewOutrasPecas);
             this.metroPanel3.Controls.Add(this.metroLabel10);
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
@@ -1089,7 +1090,7 @@ namespace AplTruckMotorsDiesel
         private MetroFramework.Controls.MetroButton btSair;
         private MetroFramework.Controls.MetroButton btImprimirRelacao;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private MetroFramework.Controls.MetroListView metroListView1;
+        private MetroFramework.Controls.MetroListView listViewOutrasPecas;
         private System.Windows.Forms.ColumnHeader clmDescricao;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroLabel metroLabel10;

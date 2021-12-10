@@ -20,7 +20,8 @@ namespace AplTruckMotorsDiesel.Impressao
             string bronzinaMancal,
             string bronzinaBiela,
             string junta,
-            string kitMotor)
+            string kitMotor,
+            string outra)
         {
             Document doc = new Document(PageSize.A4);
             doc.SetMargins(20, 20, 20, 80);
@@ -37,7 +38,7 @@ namespace AplTruckMotorsDiesel.Impressao
             titulo.Add("Motor: " + motor + " Veiculo: " + modeloVeiculo + "\n\n");
             doc.Add(titulo);
 
-            PdfPTable table = new PdfPTable(8);
+            PdfPTable table = new PdfPTable(9);
             Font fontSize12Bold = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 12, Font.BOLD);
             Font fontSize10Bold = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.COURIER, 10, Font.BOLD);
 
@@ -49,6 +50,7 @@ namespace AplTruckMotorsDiesel.Impressao
             table.AddCell(new PdfPCell(new Phrase("B.Biela", fontSize12Bold)));
             table.AddCell(new PdfPCell(new Phrase("Junta", fontSize12Bold)));
             table.AddCell(new PdfPCell(new Phrase("KIT", fontSize12Bold)));
+            table.AddCell(new PdfPCell(new Phrase("Outro", fontSize12Bold)));
 
             table.AddCell(pistao);
             table.AddCell(aneis);
@@ -58,9 +60,11 @@ namespace AplTruckMotorsDiesel.Impressao
             table.AddCell(bronzinaBiela);
             table.AddCell(junta);
             table.AddCell(kitMotor);
+            table.AddCell(outra);
 
-            for (int i = 1; i <= 8; i++)
+            for (int i = 1; i <= 9; i++)
             {
+                table.AddCell(" ");
                 table.AddCell(" ");
                 table.AddCell(" ");
                 table.AddCell(" ");

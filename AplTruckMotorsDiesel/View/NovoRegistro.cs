@@ -100,6 +100,15 @@ namespace AplTruckMotorsDiesel.View
             alterarWaterMark(3);
         }
 
+        private void btCadastrarOutrasPecas_Click(object sender, EventArgs e)
+        {
+            verificarPanelVisivel(panelCadastro);
+            IdMetodoInsert = 10;
+            pictureBoxCadastro.Image = Icones.ImgPistao;
+            lbItemSelecionado.Text = "Outras Peças";
+            alterarWaterMark(4);
+        }
+
         private void verificarPanelVisivel(Panel panel)
         {
             if (panel.Visible != true)
@@ -123,22 +132,29 @@ namespace AplTruckMotorsDiesel.View
         {
             switch (botaoSelecionado)
             {
-                case 1:
+                case 1: //Motor
                     tbCodigo.WaterMark = "Modelo Veiculo";
                     tbCodigoOriginal.WaterMark = "Modelo Motor";
                     tbMarca.WaterMark = "Observação";
                     break;
-                case 2:
+                case 2: //Itens Comuns
                     tbCodigo.WaterMark = "Código";
                     tbCodigoOriginal.WaterMark = "Código Original";
                     tbMarca.WaterMark = "Marca";
                     break;
-                case 3:
+                case 3: //Kit Motor
                     tbCodigo.WaterMark = "Código";
                     tbCodigoOriginal.WaterMark = "Itens do Kit";
                     tbMarca.WaterMark = "Marca";
                     break;
+                case 4: //Outras Peças
+                    tbCodigo.WaterMark = "Código";
+                    tbCodigoOriginal.WaterMark = "Descrição";
+                    tbMarca.WaterMark = "Marca";
+                    break;
             }
         }
+
+        
     }
 }

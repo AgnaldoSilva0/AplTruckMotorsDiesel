@@ -36,8 +36,9 @@ namespace AplTruckMotorsDiesel.View
             string bOleo = BombaOleo.retornaFichaTecnicaPorCodigo(cbBoleo.Text).Id;
             string junta = Junta.retornaFichaTecnicaPorCodigo(cbJunta.Text).Id;
             string kitMotor = KitMotor.retornaFichaTecnicaPorCodigo(cbKitMotor.Text).Id;
+            int outra = Outra.retornaFichaTecnicaPorCodigo(cbOutrasPecas.Text).Id;
 
-            Inserir.vincularPecas(idMotor, pistao, aneis, bBiela, bMancal, bAgua, bOleo, junta, "NULL", kitMotor);
+            Inserir.vincularPecas(idMotor, pistao, aneis, bBiela, bMancal, bAgua, bOleo, junta, "NULL", kitMotor, outra);
             LimparComboBox();
         }
 
@@ -90,6 +91,11 @@ namespace AplTruckMotorsDiesel.View
             {
                 cbKitMotor.Items.Add(item.CodigoKitMotor);
             }
+
+            foreach (Outra item in Pesquisar.retornaPecasComboBox("table_outra", 9))
+            {
+                cbOutrasPecas.Items.Add(item.Descricao);
+            }
         }
 
         private void LimparComboBox()
@@ -103,6 +109,7 @@ namespace AplTruckMotorsDiesel.View
             cbJunta.SelectedIndex = -1;
             cbKitMotor.SelectedIndex = -1;
             cbPistao.SelectedIndex = -1;
+            cbOutrasPecas.SelectedIndex = -1;
         }
 
         #region Comandos para alterar label ao selecionar algum item!
