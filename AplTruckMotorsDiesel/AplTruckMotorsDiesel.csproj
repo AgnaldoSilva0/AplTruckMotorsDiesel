@@ -80,6 +80,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cr5DM.cs" />
     <Compile Include="Impressao\Imprimir.cs" />
     <Compile Include="Model\BombaAgua.cs" />
     <Compile Include="Model\BronzinaMancal.cs" />
