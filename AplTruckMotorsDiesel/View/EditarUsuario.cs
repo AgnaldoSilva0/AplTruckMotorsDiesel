@@ -44,12 +44,26 @@ namespace AplTruckMotorsDiesel.View
 
         private void btEditar_Click(object sender, EventArgs e)
         {
+            //Criptografia
+            Cr5DM cr5DM = new Cr5DM();
+
             string nome = tbNomeUsuarioEditar.Text.ToUpper();
-            string senha = tbNovaSenhaEditar.Text.ToUpper();
+            string senha = cr5DM.RetornarMD5(tbNovaSenhaEditar.Text);
             int permissao = Convert.ToInt16(cbPermissaoEditar.Text.Substring(0,1));
             int id = Convert.ToInt16(metroLabel1.Text);
 
             Editar.StringEditarUsuario(nome, senha, permissao, id);
+        }
+
+        private void cbEditarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbEditarSenha.Checked == true)
+            {
+                tbNovaSenhaEditar.Enabled = true;
+            } else
+            {
+                tbNovaSenhaEditar.Enabled = false;
+            }
         }
     }
 }

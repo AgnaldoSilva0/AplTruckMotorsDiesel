@@ -35,6 +35,7 @@ namespace AplTruckMotorsDiesel.View
             this.cbPermissaoEditar = new MetroFramework.Controls.MetroComboBox();
             this.tbNomeUsuarioEditar = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.cbEditarSenha = new MetroFramework.Controls.MetroCheckBox();
             this.SuspendLayout();
             // 
             // cbMostrarSenha
@@ -70,7 +71,7 @@ namespace AplTruckMotorsDiesel.View
             // 
             // 
             this.tbNovaSenhaEditar.CustomButton.Image = null;
-            this.tbNovaSenhaEditar.CustomButton.Location = new System.Drawing.Point(273, 1);
+            this.tbNovaSenhaEditar.CustomButton.Location = new System.Drawing.Point(211, 1);
             this.tbNovaSenhaEditar.CustomButton.Name = "";
             this.tbNovaSenhaEditar.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.tbNovaSenhaEditar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -78,6 +79,7 @@ namespace AplTruckMotorsDiesel.View
             this.tbNovaSenhaEditar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbNovaSenhaEditar.CustomButton.UseSelectable = true;
             this.tbNovaSenhaEditar.CustomButton.Visible = false;
+            this.tbNovaSenhaEditar.Enabled = false;
             this.tbNovaSenhaEditar.Lines = new string[0];
             this.tbNovaSenhaEditar.Location = new System.Drawing.Point(24, 109);
             this.tbNovaSenhaEditar.MaxLength = 32767;
@@ -89,7 +91,7 @@ namespace AplTruckMotorsDiesel.View
             this.tbNovaSenhaEditar.SelectionLength = 0;
             this.tbNovaSenhaEditar.SelectionStart = 0;
             this.tbNovaSenhaEditar.ShortcutsEnabled = true;
-            this.tbNovaSenhaEditar.Size = new System.Drawing.Size(295, 23);
+            this.tbNovaSenhaEditar.Size = new System.Drawing.Size(233, 23);
             this.tbNovaSenhaEditar.TabIndex = 15;
             this.tbNovaSenhaEditar.UseSelectable = true;
             this.tbNovaSenhaEditar.WaterMark = "Senha";
@@ -151,11 +153,23 @@ namespace AplTruckMotorsDiesel.View
             this.metroLabel1.TabIndex = 18;
             this.metroLabel1.Text = "id";
             // 
+            // cbEditarSenha
+            // 
+            this.cbEditarSenha.AutoSize = true;
+            this.cbEditarSenha.Location = new System.Drawing.Point(263, 113);
+            this.cbEditarSenha.Name = "cbEditarSenha";
+            this.cbEditarSenha.Size = new System.Drawing.Size(53, 15);
+            this.cbEditarSenha.TabIndex = 19;
+            this.cbEditarSenha.Text = "Editar";
+            this.cbEditarSenha.UseSelectable = true;
+            this.cbEditarSenha.CheckedChanged += new System.EventHandler(this.cbEditarSenha_CheckedChanged);
+            // 
             // EditarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(343, 258);
+            this.Controls.Add(this.cbEditarSenha);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.cbMostrarSenha);
             this.Controls.Add(this.btEditar);
@@ -177,5 +191,6 @@ namespace AplTruckMotorsDiesel.View
         private MetroFramework.Controls.MetroComboBox cbPermissaoEditar;
         private MetroFramework.Controls.MetroTextBox tbNomeUsuarioEditar;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroCheckBox cbEditarSenha;
     }
 }
