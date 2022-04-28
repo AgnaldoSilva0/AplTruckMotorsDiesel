@@ -33,6 +33,9 @@ namespace AplTruckMotorsDiesel.View
 
         public static Boolean RetornarLogin(string usuario, string senha)
         {
+            //Criptografia
+            Cr5DM cr5DM = new Cr5DM();
+
             bool autorizado = false;
             string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
@@ -40,7 +43,8 @@ namespace AplTruckMotorsDiesel.View
             SQLiteConnection conexao = new SQLiteConnection(strConection);
             try
             {
-                string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' AND senha LIKE '"+ senha.ToUpper() +"' ";
+                //string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' AND senha LIKE '"+ senha.ToUpper() +"' ";
+                string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' ";
 
                 DataTable dados = new DataTable();
 
@@ -52,8 +56,8 @@ namespace AplTruckMotorsDiesel.View
 
                 foreach (System.Data.DataRow row in dados.Rows)
                 {
+                    autorizado = cr5DM.CompararMD5(senha, Convert.ToString(row["senha"]));
                     Program.VarGlobalPermissaoUsuario = Convert.ToInt32(row["permissao"]);
-                    autorizado = true;
                 }
             }
             catch (Exception ex)

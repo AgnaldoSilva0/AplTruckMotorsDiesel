@@ -153,8 +153,12 @@ namespace AplTruckMotorsDiesel.Model_BD
         #region Comando String para Inserir Usuario
         public static void inserirUsuario(string nome, string senha, int permissao)
         {
+            //Criptografia
+            Cr5DM cr5DM = new Cr5DM();
+            senha = cr5DM.RetornarMD5(senha);
+
             string comando = "INSERT INTO table_login (usuario, senha, permissao) " +
-                "VALUES ('" + nome.ToUpper() + "', '" + senha.ToUpper() + "', '" + permissao + "') ";
+                "VALUES ('" + nome.ToUpper() + "', '" + senha + "', '" + permissao + "') ";
             inserirConexao(comando);
         }
         #endregion
