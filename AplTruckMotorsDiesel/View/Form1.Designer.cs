@@ -93,6 +93,7 @@ namespace AplTruckMotorsDiesel
             this.clmDescricao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.btNotas = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -957,11 +958,27 @@ namespace AplTruckMotorsDiesel
             this.metroLabel10.UseCustomForeColor = true;
             this.metroLabel10.UseStyleColors = true;
             // 
+            // btNotas
+            // 
+            this.btNotas.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btNotas.ForeColor = System.Drawing.SystemColors.Control;
+            this.btNotas.Location = new System.Drawing.Point(800, 63);
+            this.btNotas.Name = "btNotas";
+            this.btNotas.Size = new System.Drawing.Size(118, 26);
+            this.btNotas.TabIndex = 24;
+            this.btNotas.Text = "Notas";
+            this.btNotas.UseCustomBackColor = true;
+            this.btNotas.UseCustomForeColor = true;
+            this.btNotas.UseSelectable = true;
+            this.btNotas.UseStyleColors = true;
+            this.btNotas.Click += new System.EventHandler(this.btNotas_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 591);
+            this.Controls.Add(this.btNotas);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.btImprimirRelacao);
@@ -1094,6 +1111,7 @@ namespace AplTruckMotorsDiesel
         private System.Windows.Forms.ColumnHeader clmDescricao;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroButton btNotas;
     }
 }
 

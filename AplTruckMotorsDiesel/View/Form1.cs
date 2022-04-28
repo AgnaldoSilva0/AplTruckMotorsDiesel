@@ -443,6 +443,10 @@ namespace AplTruckMotorsDiesel
                 outrasPecas);
         }
 
-        
+        private void btNotas_Click(object sender, EventArgs e)
+        {
+            Form_ListaNota form_ListaNota = new Form_ListaNota();
+            form_ListaNota.ShowDialog();
+        }
     }
 }
