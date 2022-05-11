@@ -87,12 +87,19 @@
     <Compile Include="Model\Icones.cs" />
     <Compile Include="Model\Nota.cs" />
     <Compile Include="Model\Outra.cs" />
+    <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Model_BD\Conexao.cs" />
     <Compile Include="Model_BD\Deletar.cs" />
     <Compile Include="Model_BD\Editar.cs" />
     <Compile Include="Model_BD\Inserir.cs" />
     <Compile Include="Model_BD\Pesquisar.cs" />
+    <Compile Include="Sistemas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistemas.Designer.cs">
+      <DependentUpon>Sistemas.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\EditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +132,12 @@
     </Compile>
     <Compile Include="View\Form_Add_Nota.Designer.cs">
       <DependentUpon>Form_Add_Nota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_Amalcaburio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_Amalcaburio.Designer.cs">
+      <DependentUpon>Form_Amalcaburio.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form_ListaNota.cs">
       <SubType>Form</SubType>
@@ -168,6 +181,9 @@
     <Compile Include="View\VincularAplicacao.Designer.cs">
       <DependentUpon>VincularAplicacao.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sistemas.resx">
+      <DependentUpon>Sistemas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\EditarUsuario.resx">
       <DependentUpon>EditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +204,9 @@
     </Compile>
     <EmbeddedResource Include="View\Form_Add_Nota.resx">
       <DependentUpon>Form_Add_Nota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_Amalcaburio.resx">
+      <DependentUpon>Form_Amalcaburio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form_ListaNota.resx">
       <DependentUpon>Form_ListaNota.cs</DependentUpon>

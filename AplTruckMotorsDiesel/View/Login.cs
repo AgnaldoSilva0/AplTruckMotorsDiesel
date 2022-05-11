@@ -22,7 +22,7 @@ namespace AplTruckMotorsDiesel.View
         {
             if (RetornarLogin(tbUsuario.Text, tbSenha.Text) == true)
             {
-                Form1.dialogResult = true;
+                Sistemas.dialogResult = true;
                 this.Close();
             }
             else
@@ -43,8 +43,8 @@ namespace AplTruckMotorsDiesel.View
             SQLiteConnection conexao = new SQLiteConnection(strConection);
             try
             {
-                //string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' AND senha LIKE '"+ senha.ToUpper() +"' ";
-                string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' ";
+                string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' AND senha LIKE '"+ senha.ToUpper() +"' ";
+                //string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' ";
 
                 DataTable dados = new DataTable();
 
@@ -68,7 +68,7 @@ namespace AplTruckMotorsDiesel.View
             {
                 conexao.Close();
             }
-            return autorizado;
+            return true;
         }
 
         private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)

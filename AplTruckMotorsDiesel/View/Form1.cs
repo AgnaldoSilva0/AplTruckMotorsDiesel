@@ -34,19 +34,19 @@ namespace AplTruckMotorsDiesel
         }
 
         //Variavel criada para dar sinal de positivo ou não para a form de login
-        public static bool dialogResult = false;
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.ShowDialog();
-            //Se der erro no login, a aplicação fecha
-            if (dialogResult != true)
-            {
-                Application.Exit();
-                return;
-            }
-            UsuarioLogado();
-        }
+        //public static bool dialogResult = false;
+        //private void Form1_Load(object sender, EventArgs e)
+        //{
+        //    Login login = new Login();
+        //    login.ShowDialog();
+        //    //Se der erro no login, a aplicação fecha
+        //    if (dialogResult != true)
+        //    {
+        //        Application.Exit();
+        //        return;
+        //    }
+        //    UsuarioLogado();
+        //}
 
         private void btPesquisaGeral_Click(object sender, EventArgs e)
         {
