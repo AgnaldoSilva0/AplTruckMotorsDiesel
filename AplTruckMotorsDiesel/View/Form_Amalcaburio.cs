@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplTruckMotorsDiesel.Model_BD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,24 @@ namespace AplTruckMotorsDiesel.View
 
         private void btPesquisar_Click(object sender, EventArgs e)
         {
+            ListViewProdutos.Items.Clear();
+            foreach (var item in Pesquisar.retornaProdutosAmalcaburio(tbPesquisar.Text))
+            {
+                ListViewProdutos.Items.Add(new ListViewItem(new String[] {
+                item.codigo,
+                item.descricao,
+                item.precoCompra.ToString(),
+                item.ipi.ToString()
+                } ));
+            }
+            
+        }
 
+        private void ListViewProdutos_MouseClick(object sender, MouseEventArgs e)
+        {
+            lbDescricao.Text = ListViewProdutos.SelectedItems[0].SubItems[1].Text;
+            double precoVenda = Convert.ToDouble(ListViewProdutos.SelectedItems[0].SubItems[2].Text) * 2;
+            lbPrecoVenda.Text = precoVenda.ToString();
         }
     }
 }

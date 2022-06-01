@@ -269,5 +269,44 @@ namespace AplTruckMotorsDiesel.Model_BD
             }
             return lista;
         }
+
+        public static List<Produto> retornaProdutosAmalcaburio(string fonte)
+        {
+            List<Produto> lista = new List<Produto>();
+            string baseDados = "C:\\BDs\\dds\\banco_dados.db";
+            string strConection = @"Data Source = " + baseDados + "; Version = 3";
+
+            SQLiteConnection conexao = new SQLiteConnection(strConection);
+            try
+            {
+                DataTable dados = new DataTable();
+
+                string query = "SELECT * FROM banco_produto WHERE codigo LIKE '%" + fonte + "%' OR descricao LIKE '%" + fonte + "%' ";
+
+                SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
+
+                conexao.Open();
+
+                adaptador.Fill(dados);
+                foreach (System.Data.DataRow row in dados.Rows)
+                {
+                    lista.Add(new Produto() { 
+                    codigo = Convert.ToString(row["codigo"]),
+                    descricao = Convert.ToString(row["descricao"]),
+                    precoCompra = Convert.ToDouble(row["preco"]),
+                    ipi = Convert.ToInt32(row["ipi"])
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return lista;
+        }
     }
 }

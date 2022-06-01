@@ -32,7 +32,8 @@ namespace AplTruckMotorsDiesel
 
         private void btAmalcaburio_Click(object sender, EventArgs e)
         {
-
+            Form_Amalcaburio form_Amalcaburio = new Form_Amalcaburio();
+            form_Amalcaburio.ShowDialog();
         }
 
         //Variavel criada para dar sinal de positivo ou não para a form de login

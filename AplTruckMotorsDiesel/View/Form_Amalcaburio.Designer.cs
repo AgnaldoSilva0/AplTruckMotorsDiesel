@@ -29,7 +29,7 @@ namespace AplTruckMotorsDiesel.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.ListViewItens = new MetroFramework.Controls.MetroListView();
+            this.ListViewProdutos = new MetroFramework.Controls.MetroListView();
             this.clmCodigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmDescricao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmPreco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -38,30 +38,32 @@ namespace AplTruckMotorsDiesel.View
             this.btPesquisar = new MetroFramework.Controls.MetroButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lbPrecoVenda = new System.Windows.Forms.Label();
+            this.lbDescricao = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ListViewItens
+            // ListViewProdutos
             // 
-            this.ListViewItens.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListViewProdutos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmCodigo,
             this.clmDescricao,
             this.clmPreco,
             this.clmIpi});
-            this.ListViewItens.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ListViewItens.FullRowSelect = true;
-            this.ListViewItens.Location = new System.Drawing.Point(23, 123);
-            this.ListViewItens.Name = "ListViewItens";
-            this.ListViewItens.OwnerDraw = true;
-            this.ListViewItens.Size = new System.Drawing.Size(691, 301);
-            this.ListViewItens.TabIndex = 0;
-            this.ListViewItens.UseCompatibleStateImageBehavior = false;
-            this.ListViewItens.UseSelectable = true;
-            this.ListViewItens.View = System.Windows.Forms.View.Details;
+            this.ListViewProdutos.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ListViewProdutos.FullRowSelect = true;
+            this.ListViewProdutos.Location = new System.Drawing.Point(23, 123);
+            this.ListViewProdutos.Name = "ListViewProdutos";
+            this.ListViewProdutos.OwnerDraw = true;
+            this.ListViewProdutos.Size = new System.Drawing.Size(691, 301);
+            this.ListViewProdutos.TabIndex = 0;
+            this.ListViewProdutos.UseCompatibleStateImageBehavior = false;
+            this.ListViewProdutos.UseSelectable = true;
+            this.ListViewProdutos.View = System.Windows.Forms.View.Details;
+            this.ListViewProdutos.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListViewProdutos_MouseClick);
             // 
             // clmCodigo
             // 
             this.clmCodigo.Text = "Código";
-            this.clmCodigo.Width = 89;
+            this.clmCodigo.Width = 82;
             // 
             // clmDescricao
             // 
@@ -79,7 +81,7 @@ namespace AplTruckMotorsDiesel.View
             // 
             this.clmIpi.Text = "IPI";
             this.clmIpi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmIpi.Width = 56;
+            this.clmIpi.Width = 65;
             // 
             // tbPesquisar
             // 
@@ -95,8 +97,9 @@ namespace AplTruckMotorsDiesel.View
             this.tbPesquisar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.tbPesquisar.CustomButton.UseSelectable = true;
             this.tbPesquisar.CustomButton.Visible = false;
+            this.tbPesquisar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.tbPesquisar.Lines = new string[0];
-            this.tbPesquisar.Location = new System.Drawing.Point(23, 94);
+            this.tbPesquisar.Location = new System.Drawing.Point(23, 85);
             this.tbPesquisar.MaxLength = 32767;
             this.tbPesquisar.Name = "tbPesquisar";
             this.tbPesquisar.PasswordChar = '\0';
@@ -106,7 +109,7 @@ namespace AplTruckMotorsDiesel.View
             this.tbPesquisar.SelectionLength = 0;
             this.tbPesquisar.SelectionStart = 0;
             this.tbPesquisar.ShortcutsEnabled = true;
-            this.tbPesquisar.Size = new System.Drawing.Size(144, 23);
+            this.tbPesquisar.Size = new System.Drawing.Size(150, 35);
             this.tbPesquisar.TabIndex = 1;
             this.tbPesquisar.UseSelectable = true;
             this.tbPesquisar.WaterMark = "Font";
@@ -116,9 +119,9 @@ namespace AplTruckMotorsDiesel.View
             // btPesquisar
             // 
             this.btPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btPesquisar.Location = new System.Drawing.Point(173, 94);
+            this.btPesquisar.Location = new System.Drawing.Point(179, 85);
             this.btPesquisar.Name = "btPesquisar";
-            this.btPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btPesquisar.Size = new System.Drawing.Size(75, 35);
             this.btPesquisar.TabIndex = 2;
             this.btPesquisar.Text = "Pesquisar";
             this.btPesquisar.UseSelectable = true;
@@ -128,7 +131,7 @@ namespace AplTruckMotorsDiesel.View
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 446);
+            this.label1.Location = new System.Drawing.Point(19, 458);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 24);
             this.label1.TabIndex = 3;
@@ -139,22 +142,34 @@ namespace AplTruckMotorsDiesel.View
             this.lbPrecoVenda.AutoSize = true;
             this.lbPrecoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrecoVenda.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbPrecoVenda.Location = new System.Drawing.Point(155, 446);
+            this.lbPrecoVenda.Location = new System.Drawing.Point(151, 458);
             this.lbPrecoVenda.Name = "lbPrecoVenda";
             this.lbPrecoVenda.Size = new System.Drawing.Size(35, 24);
             this.lbPrecoVenda.TabIndex = 4;
             this.lbPrecoVenda.Text = "0.0";
             // 
+            // lbDescricao
+            // 
+            this.lbDescricao.AutoSize = true;
+            this.lbDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescricao.Location = new System.Drawing.Point(19, 431);
+            this.lbDescricao.Name = "lbDescricao";
+            this.lbDescricao.Size = new System.Drawing.Size(25, 24);
+            this.lbDescricao.TabIndex = 5;
+            this.lbDescricao.Text = "...";
+            // 
             // Form_Amalcaburio
             // 
+            this.AcceptButton = this.btPesquisar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 490);
+            this.Controls.Add(this.lbDescricao);
             this.Controls.Add(this.lbPrecoVenda);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btPesquisar);
             this.Controls.Add(this.tbPesquisar);
-            this.Controls.Add(this.ListViewItens);
+            this.Controls.Add(this.ListViewProdutos);
             this.Name = "Form_Amalcaburio";
             this.Text = "Amalcaburio";
             this.ResumeLayout(false);
@@ -164,7 +179,7 @@ namespace AplTruckMotorsDiesel.View
 
         #endregion
 
-        private MetroFramework.Controls.MetroListView ListViewItens;
+        private MetroFramework.Controls.MetroListView ListViewProdutos;
         private System.Windows.Forms.ColumnHeader clmCodigo;
         private System.Windows.Forms.ColumnHeader clmDescricao;
         private System.Windows.Forms.ColumnHeader clmPreco;
@@ -173,5 +188,6 @@ namespace AplTruckMotorsDiesel.View
         private MetroFramework.Controls.MetroButton btPesquisar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbPrecoVenda;
+        private System.Windows.Forms.Label lbDescricao;
     }
 }
