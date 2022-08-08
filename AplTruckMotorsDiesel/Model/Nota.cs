@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplTruckMotorsDiesel.Model_BD;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
@@ -22,7 +23,7 @@ namespace AplTruckMotorsDiesel.Model
         {
             List<Nota> lista = new List<Nota>();
 
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
             string query;
 
@@ -84,7 +85,7 @@ namespace AplTruckMotorsDiesel.Model
 
         public static void inserirNota(Nota nota)
         {
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConexao = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConexao);

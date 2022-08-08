@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplTruckMotorsDiesel.Model_BD;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
@@ -50,7 +51,7 @@ namespace AplTruckMotorsDiesel.Model
         /// <returns></returns>
         public static Pistao retornaFichaTecnicaPorId(string id) {
             Pistao pistao = new Pistao();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -96,7 +97,7 @@ namespace AplTruckMotorsDiesel.Model
         public static Pistao retornaFichaTecnicaPorCodigo(string codigo)
         {
             Pistao pistao = new Pistao();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -136,7 +137,7 @@ namespace AplTruckMotorsDiesel.Model
         public static List<Pistao> retornaTodosPistao()
         {
             List<Pistao> lista = new List<Pistao>();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);

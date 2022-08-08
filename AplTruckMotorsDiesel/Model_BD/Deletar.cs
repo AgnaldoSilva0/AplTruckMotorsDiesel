@@ -14,7 +14,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         public static bool DeletarUsuario(string usuario, string senha)
         {
             bool resultado = false;
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -51,7 +51,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         /// <param name="operacao"></param>
         public static void DeletarItem(int id ,string codigo, int operacao)
         {
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -128,7 +128,7 @@ namespace AplTruckMotorsDiesel.Model_BD
 
         private static void deletarMotorTabelaAplicacao(int id)
         {
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);

@@ -22,8 +22,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         {
             List<Motor> lista = new List<Motor>();
             lista.Clear();
-            //string baseDados = Application.StartupPath + @"\db\DBSQLite.db"; C:\BDs\dds
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -85,7 +84,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         public static List<Object> retornaPeca(string idDoItemRetorno, string itemSelecionado, int objetoPeca)
         {
             List<Object> lista = new List<Object>();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -166,7 +165,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         public static List<Object> retornaPecasComboBox(string tabela, int identificadorSwith)
         {
             List<Object> lista = new List<Object>();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -238,7 +237,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         {
             List<Usuario> lista = new List<Usuario>();
 
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -273,7 +272,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         public static List<Produto> retornaProdutosAmalcaburio(string fonte)
         {
             List<Produto> lista = new List<Produto>();
-            string baseDados = "C:\\BDs\\dds\\banco_dados.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosProdutos;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);

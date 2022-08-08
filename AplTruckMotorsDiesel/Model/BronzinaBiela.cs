@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplTruckMotorsDiesel.Model_BD;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
@@ -49,7 +50,7 @@ namespace AplTruckMotorsDiesel.Model
         public static BronzinaBiela retornaFichaTecnicaPorCodigo(string codigo)
         {
             BronzinaBiela bronzinaBiela = new BronzinaBiela();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -89,7 +90,7 @@ namespace AplTruckMotorsDiesel.Model
         public static BronzinaBiela retornaFichaTecnicaPorId(string id)
         {
             BronzinaBiela bronzinaBiela = new BronzinaBiela();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -129,7 +130,7 @@ namespace AplTruckMotorsDiesel.Model
         public static List<BronzinaBiela> retornaTodosBronzinaBiela()
         {
             List<BronzinaBiela> lista = new List<BronzinaBiela>();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AplTruckMotorsDiesel.Model_BD
@@ -14,7 +10,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         #region Conectar ou Criar Banco
         public static void conexao()
         {
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             if (!File.Exists(baseDados))
@@ -45,7 +41,7 @@ namespace AplTruckMotorsDiesel.Model_BD
 
         private static void criarTabelas()
         {
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConexao = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConexao);
@@ -119,7 +115,7 @@ namespace AplTruckMotorsDiesel.Model_BD
 
         public static void ExecutarComandoSql(string comandoTexto)
         {
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConexao = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConexao);

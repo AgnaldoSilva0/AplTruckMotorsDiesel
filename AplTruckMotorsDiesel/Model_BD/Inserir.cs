@@ -13,7 +13,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         #region Classe para conectar e executar a string COMANDO passada por parametro
         private static void inserirConexao(string comandoTexto)
         {
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConexao = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConexao);

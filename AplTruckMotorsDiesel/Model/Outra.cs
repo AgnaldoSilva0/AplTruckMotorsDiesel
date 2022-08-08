@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AplTruckMotorsDiesel.Model_BD;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
@@ -44,7 +45,7 @@ namespace AplTruckMotorsDiesel.Model
         public static Outra retornaFichaTecnicaPorId(string id)
         {
             Outra outra = new Outra();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -84,7 +85,7 @@ namespace AplTruckMotorsDiesel.Model
         public static Outra retornaFichaTecnicaPorCodigo(string descricao)
         {
             Outra outra = new Outra();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -124,7 +125,7 @@ namespace AplTruckMotorsDiesel.Model
         public static List<Outra> retornaTodosOutra()
         {
             List<Outra> lista = new List<Outra>();
-            string baseDados = "C:\\BDs\\dds\\AplTruckMotorsBD.db";
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);

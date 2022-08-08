@@ -26,7 +26,7 @@ namespace AplTruckMotorsDiesel.Impressao
             Document doc = new Document(PageSize.A4);
             doc.SetMargins(20, 20, 20, 80);
             doc.AddCreationDate();
-            string caminho = @"C:\BDs\" + "relatorio.pdf";
+            string caminho = @"C:\AplTruckMotors\" + "relatorio.pdf";
 
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(caminho, FileMode.Create));
 

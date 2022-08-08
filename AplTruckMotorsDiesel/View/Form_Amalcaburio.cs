@@ -30,7 +30,6 @@ namespace AplTruckMotorsDiesel.View
                 item.ipi.ToString()
                 } ));
             }
-            
         }
 
         private void ListViewProdutos_MouseClick(object sender, MouseEventArgs e)
