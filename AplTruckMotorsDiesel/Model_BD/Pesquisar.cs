@@ -272,7 +272,7 @@ namespace AplTruckMotorsDiesel.Model_BD
         public static List<Produto> retornaProdutosAmalcaburio(string fonte)
         {
             List<Produto> lista = new List<Produto>();
-            string baseDados = DiretorioBD.CaminhoBancoDadosProdutos;
+            string baseDados = DiretorioBD.CaminhoBancoDadosPrincipal;
             string strConection = @"Data Source = " + baseDados + "; Version = 3";
 
             SQLiteConnection conexao = new SQLiteConnection(strConection);
@@ -280,7 +280,7 @@ namespace AplTruckMotorsDiesel.Model_BD
             {
                 DataTable dados = new DataTable();
 
-                string query = "SELECT * FROM banco_produto WHERE codigo LIKE '%" + fonte + "%' OR descricao LIKE '%" + fonte + "%' ";
+                string query = "SELECT * FROM table_produto WHERE codigo LIKE '%" + fonte + "%' OR descricao LIKE '%" + fonte + "%' ";
 
                 SQLiteDataAdapter adaptador = new SQLiteDataAdapter(query, strConection);
 

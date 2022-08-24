@@ -3,13 +3,6 @@ using AplTruckMotorsDiesel.Model;
 using AplTruckMotorsDiesel.Model_BD;
 using AplTruckMotorsDiesel.View;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AplTruckMotorsDiesel
@@ -34,19 +27,19 @@ namespace AplTruckMotorsDiesel
         }
 
         //Variavel criada para dar sinal de positivo ou não para a form de login
-        //public static bool dialogResult = false;
-        //private void Form1_Load(object sender, EventArgs e)
-        //{
-        //    Login login = new Login();
-        //    login.ShowDialog();
-        //    //Se der erro no login, a aplicação fecha
-        //    if (dialogResult != true)
-        //    {
-        //        Application.Exit();
-        //        return;
-        //    }
-        //    UsuarioLogado();
-        //}
+        public static bool dialogResult = false;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.ShowDialog();
+            //Se der erro no login, a aplicação fecha
+            if (dialogResult != true)
+            {
+                Application.Exit();
+                return;
+            }
+            UsuarioLogado();
+        }
 
         private void btPesquisaGeral_Click(object sender, EventArgs e)
         {
@@ -198,6 +191,7 @@ namespace AplTruckMotorsDiesel
             MessageBox.Show("Usuário não permitido para essa ação");
         }
 
+        #region ListViews Mouse Double Clicl
         private void listViewPistao_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
@@ -323,6 +317,7 @@ namespace AplTruckMotorsDiesel
                 MessageBox.Show("Tente Novamente");
             }
         }
+        #endregion
 
         private void btGerenciarUsuarios_Click(object sender, EventArgs e)
         {

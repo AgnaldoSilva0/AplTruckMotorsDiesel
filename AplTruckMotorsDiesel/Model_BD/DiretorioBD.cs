@@ -9,6 +9,5 @@ namespace AplTruckMotorsDiesel.Model_BD
     internal class DiretorioBD
     {
         public static string CaminhoBancoDadosPrincipal = "C:\\AplTruckMotors\\AplTruckMotorsBD.db";
-        public static string CaminhoBancoDadosProdutos = "C:\\AplTruckMotors\\banco_dados.db"; 
     }
 }

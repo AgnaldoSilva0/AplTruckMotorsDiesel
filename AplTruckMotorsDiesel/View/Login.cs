@@ -32,7 +32,7 @@ namespace AplTruckMotorsDiesel.View
             }
         }
 
-        public static Boolean RetornarLogin(string usuario, string senha)
+        private bool RetornarLogin(string usuario, string senha)
         {
             //Criptografia
             Cr5DM cr5DM = new Cr5DM();
@@ -44,8 +44,8 @@ namespace AplTruckMotorsDiesel.View
             SQLiteConnection conexao = new SQLiteConnection(strConection);
             try
             {
-                string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' AND senha LIKE '"+ senha.ToUpper() +"' ";
-                //string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' ";
+                //string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' AND senha LIKE '"+ senha.ToUpper() +"' ";
+                string query = "SELECT * FROM table_login WHERE usuario LIKE '" + usuario.ToUpper() + "' ";
 
                 DataTable dados = new DataTable();
 
@@ -69,7 +69,7 @@ namespace AplTruckMotorsDiesel.View
             {
                 conexao.Close();
             }
-            return true;
+            return autorizado;
         }
 
         private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
