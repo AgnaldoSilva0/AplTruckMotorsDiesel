@@ -29,16 +29,20 @@ namespace AplTruckMotorsDiesel.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Amalcaburio));
             this.ListViewProdutos = new MetroFramework.Controls.MetroListView();
             this.clmCodigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmDescricao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmPreco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmIpi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbPesquisar = new MetroFramework.Controls.MetroTextBox();
-            this.btPesquisar = new MetroFramework.Controls.MetroButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lbPrecoVenda = new System.Windows.Forms.Label();
             this.lbDescricao = new System.Windows.Forms.Label();
+            this.cbMostrarValorCompra = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btPesquisar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ListViewProdutos
@@ -75,7 +79,7 @@ namespace AplTruckMotorsDiesel.View
             // 
             this.clmPreco.Text = "Preço Compra";
             this.clmPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.clmPreco.Width = 123;
+            this.clmPreco.Width = 0;
             // 
             // clmIpi
             // 
@@ -89,9 +93,9 @@ namespace AplTruckMotorsDiesel.View
             // 
             // 
             this.tbPesquisar.CustomButton.Image = null;
-            this.tbPesquisar.CustomButton.Location = new System.Drawing.Point(122, 1);
+            this.tbPesquisar.CustomButton.Location = new System.Drawing.Point(116, 1);
             this.tbPesquisar.CustomButton.Name = "";
-            this.tbPesquisar.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.tbPesquisar.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.tbPesquisar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.tbPesquisar.CustomButton.TabIndex = 1;
             this.tbPesquisar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -100,7 +104,7 @@ namespace AplTruckMotorsDiesel.View
             this.tbPesquisar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.tbPesquisar.Lines = new string[0];
             this.tbPesquisar.Location = new System.Drawing.Point(23, 85);
-            this.tbPesquisar.MaxLength = 32767;
+            this.tbPesquisar.MaxLength = 100;
             this.tbPesquisar.Name = "tbPesquisar";
             this.tbPesquisar.PasswordChar = '\0';
             this.tbPesquisar.PromptText = "Font";
@@ -114,18 +118,8 @@ namespace AplTruckMotorsDiesel.View
             this.tbPesquisar.UseSelectable = true;
             this.tbPesquisar.WaterMark = "Font";
             this.tbPesquisar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.tbPesquisar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // btPesquisar
-            // 
-            this.btPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btPesquisar.Location = new System.Drawing.Point(179, 85);
-            this.btPesquisar.Name = "btPesquisar";
-            this.btPesquisar.Size = new System.Drawing.Size(75, 35);
-            this.btPesquisar.TabIndex = 2;
-            this.btPesquisar.Text = "Pesquisar";
-            this.btPesquisar.UseSelectable = true;
-            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
+            this.tbPesquisar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPesquisar_KeyDown);
             // 
             // label1
             // 
@@ -140,11 +134,11 @@ namespace AplTruckMotorsDiesel.View
             // lbPrecoVenda
             // 
             this.lbPrecoVenda.AutoSize = true;
-            this.lbPrecoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrecoVenda.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lbPrecoVenda.Location = new System.Drawing.Point(151, 458);
+            this.lbPrecoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrecoVenda.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lbPrecoVenda.Location = new System.Drawing.Point(175, 459);
             this.lbPrecoVenda.Name = "lbPrecoVenda";
-            this.lbPrecoVenda.Size = new System.Drawing.Size(35, 24);
+            this.lbPrecoVenda.Size = new System.Drawing.Size(38, 24);
             this.lbPrecoVenda.TabIndex = 4;
             this.lbPrecoVenda.Text = "0.0";
             // 
@@ -158,20 +152,56 @@ namespace AplTruckMotorsDiesel.View
             this.lbDescricao.TabIndex = 5;
             this.lbDescricao.Text = "...";
             // 
+            // cbMostrarValorCompra
+            // 
+            this.cbMostrarValorCompra.AutoSize = true;
+            this.cbMostrarValorCompra.Location = new System.Drawing.Point(505, 103);
+            this.cbMostrarValorCompra.Name = "cbMostrarValorCompra";
+            this.cbMostrarValorCompra.Size = new System.Drawing.Size(150, 17);
+            this.cbMostrarValorCompra.TabIndex = 6;
+            this.cbMostrarValorCompra.Text = "Monstrar preço de compra";
+            this.cbMostrarValorCompra.UseVisualStyleBackColor = true;
+            this.cbMostrarValorCompra.CheckedChanged += new System.EventHandler(this.cbMostrarValorCompra_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(140, 454);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btPesquisar.Image")));
+            this.btPesquisar.Location = new System.Drawing.Point(179, 85);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(126, 36);
+            this.btPesquisar.TabIndex = 8;
+            this.btPesquisar.Text = "Pesquisar";
+            this.btPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btPesquisar.UseVisualStyleBackColor = true;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
+            // 
             // Form_Amalcaburio
             // 
-            this.AcceptButton = this.btPesquisar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 490);
+            this.Controls.Add(this.btPesquisar);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.cbMostrarValorCompra);
             this.Controls.Add(this.lbDescricao);
             this.Controls.Add(this.lbPrecoVenda);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btPesquisar);
             this.Controls.Add(this.tbPesquisar);
             this.Controls.Add(this.ListViewProdutos);
             this.Name = "Form_Amalcaburio";
             this.Text = "Amalcaburio";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,9 +215,11 @@ namespace AplTruckMotorsDiesel.View
         private System.Windows.Forms.ColumnHeader clmPreco;
         private System.Windows.Forms.ColumnHeader clmIpi;
         private MetroFramework.Controls.MetroTextBox tbPesquisar;
-        private MetroFramework.Controls.MetroButton btPesquisar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbPrecoVenda;
         private System.Windows.Forms.Label lbDescricao;
+        private System.Windows.Forms.CheckBox cbMostrarValorCompra;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btPesquisar;
     }
 }

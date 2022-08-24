@@ -38,5 +38,25 @@ namespace AplTruckMotorsDiesel.View
             double precoVenda = Convert.ToDouble(ListViewProdutos.SelectedItems[0].SubItems[2].Text) * 2;
             lbPrecoVenda.Text = precoVenda.ToString();
         }
+
+        private void cbMostrarValorCompra_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbMostrarValorCompra.Checked)
+            {
+                ListViewProdutos.Columns[2].Width = 123;
+            }
+            else
+            {
+                ListViewProdutos.Columns[2].Width = 0;
+            }
+        }
+
+        private void tbPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btPesquisar.PerformClick();
+            }
+        }
     }
 }
